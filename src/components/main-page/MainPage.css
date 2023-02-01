@@ -1,0 +1,27 @@
+.mainpage__container {
+    display: flex;
+    height: 950px;
+}
+
+.mainpage__component {
+    width: 50%;
+    text-decoration: none;
+    color: #000000;
+}
+
+.mainpage__header {
+    margin-left: 50px;
+}
+
+.made-in-alpha {
+    background-image: url("https://thumb.tildacdn.com/tild6338-6166-4963-a230-356561343839/-/format/webp/Frame_44_3.jpg");
+    background-position: top;
+    height: 1000px;
+}
+
+.own-design {
+    background-image: url("https://thumb.tildacdn.com/tild6666-3462-4231-b130-303730643263/-/format/webp/Frame_43_2.jpg");
+    background-position: top;
+    height: 1000px;
+}
+
