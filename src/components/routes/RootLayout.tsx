@@ -1,4 +1,4 @@
-import Page from "../page/Page";
+import Page from "../page";
 import {Outlet} from "react-router-dom";
 
 const RootLayout = () => {
