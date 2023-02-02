@@ -1,3 +1,5 @@
+@import '@alfalab/core-components/vars/gaps.css';
+
 .mainpage__container {
     display: flex;
     height: 950px;
@@ -10,7 +12,7 @@
 }
 
 .mainpage__header {
-    margin-left: 50px;
+    margin-left: var(--gap-4xl);
 }
 
 .made-in-alpha {

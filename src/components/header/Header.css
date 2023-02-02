@@ -1,11 +1,14 @@
+@import '@alfalab/core-components/vars/colors-indigo.css';
+@import '@alfalab/core-components/vars/gaps.css';
+
 .header__container {
     display: flex;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: var(--gap-xs) var(--gap-xl);
 }
 
 .header__logo {
-    color: #ef3124;
+    color: var(--color-dark-bg-accent, #ef3124);
     text-decoration: none;
 }
 
