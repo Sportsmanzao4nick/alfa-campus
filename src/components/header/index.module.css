@@ -1,23 +1,23 @@
 @import '@alfalab/core-components/vars/colors-indigo.css';
 @import '@alfalab/core-components/vars/gaps.css';
 
-.header__container {
+.container {
     display: flex;
     justify-content: space-between;
     padding: var(--gap-xs) var(--gap-xl);
 }
 
-.header__logo {
+.logo {
     color: var(--color-dark-bg-accent, #ef3124);
     text-decoration: none;
 }
 
-.header__menu-links {
+.menu__links {
     text-decoration: none;
     color: #000000;
 }
 
-.header__menu-burger {
+.menu__burger {
     display: inline-block;
     width: 50px;
     height: 50px;

@@ -1,7 +1,6 @@
 import './Page.css';
-import Header from "../header/Header";
-import {Footer} from "../footer/Footer";
-import {ReactChildren, ReactElement, ReactNode} from "react";
+import {Header} from "../header";
+import {Footer} from "../footer";
 
 const Page = (props: any) => {
     return(

@@ -1,8 +1,12 @@
-import MainPage from "../../pages/main-page/MainPage";
+import Page from "../page/Page";
+import {Outlet} from "react-router-dom";
 
 const RootLayout = () => {
     return (
-        <MainPage/>
+        <Page>
+            <Outlet/>
+        </Page>
+
     )
 }
 
