@@ -4,7 +4,8 @@
 .container {
     display: flex;
     justify-content: space-between;
-    padding: var(--gap-xs) var(--gap-xl);
+    padding: var(--gap-2xs) var(--gap-xl) 0 var(--gap-xl);
+    color: #000000;
 }
 
 .logo {
@@ -12,12 +13,7 @@
     text-decoration: none;
 }
 
-.menu__links {
-    text-decoration: none;
-    color: #000000;
-}
-
-.menu__burger {
+.burger {
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -26,4 +22,86 @@
     background-position: center;
     background-image: url("https://static.tildacdn.com/tild3833-3762-4238-b266-663861633565/menu.svg");
     vertical-align: middle;
+}
+
+.burgerlist {
+    margin: 0;
+    top: 0;
+    position: fixed;
+    right: -100%;
+    transition-duration: 1s;
+    height: 100%;
+    width: 600px;
+
+}
+
+.burger:hover {
+    cursor: pointer;
+}
+
+.links {
+    text-decoration: none;
+}
+
+.links:hover {
+    cursor: pointer;
+}
+
+.active {
+    margin: 0;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background-color: #000000;
+    width: 600px;
+    transition-duration: 0.5s;
+}
+
+.list {
+    padding-top: var(--gap-xl);
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 10px;
+    left: 560px;
+    color: #ffffff;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+.listitem {
+    list-style-type: none;
+    margin-bottom: var(--gap-m);
+}
+
+.text {
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.active_footer {
+    position: absolute;
+    bottom: var(--gap-2xl);
+    padding-left: var(--gap-3xl);
+}
+
+br {
+    display: block;
+    content: "";
+    margin-top: var(--gap-m);
+}
+
+.active_text {
+    display: inline-block;
+    font-size: 13px;
+    text-decoration: none;
+    color: #ffffff;
+    line-height: 1px;
 }
