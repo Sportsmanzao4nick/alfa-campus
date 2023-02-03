@@ -105,3 +105,12 @@ br {
     color: #ffffff;
     line-height: 1px;
 }
+
+.contacts_icons {
+    color: #ffffff;
+    list-style-type: none;
+}
+
+.icon_contact {
+    display: inline-block;
+}

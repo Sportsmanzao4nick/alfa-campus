@@ -2,6 +2,8 @@ import styles from './index.module.css';
 import {NavLink} from "react-router-dom";
 import React, {useState} from "react";
 import {SfCrossMIcon} from '@alfalab/icons-glyph/SfCrossMIcon';
+import { MailMIcon } from '@alfalab/icons-glyph/MailMIcon';
+import { PhoneMIcon } from '@alfalab/icons-glyph/PhoneMIcon';
 
 const Sidebar = () => {
     const [isActive, setActive] = useState(false);
@@ -35,8 +37,16 @@ const Sidebar = () => {
                 <div className={styles.active_footer}>
                     <NavLink className={styles.active_text}
                              to=""> Политика конфиденциальности <br/> и обработки
-                        персональных
-                        данных </NavLink>
+                        персональных данных </NavLink>
+                    <ul className={styles.contacts_icons}>
+                        <li className={styles.icon_contact}>
+                            <MailMIcon/>
+                        </li>
+                        <li className={styles.icon_contact}>
+                            <PhoneMIcon/>
+                        </li>
+                        <li className={styles.icon_contact}></li>
+                    </ul>
                 </div>
             </div>
         </div>
