@@ -15,14 +15,14 @@
 }
 
 .madeinalpha {
-    background-image: url("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4c6e78de-dc83-4770-b958-285bea548ae5/Frame_46.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230203%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T120850Z&X-Amz-Expires=86400&X-Amz-Signature=52930f8a5825a33c9392a75af97b1d194623bd2b6eab86b88aafb126d9410b39&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Frame_46.jpeg%22&x-id=GetObject");
+    background-image: url("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4c6e78de-dc83-4770-b958-285bea548ae5/Frame_46.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230205%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230205T062353Z&X-Amz-Expires=86400&X-Amz-Signature=22f742ec1ff2f2814b93485981b6a97a13133eb9bb42de17fce10ddf04341d56&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Frame_46.jpeg%22&x-id=GetObject");
     background-size: 100%;
     background-position: top;
     height: 975px;
 }
 
 .owndesign {
-    background-image: url("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/267b864f-1ceb-4932-a8f7-ca3f149638e5/Frame_45.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230203%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T120839Z&X-Amz-Expires=86400&X-Amz-Signature=efa31f77b5e1ddebeb8e4d4f6a0a1b522427856dd1cbf83fe83b2726082e1578&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Frame_45.jpeg%22&x-id=GetObject");
+    background-image: url("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/267b864f-1ceb-4932-a8f7-ca3f149638e5/Frame_45.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230205%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230205T062350Z&X-Amz-Expires=86400&X-Amz-Signature=e81acf193f6c911c5936ac74711587f72c90aa5b19dedb76fc96d12b254d29f0&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Frame_45.jpeg%22&x-id=GetObject");
     background-position: top;
     background-size: 100%;
     height: 975px;

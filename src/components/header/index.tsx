@@ -1,66 +1,26 @@
 import styles from './index.module.css';
 import {NavLink} from "react-router-dom";
 import React, {useState} from "react";
-import {SfCrossMIcon} from '@alfalab/icons-glyph/SfCrossMIcon';
-import { MailMIcon } from '@alfalab/icons-glyph/MailMIcon';
-import { PhoneMIcon } from '@alfalab/icons-glyph/PhoneMIcon';
+import {Sidebar} from "../sidebar";
 
-const Sidebar = () => {
+export const Header = () => {
     const [isActive, setActive] = useState(false);
     return (
         <div className={styles.container}>
+            <div className={styles.logo__container}>
+                <div onClick={() => setActive(!isActive)}
+                     className={isActive ? styles.container_active : styles.container_off}></div>
+                <NavLink className={styles.logo}
+                         to="">A-Store</NavLink>
+            </div>
             <div onClick={() => setActive(!isActive)}
                  className={styles.links}>
                 <span className={styles.burger}></span>
                 меню
-            </div>
-            <div className={isActive ? styles.active : styles.burgerlist}>
-                <SfCrossMIcon onClick={() => setActive(!isActive)}
-                              className={styles.icon}/>
-                <ul className={styles.list}>
-                    <li className={styles.listitem}>
-                        <NavLink onClick={() => setActive(!isActive)}
-                                 className={styles.text} to="made-in-alpha">Сделано
-                            в Альфе</NavLink>
-                    </li>
-                    <li className={styles.listitem}>
-                        <NavLink onClick={() => setActive(!isActive)}
-                                 className={styles.text} to="own-design">Свой
-                            дизайн</NavLink>
-                    </li>
-                    <li className={styles.listitem}>
-                        <NavLink onClick={() => setActive(!isActive)}
-                                 className={styles.text}
-                                 to="contacts">Контакты</NavLink>
-                    </li>
-                </ul>
-                <div className={styles.active_footer}>
-                    <NavLink className={styles.active_text}
-                             to=""> Политика конфиденциальности <br/> и обработки
-                        персональных данных </NavLink>
-                    <ul className={styles.contacts_icons}>
-                        <li className={styles.icon_contact}>
-                            <MailMIcon/>
-                        </li>
-                        <li className={styles.icon_contact}>
-                            <PhoneMIcon/>
-                        </li>
-                        <li className={styles.icon_contact}></li>
-                    </ul>
+                <div className={isActive ? styles.active : styles.burgerlist}>
+                    <Sidebar/>
                 </div>
             </div>
-        </div>
-    )
-}
-
-export const Header = () => {
-    return (
-        <div className={styles.container}>
-            <div className={styles.logo__container}>
-                <NavLink className={styles.logo}
-                         to="">A-Store</NavLink>
-            </div>
-            <Sidebar/>
         </div>
     )
 }

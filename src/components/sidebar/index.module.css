@@ -1,0 +1,72 @@
+@import '@alfalab/core-components/vars/colors-indigo.css';
+@import '@alfalab/core-components/vars/gaps.css';
+
+.list {
+    padding-top: var(--gap-xl);
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 10px;
+    left: 560px;
+    color: #ffffff;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+.listitem {
+    list-style-type: none;
+    margin-bottom: var(--gap-m);
+}
+
+.text {
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.active_footer {
+    position: absolute;
+    bottom: var(--gap-2xl);
+    padding-left: var(--gap-3xl);
+}
+
+br {
+    display: block;
+    content: "";
+    margin-top: var(--gap-m);
+}
+
+.active_text {
+    display: inline-block;
+    font-size: 13px;
+    text-decoration: none;
+    color: #ffffff;
+    line-height: 1px;
+}
+
+.contacts_icons {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+.icon_contact {
+    display: flex;
+    margin-right: var(--gap-xs);
+}
+
+.link_contact {
+    text-align: center;
+    line-height: 35px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #000000;
+}

@@ -12,7 +12,6 @@ interface ReactElement<P = any, T extends string | JSXElementConstructor<any> = 
 }
 
 const Page = (props: any) => {
-    console.log(props)
     return (
         <div className={styles.page}>
             <Header/>
