@@ -1,6 +1,5 @@
-import Page from "../../components/page";
 
-const Contacts = () => {
+export const Contacts = () => {
     return (
         <div className="made-in-alpha__header">
             <h1 className="">Контакты</h1>
@@ -9,5 +8,3 @@ const Contacts = () => {
 
     );
 }
-
-export default Contacts;

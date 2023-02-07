@@ -1,6 +1,6 @@
 import styles from './index.module.css';
 
-const MadeInAlpha = () => {
+export const MadeInAlpha = () => {
     return (
         <div className="made-in-alpha__header">
             <h2 className="">Сделано в Альфе</h2>
@@ -8,5 +8,3 @@ const MadeInAlpha = () => {
         </div>
     );
 }
-
-export default MadeInAlpha;

@@ -1,9 +1,9 @@
 import {createBrowserRouter, Route, createRoutesFromElements, RouterProvider,} from "react-router-dom";
-import MainPage from "../../pages/main-page";
-import OwnDesign from "../../pages/own-design";
-import MadeInAlpha from "../../pages/made-in-alpha";
-import Contacts from "../../pages/contatcs";
-import RootLayout from "./RootLayout";
+import {MainPage} from "../../pages/main-page";
+import {OwnDesign} from "../../pages/own-design";
+import {MadeInAlpha} from "../../pages/made-in-alpha";
+import {Contacts} from "../../pages/contatcs";
+import {RootLayout} from "./root-layout";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -16,10 +16,8 @@ const router = createBrowserRouter(
     )
 )
 
-const RoutesComp = () => {
+export const RoutesComp = () => {
     return (
         <RouterProvider router={router}/>
     )
 }
-
-export default RoutesComp;

@@ -1,4 +1,4 @@
-const OwnDesign = () => {
+export const OwnDesign = () => {
     return (
         <div className="made-in-alpha__header">
             <h2 className="">Свой дизайн</h2>
@@ -6,5 +6,3 @@ const OwnDesign = () => {
         </div>
     );
 }
-
-export default OwnDesign;

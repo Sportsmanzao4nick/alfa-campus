@@ -1,12 +1,10 @@
-import Page from "../page";
+import {Page} from "../page";
 import {Outlet} from "react-router-dom";
 
-const RootLayout = () => {
+export const RootLayout = () => {
     return (
         <Page>
             <Outlet/>
         </Page>
     )
 }
-
-export default RootLayout;
