@@ -1,0 +1,43 @@
+@import '@alfalab/core-components/vars/gaps.css';
+
+.container {
+    display: flex;
+    height: 90vh;
+}
+
+.component {
+    width: 50%;
+    text-decoration: none;
+    color: #000000;
+
+}
+
+.header {
+    margin-left: var(--gap-4xl);
+    position: absolute;
+    font-weight: 700;
+}
+
+.madeinalpha {
+
+}
+
+.owndesign {
+
+}
+
+.madeinalpha_img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 25%;
+    height: 95vh;
+}
+
+.owndesign_img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 10%;
+    height: 95vh;
+}

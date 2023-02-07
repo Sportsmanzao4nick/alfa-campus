@@ -1,0 +1,45 @@
+@import '@alfalab/core-components/vars/colors-indigo.css';
+@import '@alfalab/core-components/vars/gaps.css';
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--gap-2xs) var(--gap-xl) var(--gap-2xs) var(--gap-xl);
+    color: #000000;
+}
+
+.container_active {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+.logo {
+    color: var(--color-dark-bg-accent, #ef3124);
+    font-weight: 700;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.burger {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+
+.burger:hover {
+    cursor: pointer;
+}
+
+.links {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.menu:hover {
+    cursor: pointer;
+}
