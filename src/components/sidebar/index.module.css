@@ -5,6 +5,22 @@
     padding-top: var(--gap-xl);
 }
 
+.side_container {
+    margin: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: #000000;
+    width: 30%;
+    transition-duration: 0.5s;
+    transform: translateX(100%);
+}
+
+.trans {
+    transform: translateX(0%);
+}
+
 .icon {
     width: 30px;
     height: 30px;

@@ -1,30 +1,36 @@
 import styles from './index.module.css';
 import {NavLink} from "react-router-dom";
-import React, {useState} from "react";
+import React from "react";
 import {SfCrossMIcon} from '@alfalab/icons-glyph/SfCrossMIcon';
 import {MailMIcon} from '@alfalab/icons-glyph/MailMIcon';
 import {PhoneMIcon} from '@alfalab/icons-glyph/PhoneMIcon';
 import { TelegramMIcon } from '@alfalab/icons-logotype/TelegramMIcon';
 
-export const Sidebar = () => {
-    const [isActive, setActive] = useState(false);
+type Props = {
+    isActive: boolean,
+    sliderState: () => void;
+}
+
+export const Sidebar = ({isActive, sliderState}: Props) => {
+    console.log(typeof (sliderState))
     return (
-        <div className={styles.container}>
-            <SfCrossMIcon onClick={() => setActive(!isActive)}
+        <div onClick={e=> e.stopPropagation()}
+             className={isActive ? (styles.side_container + ' ' + styles.trans) : styles.side_container}>
+            <SfCrossMIcon onClick={sliderState}
                           className={styles.icon}/>
             <ul className={styles.list}>
                 <li className={styles.listitem}>
-                    <NavLink onClick={() => setActive(!isActive)}
+                    <NavLink onClick={sliderState}
                              className={styles.text} to="made-in-alpha">Сделано
                         в Альфе</NavLink>
                 </li>
                 <li className={styles.listitem}>
-                    <NavLink onClick={() => setActive(!isActive)}
+                    <NavLink onClick={sliderState}
                              className={styles.text} to="own-design">Свой
                         дизайн</NavLink>
                 </li>
                 <li className={styles.listitem}>
-                    <NavLink onClick={() => setActive(!isActive)}
+                    <NavLink onClick={sliderState}
                              className={styles.text}
                              to="contacts">Контакты</NavLink>
                 </li>
