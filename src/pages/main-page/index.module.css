@@ -13,7 +13,7 @@
 }
 
 .header {
-    margin-left: var(--gap-4xl);
+    margin-left: var(--gap-3xl);
     position: absolute;
     font-weight: 700;
 }
@@ -31,7 +31,7 @@
     width: 100%;
     object-fit: cover;
     object-position: 50% 25%;
-    height: 95vh;
+    height: 96vh;
 }
 
 .owndesign_img {
@@ -39,5 +39,5 @@
     width: 100%;
     object-fit: cover;
     object-position: 50% 10%;
-    height: 95vh;
+    height: 96vh;
 }

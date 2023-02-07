@@ -1,10 +1,11 @@
+import cn from 'classnames';
 import styles from './index.module.css';
 import {NavLink} from "react-router-dom";
 import React from "react";
 import {SfCrossMIcon} from '@alfalab/icons-glyph/SfCrossMIcon';
 import {MailMIcon} from '@alfalab/icons-glyph/MailMIcon';
 import {PhoneMIcon} from '@alfalab/icons-glyph/PhoneMIcon';
-import { TelegramMIcon } from '@alfalab/icons-logotype/TelegramMIcon';
+import {TelegramMIcon} from '@alfalab/icons-logotype/TelegramMIcon';
 
 type Props = {
     isActive: boolean,
@@ -14,8 +15,8 @@ type Props = {
 export const Sidebar = ({isActive, sliderState}: Props) => {
     console.log(typeof (sliderState))
     return (
-        <div onClick={e=> e.stopPropagation()}
-             className={isActive ? (styles.side_container + ' ' + styles.trans) : styles.side_container}>
+        <div onClick={e => e.stopPropagation()}
+             className={isActive ? cn(styles.side_container, styles.trans) : styles.side_container}>
             <SfCrossMIcon onClick={sliderState}
                           className={styles.icon}/>
             <ul className={styles.list}>
