@@ -4,14 +4,15 @@ body {
   box-sizing: border-box;
   font-size: 32px;
   color: #000000;
-  font-family: 'StyreneA', Arial, sans-serif;
+  font-family: 'Styrene UI', Arial, sans-serif;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'ss01';
 }
 
 @font-face {
-  font-family: 'StyreneA';
+  font-family: 'Styrene UI';
   src: url('https://alfabank.servicecdn.ru/media/fonts/styrene-ui/styrene-ui_regular.woff2')
   format('woff2'), url('https://alfabank.servicecdn.ru/media/fonts/styrene-ui/styrene-ui_regular.woff')
   format('woff');
@@ -19,14 +20,14 @@ body {
   font-style: normal;
 }
 @font-face {
-  font-family: 'StyreneA';
+  font-family: 'Styrene UI';
   src: url('https://alfabank.servicecdn.ru/media/fonts/styrene-ui/styrene-ui_medium.woff2') format('woff2'),
   url('https://alfabank.servicecdn.ru/media/fonts/styrene-ui/styrene-ui_medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: 'StyreneA';
+  font-family: 'Styrene UI';
   src: url('https://alfabank.servicecdn.ru/media/fonts/styrene-ui/styrene-ui_bold.woff2') format('woff2'),
   url('https://alfabank.servicecdn.ru/media/fonts/styrene-ui/styrene-ui_bold.woff') format('woff');
   font-weight: 700;

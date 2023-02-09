@@ -6,6 +6,9 @@ import {SfCrossMIcon} from '@alfalab/icons-glyph/SfCrossMIcon';
 import {MailMIcon} from '@alfalab/icons-glyph/MailMIcon';
 import {PhoneMIcon} from '@alfalab/icons-glyph/PhoneMIcon';
 import {TelegramMIcon} from '@alfalab/icons-logotype/TelegramMIcon';
+import {Typography} from '@alfalab/core-components/typography';
+import {SidePanelResponsive} from '@alfalab/core-components/side-panel/responsive';
+
 
 type Props = {
     isActive: boolean,
@@ -13,7 +16,6 @@ type Props = {
 }
 
 export const Sidebar = ({isActive, sliderState}: Props) => {
-    console.log(typeof (sliderState))
     return (
         <div onClick={e => e.stopPropagation()}
              className={isActive ? cn(styles.side_container, styles.trans) : styles.side_container}>
@@ -61,3 +63,74 @@ export const Sidebar = ({isActive, sliderState}: Props) => {
         </div>
     )
 }
+
+
+export const SliderTwo = ({isActive, sliderState}: Props) => {
+
+    const Text = () => (
+        <p style={{margin: "15px 0 16px"}}>
+            Сейчас много говорят об отказах банков в проведении операций, блокировках
+            интернет-банка. Это связано с тем, что Центральный банк РФ обязывает банки
+            выявлять операции своих клиентов, потенциально нарушающие требования
+            Федерального закона «О противодействии легализации (отмыванию) доходов,
+            полученных преступным путем, и финансированию терроризма» — 115-ФЗ
+        </p>
+    );
+    return (
+        <React.Fragment>
+            <SidePanelResponsive
+                open={isActive}
+                onClose={sliderState}
+                size="s"
+                placement="right"
+                className={styles.side_container}>
+                <SidePanelResponsive.Header hasCloser="true"/>
+                <SidePanelResponsive.Content>
+                    <ul className={styles.list}>
+                        <Typography.TitleResponsive
+                            view="large"
+                            tag="h3"
+                            weight="bold"
+                            defaultMargins="true"
+                            font="styrene">
+                            <li className={styles.listitem}>
+                                <NavLink onClick={sliderState}
+                                         className={styles.text}
+                                         to="made-in-alpha">Сделано в Альфе</NavLink>
+                            </li>
+                        </Typography.TitleResponsive>
+                        <Typography.TitleResponsive
+                            view="large"
+                            tag="h3"
+                            weight="bold"
+                            defaultMargins="true"
+                            font="styrene">
+                            <li className={styles.listitem}>
+                                <NavLink onClick={sliderState}
+                                         className={styles.text}
+                                         to="own-design">Свой дизайн</NavLink>
+                            </li>
+                        </Typography.TitleResponsive>
+                        <Typography.TitleResponsive
+                            view="large"
+                            tag="h3"
+                            weight="bold"
+                            defaultMargins="true"
+                            font="styrene">
+                            <li className={styles.listitem}>
+                                <NavLink onClick={sliderState}
+                                         className={styles.text}
+                                         to="contacts">Контакты</NavLink>
+                            </li>
+                        </Typography.TitleResponsive>
+                    </ul>
+                    <Text/>
+                </SidePanelResponsive.Content>
+                <SidePanelResponsive.Footer>
+                </SidePanelResponsive.Footer>
+            </SidePanelResponsive>
+        </React.Fragment>
+    )
+        ;
+};
+

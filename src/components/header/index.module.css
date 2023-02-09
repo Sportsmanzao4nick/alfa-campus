@@ -13,7 +13,6 @@
 
 .logo {
     color: var(--color-dark-bg-accent);
-    font-weight: 700;
     text-decoration: none;
     vertical-align: middle;
 }
@@ -29,13 +28,14 @@
 }
 
 .links {
+    display:flex;
     text-decoration: none;
     font-weight: 700;
+    vertical-align: middle;
 }
 
 .menu {
-    font-size: 32px;
-    letter-spacing: var(--gap-3xs);
+    vertical-align: middle;
 }
 
 .menu:hover {

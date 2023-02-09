@@ -4,19 +4,8 @@ import React, {useState} from "react";
 import {Sidebar} from "../sidebar";
 import {BurgerMIcon} from '@alfalab/icons-glyph/BurgerMIcon';
 import {Backdrop} from '@alfalab/core-components/backdrop';
-
-// render(() => {
-//
-//
-//     return (
-//         <div style={{ zIndex: 1, position: 'relative' }}>
-//             <Button onClick={() => setOpen(!open)} size='xs'>
-//                 {open ? 'Закрыть' : 'Открыть'}
-//             </Button>
-//             <Backdrop open={open} onClick={() => setOpen(false)} />
-//         </div>
-//     );
-// });
+import {Typography} from '@alfalab/core-components/typography';
+import {SliderTwo} from "../sidebar"
 
 export const Header = () => {
     const [isActive, setActive] = useState(false);
@@ -32,13 +21,24 @@ export const Header = () => {
                      onClick={sliderState}>
                     <Backdrop open={isActive} onClick={() => setActive(false)}/>
                 </div>
-                <NavLink className={styles.logo} to="">A-Store</NavLink>
+                <NavLink className={styles.logo} to="">
+                    <Typography.TitleResponsive
+                        tag="div"
+                        weight="bold"
+                        view="medium"
+                        font="styrene">A-Store</Typography.TitleResponsive>
+                </NavLink>
             </div>
             <div onClick={sliderState}
                  className={styles.links}>
                 <BurgerMIcon className={styles.burger}/>
-                <span className={styles.menu}>меню</span>
-                <Sidebar isActive={isActive} sliderState={sliderState}/>
+                <Typography.TitleResponsive
+                    className={styles.menu}
+                    tag="div"
+                    weight="bold"
+                    view="medium"
+                    font="styrene">меню</Typography.TitleResponsive>
+                <SliderTwo isActive={isActive} sliderState={sliderState}/>
             </div>
         </div>
     )

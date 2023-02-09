@@ -7,7 +7,7 @@ type Props = {
     children: React.ReactElement
 }
 
-export const Page = ({ children}: Props) => {
+export const Page = ({children}: Props) => {
     return (
         <div className={styles.page}>
             <Header/>

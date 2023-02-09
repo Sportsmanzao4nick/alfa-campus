@@ -1,0 +1,18 @@
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header_container {
+    height: 195px;
+}
+
+.header {
+    font-size: 110px;
+    letter-spacing: -2.5px;
+    margin: 0 auto;
+}
+
+.text {
+    letter-spacing: 0;
+}
