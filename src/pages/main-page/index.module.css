@@ -9,7 +9,6 @@
     width: 50%;
     text-decoration: none;
     color: #000000;
-
 }
 
 .header {
@@ -39,4 +38,11 @@
     object-fit: cover;
     object-position: 50% 10%;
     height: 96vh;
+}
+
+@media (max-width: 960px) {
+    .container {
+        height: 180vh;
+        display: block;
+    }
 }

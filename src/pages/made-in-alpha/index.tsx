@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import {ProductsList} from "../../components/products-list";
+import {ProductsList} from "../../components/products-list/made-in-alpha";
 import {Typography} from "@alfalab/core-components/typography";
 import React from "react";
 

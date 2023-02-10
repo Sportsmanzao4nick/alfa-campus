@@ -1,22 +1,17 @@
-.list {
-    padding-top: var(--gap-xl);
-}
+@import "@alfalab/core-components/vars/colors-transparent.css";
+@import '@alfalab/core-components/vars/colors-bluetint.css';
 
 .side_container {
-    /*margin: 0;*/
-    /*right: 0;*/
-    /*top: 0;*/
-    /*bottom: 0;*/
-    /*position: fixed;*/
     background-color: #000000;
-    width: 30%;
-    /*transition-duration: 0.5s;*/
-    /*transform: translateX(100%);*/
-    z-index: 10;
 }
 
-.trans {
-    transform: translateX(0%);
+.header {
+    background-color: #000000;
+}
+
+.content {
+    padding: 0;
+    background-color: #000000;
 }
 
 .icon {
@@ -32,35 +27,26 @@
     cursor: pointer;
 }
 
-.listitem {
-    list-style-type: none;
-    margin-bottom: var(--gap-m);
-}
-
 .text {
     font-weight: 700;
     color: var(--color-light-bg-primary);
     text-decoration: none;
 }
 
-.active_footer {
-    position: absolute;
-    bottom: var(--gap-2xl);
-    padding-left: var(--gap-3xl);
+.footer {
+    background-color: #000000;
 }
 
-br {
-    display: block;
-    content: "";
-    margin-top: var(--gap-m);
-}
+//br {
+//    display: block;
+//    content: "";
+//    margin-top: var(--gap-2xs);
+//}
 
-.active_text {
-    display: inline-block;
-    font-size: 13px;
+.text {
     text-decoration: none;
     color: var(--color-light-bg-primary);
-    line-height: 1px;
+    background-color: #000000;
 }
 
 .contacts_icons {

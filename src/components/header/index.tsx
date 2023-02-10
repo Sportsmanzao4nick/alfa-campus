@@ -17,9 +17,8 @@ export const Header = () => {
             <div className={styles.logo__container}>
                 {/*<div onClick={sliderState}*/}
                 {/*     className={isActive ? styles.container_active : styles.container_off}></div>*/}
-                <div className={styles.container_active}
-                     onClick={sliderState}>
-                    <Backdrop open={isActive} onClick={() => setActive(false)}/>
+                <div className={styles.container_active}>
+                    <Backdrop open={isActive} />
                 </div>
                 <NavLink className={styles.logo} to="">
                     <Typography.TitleResponsive
