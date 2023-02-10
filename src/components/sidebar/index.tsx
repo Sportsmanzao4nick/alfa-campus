@@ -20,14 +20,14 @@ export const Sidebar = ({isActive, sliderState}: Props) => {
                 placement="right">
                 <SidePanelResponsive.Header
                     className={styles.header}
-                    hasCloser="true"/>
+                    hasCloser={true}/>
                 <SidePanelResponsive.Content
                     className={styles.content}>
                     <Typography.TitleResponsive
                         view="large"
                         tag="h3"
                         weight="bold"
-                        defaultMargins="true"
+                        defaultMargins={true}
                         font="styrene">
                         <NavLink onClick={sliderState}
                                  className={styles.text}
@@ -37,7 +37,7 @@ export const Sidebar = ({isActive, sliderState}: Props) => {
                         view="large"
                         tag="h3"
                         weight="bold"
-                        defaultMargins="true"
+                        defaultMargins={true}
                         font="styrene">
                         <NavLink onClick={sliderState}
                                  className={styles.text}
@@ -47,7 +47,7 @@ export const Sidebar = ({isActive, sliderState}: Props) => {
                         view="large"
                         tag="h3"
                         weight="bold"
-                        defaultMargins="true"
+                        defaultMargins={true}
                         font="styrene">
                         <NavLink onClick={sliderState}
                                  className={styles.text}
@@ -88,6 +88,8 @@ export const Sidebar = ({isActive, sliderState}: Props) => {
         </React.Fragment>
     );
 };
+
+
 
 
 // export const Sidebar = ({isActive, sliderState}: Props) => {

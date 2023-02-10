@@ -14,7 +14,7 @@ export const MainPage = () => {
                         view="large"
                         tag="h3"
                         weight="bold"
-                        defaultMargins="true"
+                        defaultMargins={true}
                         font="styrene">Сделано в Альфе</Typography.TitleResponsive>
                 </div>
                 <img className={styles.madeinalpha_img} src={Frame_46}/>
@@ -25,7 +25,7 @@ export const MainPage = () => {
                         view="large"
                         tag="h3"
                         weight="bold"
-                        defaultMargins="true"
+                        defaultMargins={true}
                         font="styrene">Свой дизайн</Typography.TitleResponsive>
                 </div>
                 <img className={styles.owndesign_img} src={Frame_45}/>
