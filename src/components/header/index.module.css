@@ -11,6 +11,10 @@
     z-index: 1;
 }
 
+.backdrop {
+    --backdrop-visible-background: var(--color-dark-bg-opaque);
+}
+
 .logo {
     color: var(--color-dark-bg-accent);
     text-decoration: none;

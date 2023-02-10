@@ -1,11 +1,10 @@
 import styles from './index.module.css';
 import {NavLink} from "react-router-dom";
 import React, {useState} from "react";
-import {Sidebar} from "../sidebar";
 import {BurgerMIcon} from '@alfalab/icons-glyph/BurgerMIcon';
 import {Backdrop} from '@alfalab/core-components/backdrop';
 import {Typography} from '@alfalab/core-components/typography';
-import {SliderTwo} from "../sidebar"
+import {Sidebar} from "../sidebar"
 
 export const Header = () => {
     const [isActive, setActive] = useState(false);
@@ -18,7 +17,8 @@ export const Header = () => {
                 {/*<div onClick={sliderState}*/}
                 {/*     className={isActive ? styles.container_active : styles.container_off}></div>*/}
                 <div className={styles.container_active}>
-                    <Backdrop open={isActive} />
+                    <Backdrop className={styles.backdrop}
+                        open={isActive}/>
                 </div>
                 <NavLink className={styles.logo} to="">
                     <Typography.TitleResponsive
@@ -37,7 +37,7 @@ export const Header = () => {
                     weight="bold"
                     view="medium"
                     font="styrene">меню</Typography.TitleResponsive>
-                <SliderTwo isActive={isActive} sliderState={sliderState}/>
+                <Sidebar isActive={isActive} sliderState={sliderState}/>
             </div>
         </div>
     )

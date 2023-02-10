@@ -12,7 +12,7 @@ type Props = {
     sliderState: () => void;
 }
 
-export const SliderTwo = ({isActive, sliderState}: Props) => {
+export const Sidebar = ({isActive, sliderState}: Props) => {
     return (
         <React.Fragment>
             <SidePanelResponsive
