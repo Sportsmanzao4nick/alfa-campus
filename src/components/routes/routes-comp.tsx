@@ -6,6 +6,7 @@ import {Contacts} from "../../pages/contatcs";
 import {RootLayout} from "./root-layout";
 import {Backpack} from "../../pages/rukzak-dlya-umnih-i-svobodnih";
 
+
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="" element={<RootLayout/>}>

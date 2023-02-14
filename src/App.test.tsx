@@ -12,3 +12,4 @@ test('full app rendering/navigating', async () => {
     await user.click(screen.getByText(/made-in-alpha/i))
     expect(screen.getByText(/Сделано в Альфе/i)).toBeInTheDocument()
 })
+

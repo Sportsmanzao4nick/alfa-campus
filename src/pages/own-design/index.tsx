@@ -9,7 +9,6 @@ export const OwnDesign = () => {
             <div className={styles.header_container}>
                 <Typography.TitleResponsive
                     className={styles.header}
-
                     tag="h1"
                     weight="bold"
                     font="styrene">Свой дизайн</Typography.TitleResponsive>
