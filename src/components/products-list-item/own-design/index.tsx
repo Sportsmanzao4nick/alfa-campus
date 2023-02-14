@@ -30,7 +30,7 @@ export const Cell = ({id, title, description, products}: Data) => {
                             className={styles.item_container}
                             verticalPadding='airy'
                             direction='vertical'>
-                            <PureCell.Graphics verticalAlign='center'>
+                            <PureCell.Graphics verticalAlign='top'>
                                 <div className={styles.graphics}/>
                             </PureCell.Graphics>
                             <PureCell.Content>

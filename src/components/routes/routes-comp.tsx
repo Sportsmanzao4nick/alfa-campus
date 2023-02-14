@@ -4,6 +4,7 @@ import {OwnDesign} from "../../pages/own-design";
 import {MadeInAlpha} from "../../pages/made-in-alpha";
 import {Contacts} from "../../pages/contatcs";
 import {RootLayout} from "./root-layout";
+import {Backpack} from "../../pages/rukzak-dlya-umnih-i-svobodnih";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -12,6 +13,7 @@ const router = createBrowserRouter(
             <Route path="own-design" element={<OwnDesign/>}/>
             <Route path="made-in-alpha" element={<MadeInAlpha/>}/>
             <Route path="contacts" element={<Contacts/>}/>
+            <Route path="rukzak-dlya-umnih-i-svobodnih" element={<Backpack/>}/>
         </Route>
     )
 )

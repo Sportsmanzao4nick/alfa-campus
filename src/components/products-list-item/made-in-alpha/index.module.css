@@ -9,10 +9,31 @@
     align-items: start;
 }
 
+.graphics {
+    max-width: 375px;
+    max-height: 375px;
+}
+
+.images {
+    max-width: 375px;
+    max-height: 375px;
+    width: 25vw;
+    height: 25vw;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
 @media (max-width: 960px) {
 
     .container {
         width: 50%;
+    }
+
+    .images {
+        max-width: 295px;
+        max-height: 295px;
+        width: 31vw;
+        height: 31vw;
     }
 }
 
@@ -20,5 +41,17 @@
 
     .container {
         width: 100%;
+    }
+
+    .graphics {
+        max-width: 430px;
+        max-height: 430px;
+    }
+
+    .images {
+        max-width: 430px;
+        max-height: 430px;
+        width: 85vw;
+        height: 85vw;
     }
 }
