@@ -9,7 +9,9 @@ export const Footer = () => {
                 className={styles.copyright}
                 tag="div"
                 weight="regular"
-                color="disabled">© ООО «Альфа Фьюче Пипл», 2022</Typography.Text>
+                color="disabled">
+                © ООО «Альфа Фьюче Пипл», 2022
+            </Typography.Text>
         </div>
     )
 }

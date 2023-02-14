@@ -5,12 +5,6 @@
     color: #000000;
 }
 
-.container_active {
-    background-color: var(--color-light-bg-primary);
-    position: relative;
-    z-index: 1;
-}
-
 .backdrop {
     --backdrop-visible-background: var(--color-dark-bg-opaque);
 }
@@ -49,5 +43,12 @@
 @media (max-width: 960px) {
     .menu {
         display: none;
+    }
+}
+
+@media (max-width: 645px) {
+    .logo {
+        position: relative;
+        z-index: 1000;
     }
 }

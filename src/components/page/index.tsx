@@ -2,12 +2,9 @@ import styles from './index.module.css';
 import {Header} from "../header";
 import {Footer} from "../footer";
 import React from "react";
+import {Data} from "./types";
 
-type Props = {
-    children: React.ReactElement
-}
-
-export const Page = ({children}: Props) => {
+export const Page = ({children}: Data) => {
     return (
         <div className={styles.page}>
             <Header/>

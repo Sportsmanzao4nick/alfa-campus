@@ -7,7 +7,7 @@ import React from "react";
 
 export const MainPage = () => {
     return (
-        <div className={styles.container}>
+        <div data-testid='main-page' className={styles.container}>
             <NavLink className={`${styles.component} ${styles.madeinalpha}`} to="made-in-alpha">
                 <div className={styles.header}>
                     <Typography.TitleResponsive

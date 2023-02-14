@@ -1,5 +1,3 @@
-@import '@alfalab/core-components/vars/gaps.css';
-
 .container {
     display: flex;
     height: 90vh;

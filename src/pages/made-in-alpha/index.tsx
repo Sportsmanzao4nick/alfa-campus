@@ -9,7 +9,8 @@ export const MadeInAlpha = () => {
             <div className={styles.header_container}>
                 <Typography.TitleResponsive
                     className={styles.header}
-                    view={110}
+                    view="xlarge"
+                    defaultMargins={true}
                     tag="h1"
                     weight="bold"
                     font="styrene">Сделано в Альфе</Typography.TitleResponsive>
