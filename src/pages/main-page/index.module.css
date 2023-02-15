@@ -9,17 +9,27 @@
     color: #000000;
 }
 
+.component:hover {
+    color: #000000;
+    background-color: #000000;
+    opacity: 0.5;
+    --color-light-bg-primary: #000000;
+}
+
 .header {
     margin-left: var(--gap-3xl);
     position: absolute;
 }
 
 .madeinalpha {
+    display: block;
+    width: 100%;
 
 }
 
 .owndesign {
-
+    display: block;
+    width: 100%;
 }
 
 .madeinalpha_img {
@@ -40,7 +50,38 @@
 
 @media (max-width: 960px) {
     .container {
-        height: 180vh;
+        height: 90vh;
         display: block;
+    }
+
+    .madeinalpha_img {
+        height: 47.5vh;
+    }
+
+    .owndesign_img {
+        height: 47.5vh;
+    }
+
+}
+
+@media (max-width: 470px) {
+    .container {
+        height: 85vh;
+        display: block;
+    }
+
+    .madeinalpha_img {
+        height: 40vh;
+        object-position: 50% 10%;
+    }
+
+    .owndesign {
+        margin-top: var(--gap-2xl);
+
+    }
+
+    .owndesign_img {
+        height: 40vh;
+        object-position: 50% 10%;
     }
 }

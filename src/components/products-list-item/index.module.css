@@ -1,4 +1,4 @@
-.container {
+.container.container {
     width: 33.33%;
     text-align: start;
     align-items: start;
@@ -12,6 +12,7 @@
 .graphics {
     max-width: 375px;
     max-height: 375px;
+    align-items: start;
 }
 
 .images {
@@ -25,8 +26,8 @@
 
 @media (max-width: 960px) {
 
-    .container {
-        width: 50%;
+    .container.container {
+        width: 47%;
     }
 
     .images {
@@ -39,7 +40,7 @@
 
 @media (max-width: 470px) {
 
-    .container {
+    .container.container {
         width: 100%;
     }
 

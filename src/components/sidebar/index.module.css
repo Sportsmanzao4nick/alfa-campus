@@ -1,24 +1,14 @@
-@import '@alfalab/core-components/vars/colors-indigo.css';
-@import '@alfalab/core-components/vars/gaps.css';
-
-.list {
-    padding-top: var(--gap-xl);
-}
-
 .side_container {
-    margin: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    position: fixed;
     background-color: #000000;
-    width: 30%;
-    transition-duration: 0.5s;
-    transform: translateX(100%);
 }
 
-.trans {
-    transform: translateX(0%);
+.header {
+    background-color: #000000;
+}
+
+.content {
+    padding: 0;
+    background-color: #000000;
 }
 
 .icon {
@@ -27,42 +17,16 @@
     position: relative;
     top: 10px;
     left: 560px;
-    color: #ffffff;
+    color: var(--color-light-bg-primary);
 }
 
-.icon:hover {
-    cursor: pointer;
-}
-
-.listitem {
-    list-style-type: none;
-    margin-bottom: var(--gap-m);
+.footer {
+    background-color: #000000;
 }
 
 .text {
-    font-weight: 700;
-    color: #ffffff;
     text-decoration: none;
-}
-
-.active_footer {
-    position: absolute;
-    bottom: var(--gap-2xl);
-    padding-left: var(--gap-3xl);
-}
-
-br {
-    display: block;
-    content: "";
-    margin-top: var(--gap-m);
-}
-
-.active_text {
-    display: inline-block;
-    font-size: 13px;
-    text-decoration: none;
-    color: #ffffff;
-    line-height: 1px;
+    color: var(--color-light-bg-primary);
 }
 
 .contacts_icons {
@@ -81,8 +45,50 @@ br {
     line-height: 35px;
     width: 35px;
     height: 35px;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--color-light-bg-primary);
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: var(--color-light-bg-primary);
     color: #000000;
+}
+
+
+@media (max-width: 645px) {
+
+    .side_container {
+        position: relative;
+        z-index: 1;
+        background-color: var(--color-light-bg-primary);
+    }
+
+    .header {
+        position: relative;
+        z-index: 1;
+        background-color: var(--color-light-bg-primary);
+    }
+
+    .content {
+        background-color: var(--color-light-bg-primary);
+    }
+
+    .icon {
+        color: #000000;
+    }
+
+    .footer {
+        background-color: var(--color-light-bg-primary);
+    }
+
+    .text {
+        color: #000000;
+    }
+
+    .link_contact {
+        border: 1px solid #000000;
+        border-radius: 50%;
+        background-color: #000000;
+        color: var(--color-light-bg-primary);
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+    }
 }

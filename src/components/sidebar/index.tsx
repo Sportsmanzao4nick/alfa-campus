@@ -1,4 +1,4 @@
-import styles from './index.module.scss';
+import styles from './index.module.css';
 import {NavLink} from "react-router-dom";
 import React, {useState} from "react";
 import {MailMIcon} from '@alfalab/icons-glyph/MailMIcon';

@@ -9,16 +9,19 @@
     --backdrop-visible-background: var(--color-dark-bg-opaque);
 }
 
+.logo_container {
+
+}
+
 .logo {
     color: var(--color-dark-bg-accent);
     text-decoration: none;
     vertical-align: middle;
 }
 
-.burger {
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
+.burger.burger{
+    width: 40px;
+    height: 40px;
 }
 
 .burger:hover {
@@ -26,14 +29,13 @@
 }
 
 .links {
+    width: 150px;
     display:flex;
     text-decoration: none;
     font-weight: 700;
-    vertical-align: middle;
 }
 
 .menu {
-    vertical-align: middle;
 }
 
 .menu:hover {
@@ -44,6 +46,9 @@
     .menu {
         display: none;
     }
+    .links {
+        width: 50px;
+    }
 }
 
 @media (max-width: 645px) {
@@ -51,4 +56,9 @@
         position: relative;
         z-index: 1000;
     }
+
+    .links {
+        width: 30px;
+    }
+
 }
