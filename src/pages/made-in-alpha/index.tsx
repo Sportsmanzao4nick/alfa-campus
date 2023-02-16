@@ -1,7 +1,7 @@
-import styles from "./index.module.css";
+import React from "react";
 import { ProductsList } from "../../components/products-list/made-in-alpha";
 import { Typography } from "@alfalab/core-components/typography";
-import React from "react";
+import styles from "./index.module.css";
 
 export const MadeInAlpha = () => {
   return (

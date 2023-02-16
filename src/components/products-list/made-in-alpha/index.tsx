@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import styles from "./index.module.css";
 import { Cell } from "../../products-list-item";
+import { Products } from "./types";
 import axios from "axios";
+import styles from "./index.module.css";
 
 export const ProductsList = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     axios
-      .get("./products.json")
+      .get("./products-mia.json")
       .then((res) => {
         setItems(res.data.products);
       })
@@ -19,24 +20,19 @@ export const ProductsList = () => {
 
   return (
     <div className={styles.container}>
-      {items.map(
-        (item: {
-          id: number;
-          preview: string;
-          price: number;
-          title: string;
-        }) => {
-          return (
-            <Cell
-              key={item.id}
-              preview={item.preview}
-              id={item.id}
-              price={item.price}
-              title={item.title}
-            />
-          );
-        }
-      )}
+      {items.map((item: Products) => {
+        return (
+          <Cell
+            key={item.id}
+            preview={item.preview}
+            id={item.id}
+            price={item.price}
+            title={item.title}
+            description={item.description}
+            images={item.images}
+          />
+        );
+      })}
     </div>
   );
 };

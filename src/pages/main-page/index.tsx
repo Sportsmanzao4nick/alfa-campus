@@ -1,9 +1,9 @@
-import styles from "./index.module.css";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import Frame_46 from "./img/Frame_46.jpeg";
 import Frame_45 from "./img/Frame_45.jpeg";
 import { Typography } from "@alfalab/core-components/typography";
-import React from "react";
+import styles from "./index.module.css";
 
 export const MainPage = () => {
   return (

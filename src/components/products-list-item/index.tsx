@@ -1,12 +1,11 @@
 import React from "react";
-import { Data } from "./types";
-import styles from "./index.module.css";
+import { Products } from "./types";
 import { PureCell } from "@alfalab/core-components/pure-cell";
 import { Typography } from "@alfalab/core-components/typography";
+import styles from "./index.module.css";
 
 export const Cell = ({
   id,
-  key,
   title,
   description,
   preview,
@@ -17,7 +16,7 @@ export const Cell = ({
   sizes,
   stickerNumbers,
   availability,
-}: Data) => {
+}: Products) => {
   return (
     <PureCell
       className={styles.container}

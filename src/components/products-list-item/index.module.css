@@ -1,5 +1,6 @@
 .container.container {
     width: 33.33%;
+    padding: var(--gap-xs);
     text-align: start;
     align-items: start;
 }
@@ -18,8 +19,8 @@
 .images {
     max-width: 375px;
     max-height: 375px;
-    width: 25vw;
-    height: 25vw;
+    width: 29vw;
+    height: 29vw;
     object-fit: cover;
     object-position: 50% 50%;
 }
@@ -27,14 +28,14 @@
 @media (max-width: 960px) {
 
     .container.container {
-        width: 47%;
+        width: 50%;
     }
 
     .images {
         max-width: 295px;
         max-height: 295px;
-        width: 31vw;
-        height: 31vw;
+        width: 35vw;
+        height: 35vw;
     }
 }
 
@@ -45,14 +46,14 @@
     }
 
     .graphics {
-        max-width: 430px;
-        max-height: 430px;
+        max-width: 420px;
+        max-height: 420px;
     }
 
     .images {
-        max-width: 430px;
-        max-height: 430px;
-        width: 85vw;
-        height: 85vw;
+        max-width: 420px;
+        max-height: 420px;
+        width: 88vw;
+        height: 88vw;
     }
 }

@@ -9,17 +9,13 @@
     --backdrop-visible-background: var(--color-dark-bg-opaque);
 }
 
-.logo_container {
-
-}
-
 .logo {
     color: var(--color-dark-bg-accent);
     text-decoration: none;
     vertical-align: middle;
 }
 
-.burger.burger{
+.burger.burger {
     width: 40px;
     height: 40px;
 }
@@ -30,12 +26,9 @@
 
 .links {
     width: 150px;
-    display:flex;
+    display: flex;
     text-decoration: none;
     font-weight: 700;
-}
-
-.menu {
 }
 
 .menu:hover {
@@ -46,6 +39,7 @@
     .menu {
         display: none;
     }
+
     .links {
         width: 50px;
     }

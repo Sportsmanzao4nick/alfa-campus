@@ -1,6 +1,6 @@
 export interface Products {
-  id: number;
   key: number;
+  id: number;
   title: string;
   description: string;
   preview: string;
@@ -11,4 +11,5 @@ export interface Products {
   sizes: [];
   stickerNumbers: [];
   availability: boolean;
+  products: [];
 }

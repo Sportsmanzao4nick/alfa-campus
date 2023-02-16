@@ -1,10 +1,10 @@
-import styles from "./index.module.css";
-import { NavLink } from "react-router-dom";
 import React, { useState } from "react";
+import { Sidebar } from "../sidebar";
+import { NavLink } from "react-router-dom";
 import { BurgerMIcon } from "@alfalab/icons-glyph/BurgerMIcon";
 import { Typography } from "@alfalab/core-components/typography";
-import { Sidebar } from "../sidebar";
 import { PureCell } from "@alfalab/core-components/pure-cell";
+import styles from "./index.module.css";
 
 export const Header = () => {
   const [isActive, setActive] = useState(false);
@@ -34,14 +34,13 @@ export const Header = () => {
           </Typography.TitleResponsive>
         </NavLink>
       </div>
-      <PureCell className={styles.links}>
+      <PureCell onClick={handeMenuOpen} className={styles.links}>
         <PureCell.Graphics verticalAlign="center">
-          <BurgerMIcon onClick={handeMenuOpen} className={styles.burger} />
+          <BurgerMIcon className={styles.burger} />
         </PureCell.Graphics>
         <PureCell.Content>
           <PureCell.Main>
             <Typography.TitleResponsive
-              onClick={handeMenuOpen}
               className={styles.menu}
               tag="div"
               weight="bold"

@@ -1,6 +1,6 @@
-import styles from "./index.module.css";
-import { Typography } from "@alfalab/core-components/typography";
 import React from "react";
+import { Typography } from "@alfalab/core-components/typography";
+import styles from "./index.module.css";
 
 export const Footer = () => {
   return (
