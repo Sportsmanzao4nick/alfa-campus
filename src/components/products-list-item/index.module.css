@@ -1,13 +1,5 @@
 .container.container {
-    width: 33.33%;
     padding: var(--gap-xs);
-    text-align: start;
-    align-items: start;
-}
-
-.text {
-    text-align: start;
-    align-items: start;
 }
 
 .graphics {
@@ -27,9 +19,9 @@
 
 @media (max-width: 960px) {
 
-    .container.container {
-        width: 50%;
-    }
+    /*.container.container {*/
+    /*    width: 50%;*/
+    /*}*/
 
     .images {
         max-width: 295px;
@@ -41,9 +33,9 @@
 
 @media (max-width: 470px) {
 
-    .container.container {
-        width: 100%;
-    }
+    /*.container.container {*/
+    /*    width: 100%;*/
+    /*}*/
 
     .graphics {
         max-width: 420px;

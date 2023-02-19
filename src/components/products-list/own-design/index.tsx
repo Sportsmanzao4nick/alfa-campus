@@ -4,6 +4,7 @@ import { Products } from "./types";
 import { Typography } from "@alfalab/core-components/typography";
 import axios from "axios";
 import styles from "./index.module.css";
+import { NavLink } from "react-router-dom";
 
 export const ProductsListOwnDesign = () => {
   const [itemsArr, setItems] = useState([]);
@@ -44,15 +45,20 @@ export const ProductsListOwnDesign = () => {
             <div className={styles.item_container}>
               {items.products.map((item: Products) => {
                 return (
-                  <Cell
-                    key={item.id}
-                    id={item.id}
-                    subtitle={item.subtitle}
-                    preview={item.preview}
-                    price={item.price}
-                    title={item.title}
-                    description={item.description}
-                  />
+                  <NavLink
+                    className={styles.link}
+                    to={`/own-design/${item.id}`}
+                  >
+                    <Cell
+                      key={item.id}
+                      id={item.id}
+                      subtitle={item.subtitle}
+                      preview={item.preview}
+                      price={item.price}
+                      title={item.title}
+                      description={item.description}
+                    />
+                  </NavLink>
                 );
               })}
             </div>
