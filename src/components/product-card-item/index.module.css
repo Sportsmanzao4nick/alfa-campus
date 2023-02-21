@@ -7,6 +7,7 @@
 
 .images_container {
     padding: 0 var(--gap-s);
+    width: 100%;
     max-width: 560px;
     display: flex;
     flex-wrap: wrap;
