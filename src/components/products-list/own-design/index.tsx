@@ -47,7 +47,7 @@ export const ProductsListOwnDesign = () => {
                 return (
                   <NavLink
                     className={styles.link}
-                    to={`/own-design/${item.id}`}
+                    to={`/own-design/${Number(item.id) - 5}`}
                   >
                     <Cell
                       key={item.id}

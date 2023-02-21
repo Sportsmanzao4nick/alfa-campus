@@ -1,6 +1,5 @@
-
-
 export interface Products {
+  prevState: [];
   key: number;
   id: number;
   title: string;

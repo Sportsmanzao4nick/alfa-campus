@@ -1,10 +1,88 @@
 .container {
     display: flex;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-
 }
+
 .images_container {
+    padding: 0 var(--gap-s);
+    max-width: 560px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.aside_images_container {
+    max-width: 560px;
+    align-self: start;
+    align-items: start;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main_image {
+    width: 100%;
+    max-width: 560px;
+    max-height: 742px;
+}
+
+.image {
+    border: 3px solid var(--color-dark-bg-overlay);
+}
+
+.cell_container {
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--gap-s) var(--gap-3xl);
+    align-self: start;
+    text-align: start;
+}
+
+.options_selector_container {
+    width: 40%;
+    align-self: start;
+    text-align: start;
+}
+
+.selector_text {
+    font-size: 16px;
+}
+
+.amount {
+    padding: var(--gap-l) 0;
+    align-self: start;
+    text-align: start;
+    font-size: 20px;
+}
+
+.button {
+    width: 100%;
+    border-radius: 30px;
+    margin-top: var(--gap-l);
+    align-self: start;
+}
+
+.description_text {
+    margin-top: var(--gap-xl);
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: start;
+}
+
+@media (max-width: 960px) {
+    .container {
+        display: block;
+        max-width: 600px;
+        width: 95%;
+    }
+
+    .cell_container {
+        padding: var(--gap-xl) var(--gap-s);
+    }
+
+    .images_container {
+        width: 100%;
+        max-width: 600px;
+    }
+
 }

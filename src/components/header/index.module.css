@@ -46,6 +46,10 @@
 }
 
 @media (max-width: 645px) {
+    .container {
+        max-width: 640px;
+    }
+
     .logo {
         position: relative;
         z-index: 1000;
@@ -54,5 +58,4 @@
     .links {
         width: 30px;
     }
-
 }

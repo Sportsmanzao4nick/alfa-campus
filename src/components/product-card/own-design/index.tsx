@@ -6,9 +6,10 @@ import axios from "axios";
 import styles from "./index.module.css";
 
 export const ProductCardOwnDesign = () => {
-  const { id } = useParams();
-  const [product, setProduct] = useState<Products>([]);
+  let { id } = useParams<{ id: string }>();
+  const [product, setProduct] = useState<Products| null>(null);
 
+  console.log(id);
   useEffect(() => {
     axios
       .get("/products.json")
@@ -19,13 +20,9 @@ export const ProductCardOwnDesign = () => {
         console.log(err);
       });
   }, []);
+  console.log(product);
 
-  //
-  // const  newColorsArr = product.colors?.map((item: string, index :number) => {
-  //   index++;
-  //     let obj = { content: item };
-  //     return obj;
-  //   });
+  if (!product) return null;
 
   return (
     <div>
@@ -39,6 +36,9 @@ export const ProductCardOwnDesign = () => {
         title={product.title}
         description={product.description}
         availability={product.availability}
+        sizes={product.sizes}
+        stickerNumbers={product.stickerNumbers}
+        subtitle={product.subtitle}
       />
     </div>
   );
