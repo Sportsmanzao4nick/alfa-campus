@@ -28,7 +28,17 @@
 }
 
 .image {
-    border: 3px solid var(--color-dark-bg-overlay);
+    display: flex;
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+    background-size: cover;
+    margin: 4px;
+    margin-left: 0;
+}
+
+.select_image {
+    outline: 3px solid var(--color-dark-bg-overlay);
 }
 
 .cell_container {
@@ -39,10 +49,13 @@
     text-align: start;
 }
 
-.options_selector_container {
-    width: 40%;
+.main_container {
     align-self: start;
     text-align: start;
+}
+
+.options_container {
+    width: 40%;
 }
 
 .selector_text {
@@ -51,8 +64,7 @@
 
 .amount {
     padding: var(--gap-l) 0;
-    align-self: start;
-    text-align: start;
+
     font-size: 20px;
 }
 
@@ -60,21 +72,19 @@
     width: 100%;
     border-radius: 30px;
     margin-top: var(--gap-l);
-    align-self: start;
 }
 
 .description_text {
     margin-top: var(--gap-xl);
     line-height: 1.5;
     font-size: 16px;
-    text-align: start;
+
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
     .container {
         display: block;
         max-width: 600px;
-        width: 95%;
     }
 
     .cell_container {
@@ -82,7 +92,8 @@
     }
 
     .images_container {
-        width: 100%;
+        padding: 0 var(--gap-xs);
+        width:  95%;
         max-width: 600px;
     }
 

@@ -43,9 +43,10 @@ export const ProductsListOwnDesign = () => {
               {items.description}
             </Typography.Text>
             <div className={styles.item_container}>
-              {items.products.map((item: Products) => {
+              {items.products.map((item: Products, index: number) => {
                 return (
                   <NavLink
+                    key={item.id}
                     className={styles.link}
                     to={`/own-design/${Number(item.id) - 5}`}
                   >

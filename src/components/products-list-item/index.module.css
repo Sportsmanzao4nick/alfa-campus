@@ -17,11 +17,7 @@
     object-position: 50% 50%;
 }
 
-@media (max-width: 960px) {
-
-    /*.container.container {*/
-    /*    width: 50%;*/
-    /*}*/
+@media (max-width: 1024px) {
 
     .images {
         max-width: 295px;
@@ -32,10 +28,6 @@
 }
 
 @media (max-width: 470px) {
-
-    /*.container.container {*/
-    /*    width: 100%;*/
-    /*}*/
 
     .graphics {
         max-width: 420px;
