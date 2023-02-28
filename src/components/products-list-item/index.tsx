@@ -7,14 +7,9 @@ import styles from "./index.module.css";
 export const Cell = ({
   id,
   title,
-  description,
   preview,
-  images,
   subtitle,
   price,
-  colors,
-  sizes,
-  stickerNumbers,
   availability,
 }: Products) => {
   return (

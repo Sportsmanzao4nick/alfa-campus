@@ -1,4 +1,4 @@
-.side_container {
+.sideContainer {
     background-color: #000000;
 }
 
@@ -28,25 +28,25 @@
     color: var(--color-light-bg-primary);
 }
 
-.contacts_icons {
+.contactsIcons {
     padding: 0;
     list-style-type: none;
     display: flex;
 }
 
-.icon_contact {
+.iconContact {
     display: flex;
     margin-right: var(--gap-xs);
 }
 
-.link_contact {
+.linkContact {
     color: #000000;
 }
 
 
 @media (max-width: 600px) {
 
-    .side_container {
+    .sideContainer {
         position: relative;
         z-index: 1;
         background-color: var(--color-light-bg-primary);

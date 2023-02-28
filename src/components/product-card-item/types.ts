@@ -11,6 +11,5 @@ export interface Products {
     sizes: [];
     stickerNumbers: [];
     availability: boolean;
-  }
-
+  };
 }

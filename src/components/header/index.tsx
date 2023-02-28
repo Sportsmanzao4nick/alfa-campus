@@ -16,7 +16,7 @@ export const Header = () => {
   };
   return (
     <div className={styles.container}>
-      <div className={styles.logo_container}>
+      <div className={styles.logoContainer}>
         <NavLink
           data-testid="main-page-link"
           onClick={menuClose}
@@ -24,7 +24,7 @@ export const Header = () => {
           to=""
         >
           <Typography.TitleResponsive
-            className={styles.logo_power}
+            className={styles.logoPower}
             tag="div"
             weight="bold"
             view="medium"

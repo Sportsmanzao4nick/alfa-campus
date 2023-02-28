@@ -9,36 +9,30 @@ import styles from "./index.module.css";
 
 export const Product = ({ product }: Products) => {
   const [initialSlide, setInitialSlide] = useState(0);
-  const [selectedItem, setSelectedItem] = useState(0);
 
-  const handleOpenGallery = (id: number) => {
-    setSelectedItem(id);
-  };
-
-  const openGallery = (slideIndex: number) => {
+  const handleOpenGallery = (slideIndex: number) => {
     setInitialSlide(slideIndex);
   };
 
   return (
     <div className={styles.container}>
-      <div className={styles.images_container}>
+      <div className={styles.imagesContainer}>
         <img
-          className={styles.main_image}
+          className={styles.mainImage}
           src={product.images?.find((i, idx) => idx === initialSlide)}
         />
-        <div className={styles.aside_images_container}>
+        <div className={styles.asideImagesContainer}>
           {product.images?.map((item: string, index) => {
             return (
               <div
                 className={
-                  selectedItem === index
-                    ? cn(styles.image, styles.select_image)
+                  initialSlide === index
+                    ? cn(styles.image, styles.selectImage)
                     : styles.image
                 }
                 key={item}
                 onClick={() => {
                   handleOpenGallery(index);
-                  openGallery(index);
                 }}
                 style={{
                   backgroundImage: `url(${item})`,
@@ -49,14 +43,14 @@ export const Product = ({ product }: Products) => {
         </div>
       </div>
       <PureCell
-        className={styles.cell_container}
+        className={styles.cellContainer}
         key={product.id}
         verticalPadding="airy"
         direction="vertical"
       >
         <PureCell.Content>
           <PureCell.Main>
-            <div className={styles.main_container}>
+            <div className={styles.mainContainer}>
               <Typography.TitleResponsive
                 className={styles.text}
                 view="xsmall"
@@ -75,10 +69,10 @@ export const Product = ({ product }: Products) => {
                 value={product.price}
               />
 
-              <div className={styles.options_container}>
-                <div className={styles.selector_container}>
+              <div className={styles.optionsContainer}>
+                <div className={styles.selectorContainer}>
                   <Typography.TitleResponsive
-                    className={styles.selector_text}
+                    className={styles.selectorText}
                     view="xsmall"
                     tag="h3"
                     weight="medium"
@@ -88,7 +82,7 @@ export const Product = ({ product }: Products) => {
                     цвет
                   </Typography.TitleResponsive>
                   <SelectResponsive
-                    className={styles.selector_item}
+                    className={styles.selectorItem}
                     allowUnselect={true}
                     size="s"
                     options={product.colors?.map((i) => ({
@@ -99,9 +93,9 @@ export const Product = ({ product }: Products) => {
                     block={true}
                   />
                 </div>
-                <div className={styles.selector_container}>
+                <div className={styles.selectorContainer}>
                   <Typography.TitleResponsive
-                    className={styles.selector_text}
+                    className={styles.selectorText}
                     view="xsmall"
                     tag="h3"
                     weight="medium"
@@ -111,7 +105,7 @@ export const Product = ({ product }: Products) => {
                     размер
                   </Typography.TitleResponsive>
                   <SelectResponsive
-                    className={styles.selector_item}
+                    className={styles.selectorItem}
                     allowUnselect={true}
                     size="s"
                     options={product.sizes?.map((i) => ({
@@ -122,9 +116,9 @@ export const Product = ({ product }: Products) => {
                     block={true}
                   />
                 </div>
-                <div className={styles.selector_container}>
+                <div className={styles.selectorContainer}>
                   <Typography.TitleResponsive
-                    className={styles.selector_text}
+                    className={styles.selectorText}
                     view="xsmall"
                     tag="h3"
                     weight="medium"
@@ -134,7 +128,7 @@ export const Product = ({ product }: Products) => {
                     номер стикера
                   </Typography.TitleResponsive>
                   <SelectResponsive
-                    className={styles.selector_item}
+                    className={styles.selectorItem}
                     allowUnselect={true}
                     size="s"
                     options={product.stickerNumbers?.map((i) => ({
@@ -149,9 +143,9 @@ export const Product = ({ product }: Products) => {
                   В корзину
                 </Button>
               </div>
-              <div className={styles.description_container}>
+              <div className={styles.descriptionContainer}>
                 <Typography.TitleResponsive
-                  className={styles.description_text}
+                  className={styles.descriptionText}
                   view="xsmall"
                   tag="h3"
                   weight="medium"

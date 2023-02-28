@@ -19,7 +19,7 @@ export const Sidebar = ({
     <React.Fragment>
       <SidePanelResponsive
         onBackdropClick={handeMenuOpen}
-        className={styles.side_container}
+        className={styles.sideContainer}
         open={isActive}
         placement="right"
         hasCloser={true}
@@ -40,7 +40,7 @@ export const Sidebar = ({
             <NavLink
               onClick={handeMenuOpen}
               className={styles.text}
-              to="made-in-alpha"
+              to="made-in-alfa"
             >
               Сделано в Альфе
             </NavLink>
@@ -85,34 +85,34 @@ export const Sidebar = ({
         </SidePanelResponsive.Content>
         <SidePanelResponsive.Footer className={styles.footer}>
           <div>
-            <ul className={styles.contacts_icons}>
-              <li className={styles.icon_contact}>
+            <ul className={styles.contactsIcons}>
+              <li className={styles.iconContact}>
                 <a href="mailto:info@alfabankstore.ru">
                   <Circle
                     backgroundColor="var(--color-light-bg-primary)"
                     size={32}
                   >
-                    <MailMIcon className={styles.link_contact} />
+                    <MailMIcon className={styles.linkContact} />
                   </Circle>
                 </a>
               </li>
-              <li className={styles.icon_contact}>
+              <li className={styles.iconContact}>
                 <a href="tel:+7 906 061-60-20">
                   <Circle
                     backgroundColor="var(--color-light-bg-primary)"
                     size={32}
                   >
-                    <PhoneMIcon className={styles.link_contact} />
+                    <PhoneMIcon className={styles.linkContact} />
                   </Circle>
                 </a>
               </li>
-              <li className={styles.icon_contact}>
+              <li className={styles.iconContact}>
                 <a href="https://wa.me/79060616020">
                   <Circle
                     backgroundColor="var(--color-light-bg-primary)"
                     size={32}
                   >
-                    <TelegramMIcon className={styles.link_contact} />
+                    <TelegramMIcon className={styles.linkContact} />
                   </Circle>
                 </a>
               </li>

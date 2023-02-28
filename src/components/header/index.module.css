@@ -45,12 +45,12 @@
     }
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
     .container {
-        max-width: 580px;
+        width: 87%;
     }
 
-    .burger.burger {
+    .burger {
         margin-right: 0;
     }
 

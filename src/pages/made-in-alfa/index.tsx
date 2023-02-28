@@ -1,9 +1,9 @@
 import React from "react";
-import { ProductsList } from "../../components/products-list/made-in-alpha";
+import { ProductsListMadeInAlfa } from "../../components/products-list/made-in-alfa";
 import { Typography } from "@alfalab/core-components/typography";
 import styles from "./index.module.css";
 
-export const MadeInAlpha = () => {
+export const MadeInAlfa = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header_container}>
@@ -26,7 +26,7 @@ export const MadeInAlpha = () => {
           Хотим каждую из этих вещей! Себе, родным и друзьям
         </Typography.Text>
       </div>
-      <ProductsList />
+      <ProductsListMadeInAlfa />
     </div>
   );
 };

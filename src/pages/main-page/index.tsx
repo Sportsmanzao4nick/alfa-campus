@@ -10,7 +10,7 @@ export const MainPage = () => {
     <div data-testid="main-page" className={styles.container}>
       <NavLink
         className={`${styles.component} ${styles.madeinalpha}`}
-        to="made-in-alpha"
+        to="made-in-alfa"
       >
         <div className={styles.header}>
           <Typography.TitleResponsive

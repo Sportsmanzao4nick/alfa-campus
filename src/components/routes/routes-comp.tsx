@@ -6,19 +6,21 @@ import {
 } from "react-router-dom";
 import { MainPage } from "../../pages/main-page";
 import { OwnDesign } from "../../pages/own-design";
-import { MadeInAlpha } from "../../pages/made-in-alpha";
+import { MadeInAlfa } from "../../pages/made-in-alfa";
 import { Contacts } from "../../pages/contatcs";
 import { RootLayout } from "./root-layout";
-import {ProductPage} from "../../pages/product";
+import { ProductPage } from "../../pages/product";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="" element={<RootLayout />}>
       <Route index element={<MainPage />} />
       <Route path="own-design" element={<OwnDesign />} />
-      <Route path="made-in-alpha" element={<MadeInAlpha />} />
+      <Route path="made-in-alfa" element={<MadeInAlfa />} />
       <Route path="contacts" element={<Contacts />} />
-      <Route path="own-design/:id" element={<ProductPage />} />
+      <Route path="product/:id" element={<ProductPage />} />
+      {/*<Route path="made-in-alfa/:id" element={<ProductPage />} />*/}
+      {/*<Route path="own-design/:id" element={<ProductPage />} />*/}
     </Route>
   )
 );

@@ -1,9 +1,9 @@
-.container_header {
+.containerHeader {
     font-size: 115px;
     line-height: 130px;
 }
 
-.item_container {
+.itemContainer {
     display: flex;
     flex-wrap: wrap;
 }
@@ -20,7 +20,7 @@
         width: 50%;
     }
 
-    .container_header {
+    .containerHeader {
         font-size: 75px;
         line-height: 88px;
     }
@@ -28,7 +28,7 @@
 
 @media (max-width: 600px) {
 
-    .container_header {
+    .containerHeader {
         font-size: 42px;
         line-height: 44px;
     }
@@ -40,7 +40,7 @@
         width: 100%;
     }
 
-    .container_header {
+    .containerHeader {
         font-size: 42px;
         line-height: 44px;
     }

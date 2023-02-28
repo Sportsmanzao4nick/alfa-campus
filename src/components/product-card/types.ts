@@ -1,5 +1,5 @@
 export interface Products {
-  products:{};
+  product:{};
   id: number;
   title: string;
   description: string;
@@ -11,4 +11,5 @@ export interface Products {
   sizes: [];
   stickerNumbers: [];
   availability: boolean;
+
 }

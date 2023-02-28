@@ -1,9 +1,9 @@
 import {render, screen} from "@testing-library/react";
-import {ProductsList} from "./index";
+import {ProductsListMadeInAlfa} from "./index";
 import React from "react";
 import axios from "axios";
-import {Cell} from "../../products-list-item/made-in-alpha";
-import {MadeInAlpha} from "../../../pages/made-in-alpha";
+import {Cell} from "../../products-list-item/made-in-alfa";
+import {MadeInAlfa} from "../../../pages/made-in-alfa";
 
 
 // jest.mock('ProductList', () => {
@@ -63,7 +63,7 @@ describe('getData', () => {
     let response: object;
     beforeEach(() => {
         response = {
-            products: [
+            productsMadeInAlfa: [
                 {
                     id: 0,
                     preview: "http://localhost:3000/public/images/15932051.jpeg",
@@ -105,7 +105,7 @@ describe('getData', () => {
 
     test('Получены верные значения',  async () => {
         (axios.get as jest.Mock).mockReturnValue(response);
-        render(<ProductsList/>)
+        render(<ProductsListMadeInAlfa/>)
         const data = await screen.findAllByTitle("Экоручка");
         expect(data).toBe(1)
     })
