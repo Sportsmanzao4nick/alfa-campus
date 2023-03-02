@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   fetchProductsMadeInAlfa,
   fetchProductsOwnDesign,
-} from "./operations";
+} from "./thunk";
 
 const initialState = {
   isLoading: false,
