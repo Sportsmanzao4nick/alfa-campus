@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { ProductState } from "./types";
 import { useParams } from "react-router-dom";
 import { Product } from "../product-card-item";

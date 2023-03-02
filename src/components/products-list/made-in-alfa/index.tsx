@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Cell } from "../../products-list-item";
 import { Product } from "./types";
 import { NavLink } from "react-router-dom";
