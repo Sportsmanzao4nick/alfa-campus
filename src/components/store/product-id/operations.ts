@@ -1,12 +1,21 @@
-import { onProductsLoadingFinished, onProductsLoadingStart } from './product-id';
-import { getProductsWithID } from "./api";
-import {AppDispatch} from "./types";
+import axios from "axios";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const fetchProductsWithID = (id: string| number) => async (dispatch: AppDispatch) => {
-  dispatch(onProductsLoadingStart());
+export const fetchProductById = createAsyncThunk(
+  "products/fetchProductById",
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `http://qa-games.ru/astore/product/${id}`
+      );
 
-  const { data } = await getProductsWithID(id);
-  console.log('eto data fetch', data)
+      if (response.status !== 200) {
+        throw new Error("Error!");
+      }
 
-  dispatch(onProductsLoadingFinished(data));
-};
+      return response.data;
+    } catch (e) {
+      return rejectWithValue(e);
+    }
+  }
+);

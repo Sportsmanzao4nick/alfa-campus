@@ -25,11 +25,9 @@ export const Product = ({ product }: Products) => {
           {product.images?.map((item: string, index) => {
             return (
               <div
-                className={
-                  initialSlide === index
-                    ? cn(styles.image, styles.selectImage)
-                    : styles.image
-                }
+                className={cn(styles.image, {
+                  [styles.selectImage]: initialSlide === index,
+                })}
                 key={item}
                 onClick={() => {
                   handleOpenGallery(index);
@@ -89,7 +87,7 @@ export const Product = ({ product }: Products) => {
                       content: i,
                       key: i,
                     }))}
-                    placeholder={product.colors[0]}
+                    // placeholder={product.colors[0]}
                     block={true}
                   />
                 </div>
@@ -112,7 +110,7 @@ export const Product = ({ product }: Products) => {
                       content: i,
                       key: i,
                     }))}
-                    placeholder={product.sizes[0]}
+                    // placeholder={product.sizes[0]}
                     block={true}
                   />
                 </div>
@@ -135,7 +133,7 @@ export const Product = ({ product }: Products) => {
                       content: i,
                       key: i,
                     }))}
-                    placeholder={product.stickerNumbers[0]}
+                    // placeholder={product.stickerNumbers[0]}
                     block={true}
                   />
                 </div>

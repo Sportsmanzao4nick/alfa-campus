@@ -19,8 +19,6 @@ const router = createBrowserRouter(
       <Route path="made-in-alfa" element={<MadeInAlfa />} />
       <Route path="contacts" element={<Contacts />} />
       <Route path="product/:id" element={<ProductPage />} />
-      {/*<Route path="made-in-alfa/:id" element={<ProductPage />} />*/}
-      {/*<Route path="own-design/:id" element={<ProductPage />} />*/}
     </Route>
   )
 );

@@ -1,13 +1,11 @@
-import {ApplicationState, AppState} from "./types";
+import {ApplicationState} from "./types";
 
-export const getProducts = (state: ApplicationState) =>state.productID;
+export const getProduct = (state: ApplicationState ) =>state.product;
 
-export const getProductsList = (state:ApplicationState) => getProducts(state).list;
+export const getProductsIsLoading = (state: ApplicationState) => getProduct(state).isLoading;
 
-export const getProductsIsLoading = (state:ApplicationState) => getProducts(state).isLoading;
+export const getProductsHasError = (state: ApplicationState) => getProduct(state).hasError;
 
-export const getProductsHasError = (state:ApplicationState) => getProducts(state).hasError;
-
-export const getCurrentProduct = (state:ApplicationState)=> getProducts(state).currentProduct;
+export const getCurrentProduct = (state: ApplicationState) => getProduct(state).currentProduct;
 
 

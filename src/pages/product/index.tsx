@@ -1,5 +1,5 @@
-import { ProductCardOwnDesign } from "../../components/product-card";
+import { ProductCard } from "../../components/product-card";
 
 export const ProductPage = () => {
-  return <ProductCardOwnDesign />;
+  return <ProductCard />;
 };

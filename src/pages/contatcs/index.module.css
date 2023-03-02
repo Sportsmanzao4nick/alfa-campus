@@ -1,12 +1,11 @@
 .container {
-    height: 90vh;
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
 }
 
-.header_container {
-    padding: 30px 0;
+.headerContainer {
+    padding: var(--gap-2xl) 0;
     text-align: start;
 }
 
@@ -18,10 +17,19 @@
     margin: 0 auto;
 }
 
+.textContainer {
+    padding: var(--gap-4xl) 0;
+}
+
 .text {
     letter-spacing: 0;
 }
 
+.maps {
+    width: 500px;
+    heigt: 300px;
+    padding: var(--gap-l) 0;
+}
 
 @media (max-width: 960px) {
 
@@ -38,6 +46,10 @@
 }
 
 @media (max-width: 600px) {
+    .headerContainer {
+        padding: var(--gap-l) 0;
+        text-align: start;
+    }
 
     .header {
         font-size: 42px;
@@ -46,5 +58,8 @@
 
     .container {
         width: 90%;
+    }
+    .textContainer {
+        padding: var(--gap-s) 0;
     }
 }

@@ -1,4 +1,4 @@
-export interface Products {
+export interface ProductState {
   product:{};
   id: number;
   title: string;
@@ -11,5 +11,4 @@ export interface Products {
   sizes: [];
   stickerNumbers: [];
   availability: boolean;
-
 }

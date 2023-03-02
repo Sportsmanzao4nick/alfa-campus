@@ -1,8 +1,8 @@
-import reducer from "./product-id";
+import reducer from "./product-id-slice";
 import * as productsSelectors from "./selectors";
 import * as productsOperations from "./operations";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, ApplicationState, AppState } from "./types";
+import { AppDispatch, ApplicationState} from "./types";
 import { TypedUseSelectorHook } from "react-redux";
 
 export { productsSelectors, productsOperations };

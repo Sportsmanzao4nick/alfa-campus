@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Cell } from "../../products-list-item";
-import { Products } from "./types";
-
+import { Product } from "./types";
+import { NavLink } from "react-router-dom";
 import {
   productsOperations,
   productsSelectors,
   useAppDispatch,
   useAppSelector,
-} from "../../store/made-in-alfa";
+} from "../../store/products-list";
 import styles from "./index.module.css";
-import { NavLink } from "react-router-dom";
 
 export const ProductsListMadeInAlfa = () => {
   const dispatch = useAppDispatch();
@@ -20,29 +19,34 @@ export const ProductsListMadeInAlfa = () => {
 
   useEffect(() => {
     dispatch(productsOperations.fetchProductsMadeInAlfa());
-  }, []);
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
 
   return (
     <div className={styles.container}>
-      {productsListMadeInAlfa.map((item: Products) => {
-        return (
-          <NavLink
-            key={item.id}
-            className={styles.link}
-            to={`/product/${Number(item.id)}`}
-          >
-            <Cell
+      {productsListMadeInAlfa &&
+        productsListMadeInAlfa?.map((item: Product) => {
+          return (
+            <NavLink
               key={item.id}
-              preview={item.preview}
-              id={item.id}
-              price={item.price}
-              title={item.title}
-              description={item.description}
-              availability={item.availability}
-            />
-          </NavLink>
-        );
-      })}
+              className={styles.link}
+              to={`/product/${item.id}`}
+            >
+              <Cell
+                key={item.id}
+                preview={item.preview}
+                id={item.id}
+                price={item.price}
+                title={item.title}
+                description={item.description}
+                availability={item.availability}
+              />
+            </NavLink>
+          );
+        })}
     </div>
   );
 };
