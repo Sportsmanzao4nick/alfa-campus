@@ -13,7 +13,7 @@ import styles from "./index.module.css";
 export const ProductsListMadeInAlfa = () => {
   const dispatch = useAppDispatch();
   const productsListMadeInAlfa = useAppSelector(
-    productsSelectors.getProductsList
+    productsSelectors.getProductsListMadeInAlfa
   );
   const isLoading = useAppSelector(productsSelectors.getProductsIsLoading);
 

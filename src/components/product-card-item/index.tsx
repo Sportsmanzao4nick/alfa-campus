@@ -55,88 +55,95 @@ export const Product = ({ product }: Products) => {
                 tag="h2"
                 weight="medium"
                 font="styrene"
-                dataTestId="title-item"
               >
                 {product.title}
               </Typography.TitleResponsive>
               <PureCell.Amount
                 className={styles.amount}
                 minority={1}
+                dataTestId="title-item"
                 weight="bold"
                 currency="RUR"
                 value={product.price}
               />
 
               <div className={styles.optionsContainer}>
-                <div className={styles.selectorContainer}>
-                  <Typography.TitleResponsive
-                    className={styles.selectorText}
-                    view="xsmall"
-                    tag="h3"
-                    weight="medium"
-                    font="styrene"
-                    dataTestId="title-item"
-                  >
-                    цвет
-                  </Typography.TitleResponsive>
-                  <SelectResponsive
-                    className={styles.selectorItem}
-                    allowUnselect={true}
-                    size="s"
-                    options={product.colors?.map((i) => ({
-                      content: i,
-                      key: i,
-                    }))}
-                    // placeholder={product.colors[0]}
-                    block={true}
-                  />
-                </div>
-                <div className={styles.selectorContainer}>
-                  <Typography.TitleResponsive
-                    className={styles.selectorText}
-                    view="xsmall"
-                    tag="h3"
-                    weight="medium"
-                    font="styrene"
-                    dataTestId="title-item"
-                  >
-                    размер
-                  </Typography.TitleResponsive>
-                  <SelectResponsive
-                    className={styles.selectorItem}
-                    allowUnselect={true}
-                    size="s"
-                    options={product.sizes?.map((i) => ({
-                      content: i,
-                      key: i,
-                    }))}
-                    // placeholder={product.sizes[0]}
-                    block={true}
-                  />
-                </div>
-                <div className={styles.selectorContainer}>
-                  <Typography.TitleResponsive
-                    className={styles.selectorText}
-                    view="xsmall"
-                    tag="h3"
-                    weight="medium"
-                    font="styrene"
-                    dataTestId="title-item"
-                  >
-                    номер стикера
-                  </Typography.TitleResponsive>
-                  <SelectResponsive
-                    className={styles.selectorItem}
-                    allowUnselect={true}
-                    size="s"
-                    options={product.stickerNumbers?.map((i) => ({
-                      content: i,
-                      key: i,
-                    }))}
-                    // placeholder={product.stickerNumbers[0]}
-                    block={true}
-                  />
-                </div>
+                {product.colors && product.colors.length > 0 && (
+                  <div className={styles.selectorContainer}>
+                    <Typography.TitleResponsive
+                      className={styles.selectorText}
+                      view="xsmall"
+                      tag="h3"
+                      weight="medium"
+                      font="styrene"
+                      dataTestId="title-item"
+                    >
+                      цвет
+                    </Typography.TitleResponsive>
+                    <SelectResponsive
+                      className={styles.selectorItem}
+                      allowUnselect={true}
+                      size="s"
+                      options={product.colors?.map((i) => ({
+                        content: i,
+                        key: i,
+                      }))}
+                      placeholder={product.colors[0]}
+                      block={true}
+                    />
+                  </div>
+                )}
+                {product.sizes && product.sizes.length > 0 && (
+                  <div className={styles.selectorContainer}>
+                    <Typography.TitleResponsive
+                      className={styles.selectorText}
+                      view="xsmall"
+                      tag="h3"
+                      weight="medium"
+                      font="styrene"
+                      dataTestId="title-item"
+                    >
+                      размер
+                    </Typography.TitleResponsive>
+                    <SelectResponsive
+                      className={styles.selectorItem}
+                      allowUnselect={true}
+                      size="s"
+                      options={product.sizes?.map((i) => ({
+                        content: i,
+                        key: i,
+                      }))}
+                      placeholder={product.sizes[0]}
+                      block={true}
+                    />
+                  </div>
+                )}
+                {product.stickerNumbers &&
+                  product.stickerNumbers.length > 0 && (
+                    <div className={styles.selectorContainer}>
+                      <Typography.TitleResponsive
+                        className={styles.selectorText}
+                        view="xsmall"
+                        tag="h3"
+                        weight="medium"
+                        font="styrene"
+                        dataTestId="title-item"
+                      >
+                        номер стикера
+                      </Typography.TitleResponsive>
+                      <SelectResponsive
+                        className={styles.selectorItem}
+                        allowUnselect={true}
+                        size="s"
+                        options={product.stickerNumbers?.map((i) => ({
+                          content: i,
+                          key: i,
+                        }))}
+                        placeholder={product.stickerNumbers[0]}
+                        block={true}
+                      />
+                    </div>
+                  )}
                 <Button size="s" className={styles.button} view="accent">
                   В корзину
                 </Button>

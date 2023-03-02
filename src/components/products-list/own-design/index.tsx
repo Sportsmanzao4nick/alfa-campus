@@ -14,7 +14,7 @@ import styles from "./index.module.css";
 export const ProductsListOwnDesign = () => {
   const dispatch = useAppDispatch();
   const productsListOwnDesign = useAppSelector(
-    productsSelectors.getProductsList
+    productsSelectors.getProducstListOwnDesign
   );
   const isLoading = useAppSelector(productsSelectors.getProductsIsLoading);
 

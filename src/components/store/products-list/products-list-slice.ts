@@ -7,8 +7,8 @@ import {
 const initialState = {
   isLoading: false,
   hasError: false,
-  list: [],
-  currentProduct: null,
+  listMadeInAlfa: [],
+  listOwnDesign:[],
 };
 
 const products = createSlice({
@@ -23,12 +23,12 @@ const products = createSlice({
       .addCase(fetchProductsMadeInAlfa.fulfilled, (state, action) => {
         state.isLoading = false;
         state.hasError = false;
-        state.list = action.payload;
+        state.listMadeInAlfa = action.payload;
       })
       .addCase(fetchProductsMadeInAlfa.rejected, (state) => {
         state.isLoading = false;
         state.hasError = true;
-        state.list = [];
+        state.listMadeInAlfa = [];
       })
       .addCase(fetchProductsOwnDesign.pending, (state) => {
         state.isLoading = true;
@@ -36,12 +36,12 @@ const products = createSlice({
       .addCase(fetchProductsOwnDesign.fulfilled, (state, action) => {
         state.isLoading = false;
         state.hasError = false;
-        state.list = action.payload;
+        state.listOwnDesign = action.payload;
       })
       .addCase(fetchProductsOwnDesign.rejected, (state) => {
         state.isLoading = false;
         state.hasError = true;
-        state.list = [];
+        state.listOwnDesign = [];
       });
   },
 });
