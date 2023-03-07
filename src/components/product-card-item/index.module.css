@@ -58,13 +58,16 @@
     width: 40%;
 }
 
+.selectorContainer {
+    padding-top: var(--gap-m);
+}
+
 .selectorText {
     font-size: 16px;
 }
 
 .amount {
     padding: var(--gap-l) 0;
-
     font-size: 20px;
 }
 
@@ -96,5 +99,15 @@
         width: 95%;
         max-width: 600px;
     }
+}
 
+@media (max-width: 470px) {
+    .imagesContainer {
+        max-width: 450px;
+    }
+
+    .mainImage {
+        max-width: 450px;
+        max-height: 480px;
+    }
 }

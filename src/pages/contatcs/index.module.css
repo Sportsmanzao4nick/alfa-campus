@@ -2,6 +2,7 @@
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
+    height: 90vh;
 }
 
 .headerContainer {
@@ -25,13 +26,23 @@
     letter-spacing: 0;
 }
 
-.maps {
+.mapsContainer {
     width: 500px;
-    heigt: 300px;
+    height: 300px;
     padding: var(--gap-l) 0;
 }
 
-@media (max-width: 960px) {
+.maps {
+    max-width: 850px;
+    width: 60vw;
+    height: 35vh;
+}
+
+@media (max-width: 1024px) {
+
+    .container {
+        height: 105vh;
+    }
 
     .header {
         font-size: 75px;
@@ -43,9 +54,20 @@
         max-width: 910px;
     }
 
+    .maps {
+        max-width: 850px;
+        width: 74vw;
+        height: 50vh;
+    }
+
 }
 
 @media (max-width: 600px) {
+
+    .container {
+        height: 115vh;
+    }
+
     .headerContainer {
         padding: var(--gap-l) 0;
         text-align: start;
@@ -57,9 +79,18 @@
     }
 
     .container {
+        max-width: 540px;
         width: 90%;
     }
+
     .textContainer {
         padding: var(--gap-s) 0;
     }
+
+    .maps {
+        max-width: 540px;
+        width: 80vw;
+        height: 45vh;
+    }
+
 }

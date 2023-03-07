@@ -5,22 +5,30 @@ import { Typography } from "@alfalab/core-components/typography";
 import { SelectResponsive } from "@alfalab/core-components/select/responsive";
 import cn from "classnames";
 import { Button } from "@alfalab/core-components/button";
+import { useAppDispatch } from "../store/cart";
+import { addToCart } from "../store/cart/cart-slice";
 import styles from "./index.module.css";
 
 export const Product = ({ product }: Products) => {
   const [initialSlide, setInitialSlide] = useState(0);
+  const [choseColor, setChoseColor] = useState("");
+  const [choseSize, setChoseSize] = useState("");
+  const [choseSticker, setChoseSticker] = useState();
 
   const handleOpenGallery = (slideIndex: number) => {
     setInitialSlide(slideIndex);
   };
 
+  const { id, title, price } = product;
+
+  const choseImg = product.images?.find((i, idx) => idx === initialSlide);
+
+  const dispatch = useAppDispatch();
+
   return (
     <div className={styles.container}>
       <div className={styles.imagesContainer}>
-        <img
-          className={styles.mainImage}
-          src={product.images?.find((i, idx) => idx === initialSlide)}
-        />
+        <img className={styles.mainImage} src={choseImg} alt="product-image" />
         <div className={styles.asideImagesContainer}>
           {product.images?.map((item: string, index) => {
             return (
@@ -66,7 +74,6 @@ export const Product = ({ product }: Products) => {
                 currency="RUR"
                 value={product.price}
               />
-
               <div className={styles.optionsContainer}>
                 {product.colors && product.colors.length > 0 && (
                   <div className={styles.selectorContainer}>
@@ -88,8 +95,11 @@ export const Product = ({ product }: Products) => {
                         content: i,
                         key: i,
                       }))}
-                      placeholder={product.colors[0]}
+                      placeholder={"выберите цвет"}
                       block={true}
+                      onChange={(option) => {
+                        setChoseColor(option.selected?.content);
+                      }}
                     />
                   </div>
                 )}
@@ -113,8 +123,11 @@ export const Product = ({ product }: Products) => {
                         content: i,
                         key: i,
                       }))}
-                      placeholder={product.sizes[0]}
+                      placeholder={"выберите размер"}
                       block={true}
+                      onChange={(option) => {
+                        setChoseSize(option.selected?.content);
+                      }}
                     />
                   </div>
                 )}
@@ -139,12 +152,32 @@ export const Product = ({ product }: Products) => {
                           content: i,
                           key: i,
                         }))}
-                        placeholder={product.stickerNumbers[0]}
+                        placeholder={"выберите стикер"}
                         block={true}
+                        onChange={(option) => {
+                          setChoseSticker(option.selected?.content);
+                        }}
                       />
                     </div>
                   )}
-                <Button size="s" className={styles.button} view="accent">
+                <Button
+                  size="s"
+                  className={styles.button}
+                  view="accent"
+                  onClick={() =>
+                    dispatch(
+                      addToCart({
+                        id,
+                        title,
+                        choseImg,
+                        price,
+                        choseColor,
+                        choseSize,
+                        choseSticker,
+                      })
+                    )
+                  }
+                >
                   В корзину
                 </Button>
               </div>

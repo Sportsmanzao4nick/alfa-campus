@@ -16,6 +16,7 @@ export const ProductsListMadeInAlfa = () => {
     productsSelectors.getProductsListMadeInAlfa
   );
   const isLoading = useAppSelector(productsSelectors.getProductsIsLoading);
+  const hasError = useAppSelector(productsSelectors.getProductsHasError);
 
   useEffect(() => {
     dispatch(productsOperations.fetchProductsMadeInAlfa());
@@ -23,6 +24,10 @@ export const ProductsListMadeInAlfa = () => {
 
   if (isLoading) {
     return <h2>Loading...</h2>;
+  }
+
+  if (hasError) {
+    return <h2>Произошла ошибка, повторите попытку</h2>;
   }
 
   return (

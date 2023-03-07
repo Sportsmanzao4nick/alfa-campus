@@ -8,6 +8,11 @@ export const Contacts = () => {
     center: [55.694459, 37.661994],
     zoom: 15,
   };
+  const style = {
+    width: '100%',
+    height: '70%'
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
@@ -77,9 +82,9 @@ export const Contacts = () => {
           Политика конфиденциальностии обработки персональных данных
         </Typography.Text>
       </div>
-      <div className={styles.maps}>
+      <div className={styles.mapsContainer}>
         <YMaps>
-          <Map width={600} height={250} defaultState={defaultState}>
+          <Map className={styles.maps} defaultState={defaultState}>
             <Placemark geometry={[55.694459, 37.661994]} />
           </Map>
         </YMaps>

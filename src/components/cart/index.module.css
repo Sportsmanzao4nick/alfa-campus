@@ -1,0 +1,28 @@
+.circleButtonIcon {
+    position: fixed;
+    top: 10%;
+    right: 3%;
+    cursor: pointer;
+}
+
+.buttonIcon {
+    border-radius: 100%;
+    color: var(--color-light-bg-primary);
+    background-color: var(--color-light-bg-accent);
+}
+
+@media (max-width: 1024px) {
+
+    .circleButtonIcon {
+        top: 80%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .circleButtonIcon {
+        top: 90%;
+    }
+
+}

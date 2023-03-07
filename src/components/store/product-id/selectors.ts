@@ -1,4 +1,4 @@
-import {ApplicationState} from "./types";
+import {ApplicationState} from "../types";
 
 export const getProduct = (state: ApplicationState ) =>state.product;
 

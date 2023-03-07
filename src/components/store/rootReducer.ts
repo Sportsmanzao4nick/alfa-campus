@@ -1,12 +1,12 @@
 import products from "./products-list";
-import product from "./product-id"
+import product from "./product-id";
+import cart from "./cart";
 import { configureStore } from "@reduxjs/toolkit";
-import thunk from "redux-thunk";
 
 export const store = configureStore({
   reducer: {
     products: products,
-    product: product
+    product: product,
+    cart: cart,
   },
-  middleware: [thunk],
 });

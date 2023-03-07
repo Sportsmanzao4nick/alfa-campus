@@ -14,9 +14,10 @@ import styles from "./index.module.css";
 export const ProductsListOwnDesign = () => {
   const dispatch = useAppDispatch();
   const productsListOwnDesign = useAppSelector(
-    productsSelectors.getProducstListOwnDesign
+    productsSelectors.getProductsListOwnDesign
   );
   const isLoading = useAppSelector(productsSelectors.getProductsIsLoading);
+  const hasError = useAppSelector(productsSelectors.getProductsHasError);
 
   useEffect(() => {
     dispatch(productsOperations.fetchProductsOwnDesign());
@@ -24,6 +25,10 @@ export const ProductsListOwnDesign = () => {
 
   if (isLoading) {
     return <h2>Loading...</h2>;
+  }
+
+  if (hasError) {
+    return <h2>Произошла ошибка, повторите попытку</h2>;
   }
 
   return (

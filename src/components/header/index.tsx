@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Sidebar } from "../sidebar";
+import { SidebarMenu } from "../sidebar-menu";
 import { NavLink } from "react-router-dom";
 import { BurgerMIcon } from "@alfalab/icons-glyph/BurgerMIcon";
 import { Typography } from "@alfalab/core-components/typography";
@@ -52,7 +52,7 @@ export const Header = () => {
           </PureCell.Main>
         </PureCell.Content>
       </PureCell>
-      <Sidebar isActive={isActive} handeMenuOpen={handeMenuOpen} />
+      <SidebarMenu isActive={isActive} handeMenuOpen={handeMenuOpen} />
     </div>
   );
 };

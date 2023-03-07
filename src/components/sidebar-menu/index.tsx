@@ -8,7 +8,7 @@ import { SidePanelResponsive } from "@alfalab/core-components/side-panel/respons
 import { Circle } from "@alfalab/core-components/icon-view/circle";
 import styles from "./index.module.css";
 
-export const Sidebar = ({
+export const SidebarMenu = ({
   isActive,
   handeMenuOpen,
 }: {
