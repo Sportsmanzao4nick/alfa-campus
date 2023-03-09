@@ -45,7 +45,6 @@
 
 
 @media (max-width: 600px) {
-
     .sideContainer {
         position: relative;
         z-index: 1;
@@ -73,5 +72,4 @@
     .text {
         color: #000000;
     }
-
 }

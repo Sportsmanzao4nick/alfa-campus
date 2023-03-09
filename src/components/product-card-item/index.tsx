@@ -11,12 +11,24 @@ import styles from "./index.module.css";
 
 export const Product = ({ product }: Products) => {
   const [initialSlide, setInitialSlide] = useState(0);
-  const [choseColor, setChoseColor] = useState("");
-  const [choseSize, setChoseSize] = useState("");
-  const [choseSticker, setChoseSticker] = useState();
+  const [choseColor, setChoseColor] = useState(product.colors?.[0]);
+  const [choseSize, setChoseSize] = useState(product.sizes?.[0]);
+  const [choseSticker, setChoseSticker] = useState(product.stickerNumbers?.[0]);
 
   const handleOpenGallery = (slideIndex: number) => {
     setInitialSlide(slideIndex);
+  };
+
+  const selectColor = (option) => {
+    setChoseColor(option.selected?.content);
+  };
+
+  const selectSize = (option) => {
+    setChoseSize(option.selected?.content);
+  };
+
+  const selectStickerNumber = (option) => {
+    setChoseSticker(option.selected?.content);
   };
 
   const { id, title, price } = product;
@@ -24,6 +36,20 @@ export const Product = ({ product }: Products) => {
   const choseImg = product.images?.find((i, idx) => idx === initialSlide);
 
   const dispatch = useAppDispatch();
+
+  const dispatchAddToCart = () => {
+    dispatch(
+      addToCart({
+        id,
+        title,
+        choseImg,
+        price,
+        choseColor,
+        choseSize,
+        choseSticker,
+      })
+    );
+  };
 
   return (
     <div className={styles.container}>
@@ -95,11 +121,9 @@ export const Product = ({ product }: Products) => {
                         content: i,
                         key: i,
                       }))}
-                      placeholder={"выберите цвет"}
+                      placeholder={choseColor}
                       block={true}
-                      onChange={(option) => {
-                        setChoseColor(option.selected?.content);
-                      }}
+                      onChange={selectColor}
                     />
                   </div>
                 )}
@@ -123,11 +147,9 @@ export const Product = ({ product }: Products) => {
                         content: i,
                         key: i,
                       }))}
-                      placeholder={"выберите размер"}
+                      placeholder={choseSize}
                       block={true}
-                      onChange={(option) => {
-                        setChoseSize(option.selected?.content);
-                      }}
+                      onChange={selectSize}
                     />
                   </div>
                 )}
@@ -152,11 +174,9 @@ export const Product = ({ product }: Products) => {
                           content: i,
                           key: i,
                         }))}
-                        placeholder={"выберите стикер"}
+                        placeholder={choseSticker}
                         block={true}
-                        onChange={(option) => {
-                          setChoseSticker(option.selected?.content);
-                        }}
+                        onChange={selectStickerNumber}
                       />
                     </div>
                   )}
@@ -164,19 +184,7 @@ export const Product = ({ product }: Products) => {
                   size="s"
                   className={styles.button}
                   view="accent"
-                  onClick={() =>
-                    dispatch(
-                      addToCart({
-                        id,
-                        title,
-                        choseImg,
-                        price,
-                        choseColor,
-                        choseSize,
-                        choseSticker,
-                      })
-                    )
-                  }
+                  onClick={dispatchAddToCart}
                 >
                   В корзину
                 </Button>

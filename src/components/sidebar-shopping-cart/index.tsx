@@ -11,33 +11,35 @@ export const SidebarShoppingCart = ({
   cartArr,
 }: Product) => {
   return (
-    <React.Fragment>
-      <SidePanelResponsive
-        onBackdropClick={handeMenuOpen}
-        className={styles.sideContainer}
-        open={isActive}
-        placement="right"
-        hasCloser={true}
-        onClose={handeMenuOpen}
-      >
-        <SidePanelResponsive.Header
-          className={styles.header}
+    <div>
+      {cartArr.length > 0 && (
+        <SidePanelResponsive
+          onBackdropClick={handeMenuOpen}
+          className={styles.sideContainer}
+          open={isActive}
+          placement="right"
           hasCloser={true}
-        />
-        <SidePanelResponsive.Content className={styles.content}>
-          <Typography.TitleResponsive
-            className={styles.text}
-            view="medium"
-            tag="h3"
-            weight="bold"
-            defaultMargins={true}
-            font="styrene"
-          >
-            Ваш заказ
-          </Typography.TitleResponsive>
-          <CellShoppingCart cartArr={cartArr} />
-        </SidePanelResponsive.Content>
-      </SidePanelResponsive>
-    </React.Fragment>
+          onClose={handeMenuOpen}
+        >
+          <SidePanelResponsive.Header
+            className={styles.header}
+            hasCloser={true}
+          />
+          <SidePanelResponsive.Content className={styles.content}>
+            <Typography.TitleResponsive
+              className={styles.text}
+              view="medium"
+              tag="h3"
+              weight="bold"
+              defaultMargins={true}
+              font="styrene"
+            >
+              Ваш заказ
+            </Typography.TitleResponsive>
+            <CellShoppingCart cartArr={cartArr} />
+          </SidePanelResponsive.Content>
+        </SidePanelResponsive>
+      )}
+    </div>
   );
 };

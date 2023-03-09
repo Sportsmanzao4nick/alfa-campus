@@ -18,7 +18,6 @@
 }
 
 @media (max-width: 1024px) {
-
     .images {
         max-width: 295px;
         max-height: 295px;
@@ -28,7 +27,6 @@
 }
 
 @media (max-width: 470px) {
-
     .graphics {
         max-width: 420px;
         max-height: 420px;

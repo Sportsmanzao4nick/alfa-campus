@@ -9,7 +9,7 @@ import styles from "./index.module.css";
 export const Header = () => {
   const [isActive, setActive] = useState(false);
   const handeMenuOpen = () => {
-    setActive(!isActive);
+    setActive(prev => !prev)
   };
   const menuClose = () => {
     setActive(false);

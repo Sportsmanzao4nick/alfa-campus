@@ -1,3 +1,7 @@
+.container {
+
+}
+
 .sideContainer {
     background-color: var(--color-light-bg-primary);
 }
@@ -49,7 +53,6 @@
 
 
 @media (max-width: 600px) {
-
     .sideContainer {
         position: relative;
         z-index: 1;
@@ -77,5 +80,4 @@
     .text {
         color: #000000;
     }
-
 }

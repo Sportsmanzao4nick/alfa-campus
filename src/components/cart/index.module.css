@@ -3,26 +3,42 @@
     top: 10%;
     right: 3%;
     cursor: pointer;
+    animation: zoom-in-out 0.5s forwards;
+}
+
+@keyframes zoom-in-out {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .buttonIcon {
     border-radius: 100%;
     color: var(--color-light-bg-primary);
     background-color: var(--color-light-bg-accent);
+    transition: transform 0.2s ease-in-out;
+}
+
+.buttonIcon:hover {
+    transform: scale(1.4);
 }
 
 @media (max-width: 1024px) {
-
     .circleButtonIcon {
-        top: 80%;
+        top: unset;
+        bottom: 10%;
     }
-
 }
 
 @media (max-width: 600px) {
-
     .circleButtonIcon {
-        top: 90%;
+        top: unset;
+        bottom: 10%;
     }
-
 }

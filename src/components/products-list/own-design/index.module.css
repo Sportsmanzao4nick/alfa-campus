@@ -15,7 +15,6 @@
 }
 
 @media (max-width: 1024px) {
-
     .link {
         width: 50%;
     }
@@ -27,7 +26,6 @@
 }
 
 @media (max-width: 600px) {
-
     .containerHeader {
         font-size: 42px;
         line-height: 44px;
@@ -35,7 +33,6 @@
 }
 
 @media (max-width: 470px) {
-
     .link {
         width: 100%;
     }

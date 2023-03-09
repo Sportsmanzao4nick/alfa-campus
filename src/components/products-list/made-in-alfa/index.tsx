@@ -32,26 +32,25 @@ export const ProductsListMadeInAlfa = () => {
 
   return (
     <div className={styles.container}>
-      {productsListMadeInAlfa &&
-        productsListMadeInAlfa?.map((item: Product) => {
-          return (
-            <NavLink
+      {productsListMadeInAlfa?.map((item: Product) => {
+        return (
+          <NavLink
+            key={item.id}
+            className={styles.link}
+            to={`/product/${item.id}`}
+          >
+            <Cell
               key={item.id}
-              className={styles.link}
-              to={`/product/${item.id}`}
-            >
-              <Cell
-                key={item.id}
-                preview={item.preview}
-                id={item.id}
-                price={item.price}
-                title={item.title}
-                description={item.description}
-                availability={item.availability}
-              />
-            </NavLink>
-          );
-        })}
+              preview={item.preview}
+              id={item.id}
+              price={item.price}
+              title={item.title}
+              description={item.description}
+              availability={item.availability}
+            />
+          </NavLink>
+        );
+      })}
     </div>
   );
 };
