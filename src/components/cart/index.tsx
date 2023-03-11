@@ -34,7 +34,7 @@ export const Cart = () => {
     <div>
       {cartSelect.cart.length > 0 && (
         <Circle
-          backgroundColor="var(--color-light-bg-primary)"
+          backgroundColor="var(--color-light-graphic-accent)"
           className={styles.circleButtonIcon}
           size={80}
           bottomAddons={iconQuantity}
@@ -42,7 +42,7 @@ export const Cart = () => {
           <ShoppingBagMIcon
             onClick={handeMenuOpen}
             className={styles.buttonIcon}
-          ></ShoppingBagMIcon>
+          />
         </Circle>
       )}
       <SidebarShoppingCart

@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Cell } from "../../products-list-item";
 import { Products } from "./types";
 import { Typography } from "@alfalab/core-components/typography";
 import { NavLink } from "react-router-dom";
+import { Skeleton } from "@alfalab/core-components/skeleton";
 import {
   productsOperations,
   productsSelectors,
@@ -12,6 +13,7 @@ import {
 import styles from "./index.module.css";
 
 export const ProductsListOwnDesign = () => {
+  const [isSkeletonActive, setSkeletonActive] = useState(false);
   const dispatch = useAppDispatch();
   const productsListOwnDesign = useAppSelector(
     productsSelectors.getProductsListOwnDesign
@@ -23,9 +25,9 @@ export const ProductsListOwnDesign = () => {
     dispatch(productsOperations.fetchProductsOwnDesign());
   }, [dispatch]);
 
-  if (isLoading) {
-    return <h2>Loading...</h2>;
-  }
+  useEffect(() => {
+    setSkeletonActive(isLoading);
+  }, [isLoading]);
 
   if (hasError) {
     return <h2>Произошла ошибка, повторите попытку</h2>;
@@ -61,15 +63,20 @@ export const ProductsListOwnDesign = () => {
                     className={styles.link}
                     to={`/product/${item.id}`}
                   >
-                    <Cell
-                      key={item.id}
-                      id={item.id}
-                      subtitle={item.subtitle}
-                      preview={item.preview}
-                      price={item.price}
-                      title={item.title}
-                      description={item.description}
-                    />
+                    <Skeleton
+                      visible={isSkeletonActive}
+                      animate={isSkeletonActive}
+                    >
+                      <Cell
+                        key={item.id}
+                        id={item.id}
+                        subtitle={item.subtitle}
+                        preview={item.preview}
+                        price={item.price}
+                        title={item.title}
+                        description={item.description}
+                      />
+                    </Skeleton>
                   </NavLink>
                 );
               })}

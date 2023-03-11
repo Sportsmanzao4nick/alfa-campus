@@ -5,6 +5,8 @@ const initialState: CartState = {
   cart: [],
   totalQuantity: 0,
   totalPrice: 0,
+  deliveryPrice: 0,
+  totalPriceWithDelivery: 0,
 };
 
 const cartSlice = createSlice({
@@ -73,6 +75,10 @@ const cartSlice = createSlice({
         0
       );
     },
+    totalWithDelivery: (state, action) => {
+      state.deliveryPrice = action.payload;
+      state.totalPriceWithDelivery = state.totalPrice + state.deliveryPrice;
+    },
   },
 });
 
@@ -83,6 +89,7 @@ export const {
   removeItem,
   getTotalQuantity,
   getTotalPrice,
+  totalWithDelivery,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

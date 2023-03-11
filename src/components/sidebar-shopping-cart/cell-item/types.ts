@@ -9,8 +9,6 @@ export interface Product {
     quantity: number;
 }
 
-export interface Props {
-    isActive: boolean;
-    handeMenuOpen: () => void;
+export interface ItemArr {
     cartArr: Product[];
 }

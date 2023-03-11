@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Cell } from "../../products-list-item";
 import { Product } from "./types";
 import { NavLink } from "react-router-dom";
+import { Skeleton } from "@alfalab/core-components/skeleton";
 import {
   productsOperations,
   productsSelectors,
@@ -11,6 +12,7 @@ import {
 import styles from "./index.module.css";
 
 export const ProductsListMadeInAlfa = () => {
+  const [isSkeletonActive, setSkeletonActive] = useState(false);
   const dispatch = useAppDispatch();
   const productsListMadeInAlfa = useAppSelector(
     productsSelectors.getProductsListMadeInAlfa
@@ -22,9 +24,9 @@ export const ProductsListMadeInAlfa = () => {
     dispatch(productsOperations.fetchProductsMadeInAlfa());
   }, [dispatch]);
 
-  if (isLoading) {
-    return <h2>Loading...</h2>;
-  }
+  useEffect(() => {
+    setSkeletonActive(isLoading);
+  }, [isLoading]);
 
   if (hasError) {
     return <h2>Произошла ошибка, повторите попытку</h2>;
@@ -39,15 +41,17 @@ export const ProductsListMadeInAlfa = () => {
             className={styles.link}
             to={`/product/${item.id}`}
           >
-            <Cell
-              key={item.id}
-              preview={item.preview}
-              id={item.id}
-              price={item.price}
-              title={item.title}
-              description={item.description}
-              availability={item.availability}
-            />
+            <Skeleton visible={isSkeletonActive} animate={isSkeletonActive}>
+              <Cell
+                key={item.id}
+                preview={item.preview}
+                id={item.id}
+                price={item.price}
+                title={item.title}
+                description={item.description}
+                availability={item.availability}
+              />
+            </Skeleton>
           </NavLink>
         );
       })}

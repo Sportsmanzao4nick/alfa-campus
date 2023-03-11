@@ -2,61 +2,6 @@
     padding: var(--gap-xl) 0;
 }
 
-.cellContainer {
-    padding-bottom: var(--gap-2xl);
-}
-
-.cellContainer:last-of-type {
-    border-bottom: 1px solid var(--color-light-border-underline-inverted);
-}
-
-.titleText {
-    line-height: 25px;
-    margin: 0;
-}
-
-.text {
-    line-height: 25px;
-    margin: 0;
-}
-
-.image {
-    max-width: 70px;
-    max-height: 70px;
-}
-
-.quantityContainer {
-    display: flex;
-    align-self: center;
-    margin-right: var(--gap-s);
-}
-
-.priceContainer {
-    display: flex;
-    align-self: center;
-}
-
-.iconContainer {
-    margin: 0 var(--gap-s);
-    width: 20px;
-    height: 20px;
-}
-
-.sumContainer {
-    padding-top: var(--gap-s);
-    padding-bottom: var(--gap-l);
-    align-items: end;
-    text-align: end;
-    display: flex;
-}
-
-.amountSum {
-    align-items: end;
-    text-align: end;
-    margin-left: var(--gap-s);
-    font-style: italic;
-}
-
 .buttonContinue {
     width: 100%;
     background-color: #000000;

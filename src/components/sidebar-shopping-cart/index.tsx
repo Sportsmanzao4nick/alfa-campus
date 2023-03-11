@@ -36,7 +36,7 @@ export const SidebarShoppingCart = ({
             >
               Ваш заказ
             </Typography.TitleResponsive>
-            <CellShoppingCart cartArr={cartArr} />
+            <CellShoppingCart cartArr={cartArr} isActive={isActive} handeMenuOpen={handeMenuOpen}/>
           </SidePanelResponsive.Content>
         </SidePanelResponsive>
       )}

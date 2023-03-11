@@ -15,6 +15,8 @@ export interface CartState {
   cart: Item[];
   totalQuantity: number;
   totalPrice: number;
+  deliveryPrice: number;
+  totalPriceWithDelivery: number;
 }
 
 export type AppDispatch = typeof store.dispatch;

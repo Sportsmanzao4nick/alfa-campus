@@ -1,4 +1,4 @@
-export interface Product {
+interface Products {
     choseColor: string;
     choseImg: string;
     choseSize: string;
@@ -8,9 +8,8 @@ export interface Product {
     title: string;
     quantity: number;
 }
-
-export interface Props {
-    isActive: boolean;
-    handeMenuOpen: () => void;
-    cartArr: Product[];
+export interface Product {
+    isModalActive: boolean;
+    handeModalOpen: () => void;
+    cartArr: Products[];
 }
