@@ -2,10 +2,6 @@
     padding-bottom: var(--gap-2xl);
 }
 
-/*.cellContainer:last-of-type {*/
-/*    border-bottom: 1px solid var(--color-light-border-underline-inverted);*/
-/*}*/
-
 .titleText {
     line-height: 25px;
     margin: 0;
