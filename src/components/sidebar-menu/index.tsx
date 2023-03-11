@@ -18,7 +18,6 @@ export const SidebarMenu = ({
   return (
     <React.Fragment>
       <SidePanelResponsive
-        onBackdropClick={handeMenuOpen}
         className={styles.sideContainer}
         open={isActive}
         placement="right"

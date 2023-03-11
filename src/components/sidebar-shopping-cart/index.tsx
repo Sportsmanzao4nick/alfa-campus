@@ -14,7 +14,6 @@ export const SidebarShoppingCart = ({
     <div>
       {cartArr.length > 0 && (
         <SidePanelResponsive
-          onBackdropClick={handeMenuOpen}
           className={styles.sideContainer}
           open={isActive}
           placement="right"
@@ -36,7 +35,11 @@ export const SidebarShoppingCart = ({
             >
               Ваш заказ
             </Typography.TitleResponsive>
-            <CellShoppingCart cartArr={cartArr} isActive={isActive} handeMenuOpen={handeMenuOpen}/>
+            <CellShoppingCart
+              cartArr={cartArr}
+              isActive={isActive}
+              handeMenuOpen={handeMenuOpen}
+            />
           </SidePanelResponsive.Content>
         </SidePanelResponsive>
       )}
