@@ -1,0 +1,50 @@
+.titleText {
+    line-height: 1.55;
+}
+
+.inputItemContainer {
+    padding-bottom: var(--gap-l);
+}
+
+.input {
+    margin: var(--gap-2xs) 0;
+    border-radius: 13px;
+    border: 1px solid #000000;
+}
+
+.inputError {
+    margin: var(--gap-2xs) 0;
+    border-radius: 13px;
+    border: 1px solid var(--color-light-text-accent);
+}
+
+.buttonCheckPromo {
+    width: 100%;
+    background-color: #000000;
+}
+
+.invisibleButton {
+    display: none;
+}
+
+.buttonContinue {
+    width: 100%;
+    background-color: #000000;
+    margin-top: var(--gap-m);
+}
+
+.sumContainer {
+    width: 100%;
+}
+
+.sumContainerSmallerWidth {
+    display: none;
+}
+
+
+@media (max-width: 1024px) {
+    .sumContainerSmallerWidth {
+        display: block;
+    }
+}
+

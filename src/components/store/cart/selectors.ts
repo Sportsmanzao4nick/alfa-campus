@@ -9,3 +9,5 @@ export const getTotalPrice = (state: ApplicationState) => getCart(state).totalPr
 export const getDeliveryPrice = (state: ApplicationState) => getCart(state).deliveryPrice;
 
 export const getTotalPriceWithDelivery = (state: ApplicationState) => getCart(state).totalPriceWithDelivery;
+
+export const getCustomerInfo = (state: ApplicationState) => getCart(state).customerInfo;

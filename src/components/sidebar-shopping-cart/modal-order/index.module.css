@@ -36,25 +36,6 @@
     line-height: 1.55;
 }
 
-.inputItemContainer {
-    padding-bottom: var(--gap-l);
-}
-
-.input {
-    margin: var(--gap-2xs) 0;
-    border-radius: 13px;
-    border: 1px solid #000000;
-}
-
-.buttonCheckPromo {
-    width: 100%;
-    background-color: #000000;
-}
-
-.invisibleButton {
-    display: none;
-}
-
 .productsContainer {
     position: fixed;
     max-width: 500px;
@@ -62,20 +43,6 @@
     right: 20vw;
     width: 25%;
     padding: 0 var(--gap-xs);
-}
-
-.buttonContinue {
-    width: 100%;
-    background-color: #000000;
-    margin-top: var(--gap-m);
-}
-
-.sumContainer {
-    width: 100%;
-}
-
-.sumContainerSmallerWidth {
-    display: none;
 }
 
 @media (max-width: 1024px) {
@@ -93,10 +60,6 @@
         position: static;
         width: 95%;
         padding: var(--gap-xl) var(--gap-s);
-    }
-
-    .sumContainerSmallerWidth {
-        display: block;
     }
 }
 

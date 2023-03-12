@@ -1,6 +1,6 @@
 import { store } from "./rootReducer";
 
-type Item = {
+export type productItem = {
   choseColor: string;
   choseImg: string;
   choseSize: string;
@@ -11,12 +11,29 @@ type Item = {
   quantity: number;
 };
 
+export type customerItem = {
+  fullName: string,
+  email: string,
+  phone: string,
+  address: string,
+  comments: string,
+
+}
+
 export interface CartState {
-  cart: Item[];
+  cart: productItem[];
   totalQuantity: number;
   totalPrice: number;
   deliveryPrice: number;
   totalPriceWithDelivery: number;
+  customerInfo: customerItem[];
+  isLoading: boolean,
+  hasError: boolean,
+}
+
+export interface SubmitState {
+  cart: productItem[];
+  customerInfo: customerItem[];
 }
 
 export type AppDispatch = typeof store.dispatch;

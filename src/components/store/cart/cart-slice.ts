@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { CartState } from "../types";
+import { postOrder } from "./thunk";
 
 const initialState: CartState = {
   cart: [],
@@ -7,6 +8,9 @@ const initialState: CartState = {
   totalPrice: 0,
   deliveryPrice: 0,
   totalPriceWithDelivery: 0,
+  customerInfo:[],
+  isLoading: false,
+  hasError: false,
 };
 
 const cartSlice = createSlice({
@@ -79,6 +83,24 @@ const cartSlice = createSlice({
       state.deliveryPrice = action.payload;
       state.totalPriceWithDelivery = state.totalPrice + state.deliveryPrice;
     },
+    addCustomerInfo: (state, action) => {
+      const itemToAdd = action.payload;
+      state.customerInfo.push({...itemToAdd});
+    }
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(postOrder.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(postOrder.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.hasError = false;
+      })
+      .addCase(postOrder.rejected, (state) => {
+        state.isLoading = false;
+        state.hasError = true;
+      });
   },
 });
 
@@ -90,6 +112,7 @@ export const {
   getTotalQuantity,
   getTotalPrice,
   totalWithDelivery,
+  addCustomerInfo
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
