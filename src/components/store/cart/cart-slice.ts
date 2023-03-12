@@ -2,13 +2,23 @@ import { createSlice } from "@reduxjs/toolkit";
 import { CartState } from "../types";
 import { postOrder } from "./thunk";
 
+const cartItems =
+  localStorage.getItem("cart") !== null
+    ? JSON.parse(localStorage.getItem("cart") as string)
+    : [];
+
+const totalQuantityItem =
+  localStorage.getItem("totalQuantity") !== null
+    ? JSON.parse(localStorage.getItem("totalQuantity") as string)
+    : 0;
+
 const initialState: CartState = {
-  cart: [],
-  totalQuantity: 0,
+  cart: cartItems,
+  totalQuantity: totalQuantityItem,
   totalPrice: 0,
   deliveryPrice: 0,
   totalPriceWithDelivery: 0,
-  customerInfo:[],
+  customerInfo: [],
   isLoading: false,
   hasError: false,
 };
@@ -30,6 +40,10 @@ const cartSlice = createSlice({
       } else {
         state.cart.push({ ...itemToAdd, quantity: 1 });
       }
+      localStorage.setItem(
+        "cart",
+        JSON.stringify(state.cart.map((item) => item))
+      );
     },
     incrementQuantity: (state, action) => {
       const itemToInc = action.payload;
@@ -72,6 +86,10 @@ const cartSlice = createSlice({
         (total, product) => total + product.quantity,
         0
       );
+      localStorage.setItem(
+        "totalQuantity",
+        JSON.stringify(state.totalQuantity)
+      );
     },
     getTotalPrice: (state) => {
       state.totalPrice = state.cart.reduce(
@@ -85,8 +103,8 @@ const cartSlice = createSlice({
     },
     addCustomerInfo: (state, action) => {
       const itemToAdd = action.payload;
-      state.customerInfo.push({...itemToAdd});
-    }
+      state.customerInfo.push({ ...itemToAdd });
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -112,7 +130,7 @@ export const {
   getTotalQuantity,
   getTotalPrice,
   totalWithDelivery,
-  addCustomerInfo
+  addCustomerInfo,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
