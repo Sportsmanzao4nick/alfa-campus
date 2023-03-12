@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { ProductState } from "./types";
 import { useParams } from "react-router-dom";
 import { Product } from "../product-card-item";
@@ -12,7 +12,6 @@ import {
 import styles from "./index.module.css";
 
 export const ProductCard = () => {
-  const [isSkeletonActive, setSkeletonActive] = useState(false);
   const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
   const product: ProductState | null = useAppSelector(
@@ -25,16 +24,12 @@ export const ProductCard = () => {
     dispatch(productsOperations.fetchProductById(id));
   }, [dispatch, id]);
 
-  useEffect(() => {
-    setSkeletonActive(isLoading);
-  }, [isLoading]);
-
   if (hasError) {
     return <h2>Произошла ошибка, повторите попытку</h2>;
   }
 
   return product ? (
-    <Skeleton visible={isSkeletonActive} animate={isSkeletonActive}>
+    <Skeleton visible={isLoading} animate={true} >
       <Product product={product} />
     </Skeleton>
   ) : null;

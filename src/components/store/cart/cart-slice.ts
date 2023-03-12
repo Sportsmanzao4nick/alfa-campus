@@ -2,6 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import { CartState } from "../types";
 import { postOrder } from "./thunk";
 
+const localStorageFunc = (state) => {
+  localStorage.setItem("cart", JSON.stringify(state.cart.map((item) => item)));
+  localStorage.setItem("totalQuantity", JSON.stringify(state.totalQuantity));
+};
+
 const cartItems =
   localStorage.getItem("cart") !== null
     ? JSON.parse(localStorage.getItem("cart") as string)
@@ -40,14 +45,7 @@ const cartSlice = createSlice({
       } else {
         state.cart.push({ ...itemToAdd, quantity: 1 });
       }
-      localStorage.setItem(
-        "cart",
-        JSON.stringify(state.cart.map((item) => item))
-      );
-      localStorage.setItem(
-          "totalQuantity",
-          JSON.stringify(state.totalQuantity)
-      );
+      localStorageFunc(state);
     },
     incrementQuantity: (state, action) => {
       const itemToInc = action.payload;
@@ -60,14 +58,7 @@ const cartSlice = createSlice({
       if (itemIndex >= 0) {
         state.cart[itemIndex].quantity++;
       }
-      localStorage.setItem(
-          "cart",
-          JSON.stringify(state.cart.map((item) => item))
-      );
-      localStorage.setItem(
-          "totalQuantity",
-          JSON.stringify(state.totalQuantity)
-      );
+      localStorageFunc(state);
     },
     decrementQuantity: (state, action) => {
       const itemToDec = action.payload;
@@ -83,14 +74,7 @@ const cartSlice = createSlice({
           state.cart.splice(itemIndex, 1);
         }
       }
-      localStorage.setItem(
-          "cart",
-          JSON.stringify(state.cart.map((item) => item))
-      );
-      localStorage.setItem(
-          "totalQuantity",
-          JSON.stringify(state.totalQuantity)
-      );
+      localStorageFunc(state);
     },
     removeItem: (state, action) => {
       const itemToRem = action.payload;
@@ -100,42 +84,21 @@ const cartSlice = createSlice({
         return sameKeys.every((key) => item[key] === itemToRem[key]);
       });
       state.cart.splice(itemIndex, 1);
-      localStorage.setItem(
-          "cart",
-          JSON.stringify(state.cart.map((item) => item))
-      );
-      localStorage.setItem(
-          "totalQuantity",
-          JSON.stringify(state.totalQuantity)
-      );
+      localStorageFunc(state);
     },
     getTotalQuantity: (state) => {
       state.totalQuantity = state.cart.reduce(
         (total, product) => total + product.quantity,
         0
       );
-      localStorage.setItem(
-          "cart",
-          JSON.stringify(state.cart.map((item) => item))
-      );
-      localStorage.setItem(
-          "totalQuantity",
-          JSON.stringify(state.totalQuantity)
-      );
+      localStorageFunc(state);
     },
     getTotalPrice: (state) => {
       state.totalPrice = state.cart.reduce(
         (total, product) => total + product.price * product.quantity,
         0
       );
-      localStorage.setItem(
-          "cart",
-          JSON.stringify(state.cart.map((item) => item))
-      );
-      localStorage.setItem(
-          "totalQuantity",
-          JSON.stringify(state.totalQuantity)
-      );
+      localStorageFunc(state);
     },
     totalWithDelivery: (state, action) => {
       state.deliveryPrice = action.payload;

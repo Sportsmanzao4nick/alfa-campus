@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Cell } from "../../products-list-item";
 import { Product } from "./types";
 import { NavLink } from "react-router-dom";
@@ -12,7 +12,6 @@ import {
 import styles from "./index.module.css";
 
 export const ProductsListMadeInAlfa = () => {
-  const [isSkeletonActive, setSkeletonActive] = useState(false);
   const dispatch = useAppDispatch();
   const productsListMadeInAlfa = useAppSelector(
     productsSelectors.getProductsListMadeInAlfa
@@ -23,10 +22,6 @@ export const ProductsListMadeInAlfa = () => {
   useEffect(() => {
     dispatch(productsOperations.fetchProductsMadeInAlfa());
   }, [dispatch]);
-
-  useEffect(() => {
-    setSkeletonActive(isLoading);
-  }, [isLoading]);
 
   if (hasError) {
     return <h2>Произошла ошибка, повторите попытку</h2>;
@@ -41,7 +36,7 @@ export const ProductsListMadeInAlfa = () => {
             className={styles.link}
             to={`/product/${item.id}`}
           >
-            <Skeleton visible={isSkeletonActive} animate={isSkeletonActive}>
+            <Skeleton visible={isLoading} animate={true}>
               <Cell
                 key={item.id}
                 preview={item.preview}

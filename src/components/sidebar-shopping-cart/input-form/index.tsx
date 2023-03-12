@@ -29,6 +29,19 @@ const onSubmit = async (values, actions) => {
 };
 
 export const InputForm = () => {
+  const [checked, setChecked] = useState(false);
+  const [isVisibleButton, setVisibleButton] = useState(false);
+  const onChangeDelivery = (event) => {
+    dispatch(totalWithDelivery(Number(event.target.value)));
+  };
+
+  const handleChangeCheckBox = () => {
+    setChecked((prev) => !prev);
+  };
+
+  const handleChangeButton = () => {
+    setVisibleButton(true);
+  };
   const dispatch = useAppDispatch();
   const cart = useAppSelector(cartSelectors.getCart);
   const customerInfo = useAppSelector(cartSelectors.getCustomerInfo);
@@ -37,18 +50,6 @@ export const InputForm = () => {
   const totalPriceWithDelivery = useAppSelector(
     cartSelectors.getTotalPriceWithDelivery
   );
-
-  const onChangeDelivery = (event) => {
-    dispatch(totalWithDelivery(Number(event.target.value)));
-  };
-  const [checked, setChecked] = useState(false);
-  const handleChangeCheckBox = () => {
-    setChecked((prev) => !prev);
-  };
-  const [isVisibleButton, setVisibleButton] = useState(false);
-  const handleChangeButton = () => {
-    setVisibleButton(true);
-  };
 
   const submitData = () => {
     dispatch(
@@ -66,7 +67,6 @@ export const InputForm = () => {
   const {
     values,
     errors,
-    touched,
     isSubmitting,
     handleBlur,
     handleChange,
@@ -102,22 +102,12 @@ export const InputForm = () => {
           placeholder="Фамилия Имя Отчество"
           size="m"
           id="fullName"
-          className={errors.fullName ? styles.inputError : styles.input}
+          className={styles.input}
           value={values.fullName}
           onChange={handleChange}
           onBlur={handleBlur}
+          error={errors.fullName}
         />
-        {errors.fullName && touched.fullName && (
-          <Typography.Text
-            className={styles.error}
-            view="primary-medium"
-            tag="div"
-            weight="medium"
-            color="accent"
-          >
-            {errors.fullName}
-          </Typography.Text>
-        )}
       </div>
       <div className={styles.inputItemContainer}>
         <Typography.TitleResponsive
@@ -134,22 +124,12 @@ export const InputForm = () => {
           placeholder="example@site.ru"
           size="m"
           id="email"
-          className={errors.email ? styles.inputError : styles.input}
+          className={styles.input}
           value={values.email}
           onChange={handleChange}
           onBlur={handleBlur}
+          error={errors.email}
         />
-        {errors.email && touched.email && (
-          <Typography.Text
-            className={styles.error}
-            view="primary-medium"
-            tag="div"
-            weight="medium"
-            color="accent"
-          >
-            {errors.email}
-          </Typography.Text>
-        )}
       </div>
       <div className={styles.inputItemContainer}>
         <Typography.TitleResponsive
@@ -165,23 +145,13 @@ export const InputForm = () => {
           block={true}
           placeholder="+7 000 000 00 00"
           size="m"
-          className={errors.phone ? styles.inputError : styles.input}
+          className={styles.input}
           id="phone"
           value={values.phone}
           onChange={handleChange}
           onBlur={handleBlur}
+          error={errors.phone}
         />
-        {errors.phone && touched.phone && (
-          <Typography.Text
-            className={styles.error}
-            view="primary-medium"
-            tag="div"
-            weight="medium"
-            color="accent"
-          >
-            {errors.phone}
-          </Typography.Text>
-        )}
       </div>
       <div className={styles.inputItemContainer}>
         <Typography.TitleResponsive
@@ -270,18 +240,8 @@ export const InputForm = () => {
           id="checkBox"
           onChange={handleChangeCheckBox}
           checked={checked}
+          error={errors.checkBox}
         />
-        {errors.checkBox && touched.checkBox && (
-          <Typography.Text
-            className={styles.error}
-            view="primary-medium"
-            tag="div"
-            weight="medium"
-            color="accent"
-          >
-            {errors.checkBox}
-          </Typography.Text>
-        )}
       </div>
       <div className={styles.inputItemContainer}>
         <Typography.TitleResponsive

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Products } from "./types";
 import { PureCell } from "@alfalab/core-components/pure-cell";
 import { Typography } from "@alfalab/core-components/typography";
@@ -30,6 +30,27 @@ export const Product = ({ product }: Products) => {
   const selectStickerNumber = (option) => {
     setChoseSticker(option.selected?.content);
   };
+
+  const memoizedColors = useMemo(() => {
+    return product.colors?.map((i, index) => ({
+      content: i,
+      key: i,
+    }));
+  }, [product.colors]);
+
+  const memoizedSizes = useMemo(() => {
+    return product.sizes?.map((i, index) => ({
+      content: i,
+      key: i,
+    }));
+  }, [product.sizes]);
+
+  const memoizedStickers = useMemo(() => {
+    return product.stickerNumbers?.map((i, index) => ({
+      content: i,
+      key: i,
+    }));
+  }, [product.stickerNumbers]);
 
   const { id, title, price } = product;
 
@@ -117,13 +138,11 @@ export const Product = ({ product }: Products) => {
                       className={styles.selectorItem}
                       allowUnselect={true}
                       size="s"
-                      options={product.colors?.map((i) => ({
-                        content: i,
-                        key: i,
-                      }))}
+                      options={memoizedColors}
                       placeholder={choseColor}
                       block={true}
                       onChange={selectColor}
+                      selected={choseColor}
                     />
                   </div>
                 )}
@@ -143,13 +162,11 @@ export const Product = ({ product }: Products) => {
                       className={styles.selectorItem}
                       allowUnselect={true}
                       size="s"
-                      options={product.sizes?.map((i) => ({
-                        content: i,
-                        key: i,
-                      }))}
+                      options={memoizedSizes}
                       placeholder={choseSize}
                       block={true}
                       onChange={selectSize}
+                      selected={choseSize}
                     />
                   </div>
                 )}
@@ -170,13 +187,11 @@ export const Product = ({ product }: Products) => {
                         className={styles.selectorItem}
                         allowUnselect={true}
                         size="s"
-                        options={product.stickerNumbers?.map((i) => ({
-                          content: i,
-                          key: i,
-                        }))}
+                        options={memoizedStickers}
                         placeholder={choseSticker}
                         block={true}
                         onChange={selectStickerNumber}
+                        selected={choseSticker}
                       />
                     </div>
                   )}

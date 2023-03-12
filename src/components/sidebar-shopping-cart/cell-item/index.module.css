@@ -47,7 +47,6 @@
     align-items: end;
     text-align: end;
     margin-left: var(--gap-s);
-    font-style: italic;
 }
 
 @media (max-width: 600px) {

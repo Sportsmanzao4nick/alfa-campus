@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Cell } from "../../products-list-item";
 import { Products } from "./types";
 import { Typography } from "@alfalab/core-components/typography";
@@ -13,7 +13,6 @@ import {
 import styles from "./index.module.css";
 
 export const ProductsListOwnDesign = () => {
-  const [isSkeletonActive, setSkeletonActive] = useState(false);
   const dispatch = useAppDispatch();
   const productsListOwnDesign = useAppSelector(
     productsSelectors.getProductsListOwnDesign
@@ -24,10 +23,6 @@ export const ProductsListOwnDesign = () => {
   useEffect(() => {
     dispatch(productsOperations.fetchProductsOwnDesign());
   }, [dispatch]);
-
-  useEffect(() => {
-    setSkeletonActive(isLoading);
-  }, [isLoading]);
 
   if (hasError) {
     return <h2>Произошла ошибка, повторите попытку</h2>;
@@ -63,10 +58,7 @@ export const ProductsListOwnDesign = () => {
                     className={styles.link}
                     to={`/product/${item.id}`}
                   >
-                    <Skeleton
-                      visible={isSkeletonActive}
-                      animate={isSkeletonActive}
-                    >
+                    <Skeleton visible={isLoading} animate={true}>
                       <Cell
                         key={item.id}
                         id={item.id}
