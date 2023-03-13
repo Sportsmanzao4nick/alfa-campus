@@ -71,7 +71,6 @@ export const InputForm = () => {
       },
     };
     dispatch(productsOperations.postOrder(order));
-    console.log(order);
   };
 
   const {

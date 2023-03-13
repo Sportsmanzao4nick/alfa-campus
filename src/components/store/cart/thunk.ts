@@ -15,9 +15,6 @@ export const postOrder = createAsyncThunk(
         orderInfo
       );
 
-        console.log('orderInfo', orderInfo);
-        console.log('eto responsedata', response.data)
-
       if (response.status !== 200) {
         throw new Error("Error!");
       }
