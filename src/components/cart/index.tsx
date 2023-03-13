@@ -12,13 +12,14 @@ export const Cart = () => {
   const handeMenuOpen = () => {
     setActive((prev) => !prev);
   };
+
   const dispatch = useAppDispatch();
   const cartSelect = useAppSelector(cartSelectors.getCart);
   const totalQuantity = useAppSelector(cartSelectors.getTotalQuantity);
 
   useEffect(() => {
     dispatch(getTotalQuantity());
-  }, [cartSelect]);
+  }, [cartSelect, dispatch]);
 
   const iconQuantity = (
     <Badge

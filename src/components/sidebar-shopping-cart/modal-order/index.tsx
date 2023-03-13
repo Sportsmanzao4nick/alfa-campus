@@ -25,6 +25,7 @@ export const ModalOrder = ({
       hasCloser={true}
       onClose={handeModalOpen}
       size="fullscreen"
+      className={styles.modal}
     >
       <ModalResponsive.Header
         hasCloser={true}

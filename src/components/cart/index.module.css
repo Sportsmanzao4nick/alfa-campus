@@ -2,7 +2,6 @@
     position: fixed;
     top: 10%;
     right: 3%;
-    cursor: pointer;
     animation: zoom-in-out 0.5s forwards;
 }
 
@@ -19,6 +18,7 @@
 }
 
 .buttonIcon {
+    cursor: pointer;
     border-radius: 100%;
     color: var(--color-light-bg-primary);
     background-color: var(--color-light-bg-accent);
