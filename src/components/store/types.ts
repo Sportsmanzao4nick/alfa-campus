@@ -39,6 +39,7 @@ export interface SubmitState {
       phone: string;
       address: string;
       comments: string;
+      checkBox: boolean;
     };
   };
 }

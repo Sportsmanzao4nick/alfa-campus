@@ -67,6 +67,7 @@ export const InputForm = () => {
         phone: phone,
         address: address,
         comments: comments,
+        checkBox: checkBox,
       },
     };
     dispatch(productsOperations.postOrder(order));
@@ -87,16 +88,13 @@ export const InputForm = () => {
       phone: "",
       address: "",
       comments: "",
-      checkBox: false,
+      checkBox: checked,
     },
     validationSchema: userSchema,
     onSubmit,
   });
-  const { fullName, email, phone, address, comments } = values;
-
-  console.log('checked', checked);
-  console.log('errors.checkBox', errors.checkBox)
-
+  const { fullName, email, phone, address, comments, checkBox } = values;
+  values.checkBox = checked;
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
       <div className={styles.inputItemContainer}>
