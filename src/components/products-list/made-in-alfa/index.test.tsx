@@ -3,10 +3,6 @@ import { ProductsListMadeInAlfa } from "./index";
 import React from "react";
 import {Provider} from "react";
 
-import ReactReduxHooks from "react-redux";
-import axios from "axios";
-import { Cell } from "../../products-list-item/products-list";
-import { MadeInAlfa } from "../../../pages/made-in-alfa";
 
 // jest.mock('ProductList', () => {
 //     return jest.fn(() => null)

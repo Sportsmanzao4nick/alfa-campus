@@ -38,7 +38,7 @@
     border-top: 1px solid var(--color-light-border-underline-inverted);
     padding-top: var(--gap-s);
     padding-bottom: var(--gap-l);
-    align-items: end;
+    align-items: flex-end;
     text-align: end;
     display: flex;
 }

@@ -71,7 +71,9 @@ export const InputForm = () => {
       },
     };
     dispatch(productsOperations.postOrder(order));
+    console.log(order);
   };
+
 
   const {
     values,
@@ -94,6 +96,8 @@ export const InputForm = () => {
   });
   const { fullName, email, phone, address, comments, checkBox } = values;
   values.checkBox = checked;
+  console.log(Object.keys(errors).length ===0)
+  console.log(errors);
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
       <div className={styles.inputItemContainer}>
@@ -359,7 +363,7 @@ export const InputForm = () => {
         className={styles.buttonContinue}
         view="accent"
         type="submit"
-        onClick={submitData}
+        onClick={Object.keys(errors).length ===0 ? submitData : undefined}
       >
         Дальше
       </Button>

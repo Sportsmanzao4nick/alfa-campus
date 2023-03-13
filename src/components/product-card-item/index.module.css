@@ -16,7 +16,7 @@
 .asideImagesContainer {
     max-width: 560px;
     align-self: start;
-    align-items: start;
+    align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
 }
