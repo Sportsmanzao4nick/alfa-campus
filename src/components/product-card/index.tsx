@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ProductState } from "./types";
 import { useParams } from "react-router-dom";
 import { Product } from "../product-card-item";
@@ -29,7 +29,7 @@ export const ProductCard = () => {
   }
 
   return product ? (
-    <Skeleton visible={isLoading} animate={true} >
+    <Skeleton visible={isLoading} animate={true}>
       <Product product={product} />
     </Skeleton>
   ) : null;

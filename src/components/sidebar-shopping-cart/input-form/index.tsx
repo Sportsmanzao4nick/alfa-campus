@@ -23,9 +23,8 @@ import {
 } from "../../store/cart/cart-slice";
 import styles from "./index.module.css";
 
-const onSubmit = async (values, actions) => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  actions.resetForm();
+const onSubmit = (values) => {
+  console.log("values", { values });
 };
 
 export const InputForm = () => {
@@ -44,7 +43,6 @@ export const InputForm = () => {
   };
   const dispatch = useAppDispatch();
   const cart = useAppSelector(cartSelectors.getCart);
-  const customerInfo = useAppSelector(cartSelectors.getCustomerInfo);
   const totalPrice = useAppSelector(cartSelectors.getTotalPrice);
   const deliveryPrice = useAppSelector(cartSelectors.getDeliveryPrice);
   const totalPriceWithDelivery = useAppSelector(
@@ -61,7 +59,18 @@ export const InputForm = () => {
         comments,
       })
     );
-    dispatch(productsOperations.postOrder({ cart, customerInfo }));
+    const order = {
+      cart: cart,
+      customerInfo: {
+        fullName: fullName,
+        email: email,
+        phone: phone,
+        address: address,
+        comments: comments,
+      },
+    };
+    dispatch(productsOperations.postOrder(order));
+    console.log(order);
   };
 
   const {
@@ -84,6 +93,9 @@ export const InputForm = () => {
     onSubmit,
   });
   const { fullName, email, phone, address, comments } = values;
+
+  console.log('checked', checked);
+  console.log('errors.checkBox', errors.checkBox)
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
@@ -166,9 +178,11 @@ export const InputForm = () => {
         <Input
           block={true}
           placeholder="Индекс, город, улица, дом, квартира"
+          id="address"
           size="m"
           className={styles.input}
           value={values.address}
+          onChange={handleChange}
         />
       </div>
       <div className={styles.inputItemContainer}>
@@ -256,11 +270,13 @@ export const InputForm = () => {
         <Textarea
           block={true}
           size="m"
+          id="comments"
           autosize={false}
           resize="vertical"
           minRows={5}
           className={styles.input}
           value={values.comments}
+          onChange={handleChange}
         />
       </div>
       <div className={styles.inputItemContainer}>

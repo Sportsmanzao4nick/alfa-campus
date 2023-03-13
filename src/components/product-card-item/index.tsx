@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Products } from "./types";
 import { PureCell } from "@alfalab/core-components/pure-cell";
 import { Typography } from "@alfalab/core-components/typography";
@@ -11,9 +11,9 @@ import styles from "./index.module.css";
 
 export const Product = ({ product }: Products) => {
   const [initialSlide, setInitialSlide] = useState(0);
-  const [choseColor, setChoseColor] = useState(product.colors?.[0]);
-  const [choseSize, setChoseSize] = useState(product.sizes?.[0]);
-  const [choseSticker, setChoseSticker] = useState(product.stickerNumbers?.[0]);
+  const [choseColor, setChoseColor] = useState();
+  const [choseSize, setChoseSize] = useState();
+  const [choseSticker, setChoseSticker] = useState();
 
   const handleOpenGallery = (slideIndex: number) => {
     setInitialSlide(slideIndex);
@@ -51,6 +51,18 @@ export const Product = ({ product }: Products) => {
       key: i,
     }));
   }, [product.stickerNumbers]);
+
+  useEffect(() => {
+    if (memoizedColors?.length > 0) {
+      setChoseColor(memoizedColors[0].content);
+    }
+    if (memoizedSizes?.length > 0) {
+      setChoseSize(memoizedSizes[0].content);
+    }
+    if (memoizedStickers?.length > 0) {
+      setChoseSticker(memoizedStickers[0].content);
+    }
+  }, [memoizedColors, memoizedSizes, memoizedStickers]);
 
   const { id, title, price } = product;
 
@@ -142,7 +154,6 @@ export const Product = ({ product }: Products) => {
                       placeholder={choseColor}
                       block={true}
                       onChange={selectColor}
-                      selected={choseColor}
                     />
                   </div>
                 )}
@@ -166,7 +177,6 @@ export const Product = ({ product }: Products) => {
                       placeholder={choseSize}
                       block={true}
                       onChange={selectSize}
-                      selected={choseSize}
                     />
                   </div>
                 )}
@@ -191,7 +201,6 @@ export const Product = ({ product }: Products) => {
                         placeholder={choseSticker}
                         block={true}
                         onChange={selectStickerNumber}
-                        selected={choseSticker}
                       />
                     </div>
                   )}

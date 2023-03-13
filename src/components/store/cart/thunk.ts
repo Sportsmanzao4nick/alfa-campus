@@ -4,17 +4,19 @@ import {SubmitState} from "../types";
 
 export const postOrder = createAsyncThunk(
   "products/postOrder",
-  async ({ cart, customerInfo }: SubmitState, { rejectWithValue, dispatch }) => {
+  async ({ order }: SubmitState, { rejectWithValue, dispatch }) => {
     try {
       const orderInfo = {
-        cart: cart,
-        customerInfo: customerInfo,
+        order: order
       };
 
       const response = await axios.post(
         "http://qa-games.ru/astore/create-order",
         orderInfo
       );
+
+        console.log('orderInfo', orderInfo);
+        console.log('eto responsedata', response.data)
 
       if (response.status !== 200) {
         throw new Error("Error!");

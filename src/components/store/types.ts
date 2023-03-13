@@ -12,13 +12,12 @@ export type productItem = {
 };
 
 export type customerItem = {
-  fullName: string,
-  email: string,
-  phone: string,
-  address: string,
-  comments: string,
-
-}
+  fullName: string;
+  email: string;
+  phone: string;
+  address: string;
+  comments: string;
+};
 
 export interface CartState {
   cart: productItem[];
@@ -27,13 +26,21 @@ export interface CartState {
   deliveryPrice: number;
   totalPriceWithDelivery: number;
   customerInfo: customerItem[];
-  isLoading: boolean,
-  hasError: boolean,
+  isLoading: boolean;
+  hasError: boolean;
 }
 
 export interface SubmitState {
-  cart: productItem[];
-  customerInfo: customerItem[];
+  order: {
+    cart: productItem[];
+    customerInfo: {
+      fullName: string;
+      email: string;
+      phone: string;
+      address: string;
+      comments: string;
+    };
+  };
 }
 
 export type AppDispatch = typeof store.dispatch;
