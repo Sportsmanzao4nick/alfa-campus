@@ -23,10 +23,6 @@ import {
 } from "../../store/cart/cart-slice";
 import styles from "./index.module.css";
 
-const onSubmit = (values) => {
-  console.log("values", { values });
-};
-
 export const InputForm = () => {
   const [checked, setChecked] = useState(false);
   const [isVisibleButton, setVisibleButton] = useState(false);
@@ -49,7 +45,7 @@ export const InputForm = () => {
     cartSelectors.getTotalPriceWithDelivery
   );
 
-  const submitData = () => {
+  const onSubmit = (values) => {
     dispatch(
       addCustomerInfo({
         fullName,
@@ -74,11 +70,9 @@ export const InputForm = () => {
     console.log(order);
   };
 
-
   const {
     values,
     errors,
-    isSubmitting,
     handleBlur,
     handleChange,
     handleSubmit,
@@ -96,8 +90,7 @@ export const InputForm = () => {
   });
   const { fullName, email, phone, address, comments, checkBox } = values;
   values.checkBox = checked;
-  console.log(Object.keys(errors).length ===0)
-  console.log(errors);
+
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
       <div className={styles.inputItemContainer}>
@@ -363,7 +356,6 @@ export const InputForm = () => {
         className={styles.buttonContinue}
         view="accent"
         type="submit"
-        onClick={Object.keys(errors).length ===0 ? submitData : undefined}
       >
         Дальше
       </Button>

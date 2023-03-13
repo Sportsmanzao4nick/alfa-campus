@@ -9,8 +9,16 @@ import styles from "./index.module.css";
 
 export const Cart = () => {
   const [isActive, setActive] = useState(false);
+  const [isMenuOpening, setMenuOpening] = useState(false);
+
   const handeMenuOpen = () => {
-    setActive((prev) => !prev);
+    if (!isMenuOpening) {
+      setMenuOpening(true);
+      setActive((prev) => !prev);
+      setTimeout(() => {
+        setMenuOpening(false);
+      }, 700);
+    }
   };
 
   const dispatch = useAppDispatch();
@@ -54,5 +62,3 @@ export const Cart = () => {
     </div>
   );
 };
-
-

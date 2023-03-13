@@ -8,9 +8,18 @@ import styles from "./index.module.css";
 
 export const Header = () => {
   const [isActive, setActive] = useState(false);
+  const [isMenuOpening, setMenuOpening] = useState(false);
+
   const handeMenuOpen = () => {
-    setActive(prev => !prev)
+    if (!isMenuOpening) {
+      setMenuOpening(true);
+      setActive((prev) => !prev);
+      setTimeout(() => {
+        setMenuOpening(false);
+      }, 700);
+    }
   };
+
   const menuClose = () => {
     setActive(false);
   };
