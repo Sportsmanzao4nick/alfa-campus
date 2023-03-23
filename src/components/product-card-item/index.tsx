@@ -9,7 +9,15 @@ import { useAppDispatch } from "../store/cart";
 import { addToCart } from "../store/cart/cart-slice";
 import styles from "./index.module.css";
 
+const mapToOptions = (values: string[] = []) => {
+  return values.map((value) => ({
+    content: value,
+    key: value,
+  }));
+};
+
 export const Product = ({ product }: Products) => {
+  const dispatch = useAppDispatch();
   const [initialSlide, setInitialSlide] = useState(0);
   const [choseColor, setChoseColor] = useState();
   const [choseSize, setChoseSize] = useState();
@@ -31,44 +39,42 @@ export const Product = ({ product }: Products) => {
     setChoseSticker(option.selected?.content);
   };
 
-  const memoizedColors = useMemo(() => {
-    return product.colors?.map((i, index) => ({
-      content: i,
-      key: i,
-    }));
-  }, [product.colors]);
+  const memoizedColors = useMemo(
+    () => mapToOptions(product.colors),
+    [product.colors]
+  );
 
-  const memoizedSizes = useMemo(() => {
-    return product.sizes?.map((i, index) => ({
-      content: i,
-      key: i,
-    }));
-  }, [product.sizes]);
+  const memoizedSizes = useMemo(
+    () => mapToOptions(product.sizes),
+    [product.sizes]
+  );
 
-  const memoizedStickers = useMemo(() => {
-    return product.stickerNumbers?.map((i, index) => ({
-      content: i,
-      key: i,
-    }));
-  }, [product.stickerNumbers]);
+  const memoizedStickers = useMemo(
+    () => mapToOptions(product.stickerNumbers),
+    [product.stickerNumbers]
+  );
 
   useEffect(() => {
-    if (memoizedColors?.length > 0) {
+    if (memoizedColors.length > 0) {
       setChoseColor(memoizedColors[0].content);
     }
-    if (memoizedSizes?.length > 0) {
+  }, [memoizedColors]);
+
+  useEffect(() => {
+    if (memoizedSizes.length > 0) {
       setChoseSize(memoizedSizes[0].content);
     }
-    if (memoizedStickers?.length > 0) {
+  }, [memoizedSizes]);
+
+  useEffect(() => {
+    if (memoizedStickers.length > 0) {
       setChoseSticker(memoizedStickers[0].content);
     }
-  }, [memoizedColors, memoizedSizes, memoizedStickers]);
+  }, [memoizedStickers]);
 
   const { id, title, price } = product;
 
   const choseImg = product.images?.find((i, idx) => idx === initialSlide);
-
-  const dispatch = useAppDispatch();
 
   const dispatchAddToCart = () => {
     dispatch(

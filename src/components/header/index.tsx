@@ -8,16 +8,11 @@ import styles from "./index.module.css";
 
 export const Header = () => {
   const [isActive, setActive] = useState(false);
-  const [isMenuOpening, setMenuOpening] = useState(false);
-
   const handeMenuOpen = () => {
-    if (!isMenuOpening) {
-      setMenuOpening(true);
-      setActive((prev) => !prev);
-      setTimeout(() => {
-        setMenuOpening(false);
-      }, 700);
-    }
+    setActive(true);
+  };
+  const handeMenuClose = () => {
+    setActive(false);
   };
 
   const menuClose = () => {
@@ -61,7 +56,11 @@ export const Header = () => {
           </PureCell.Main>
         </PureCell.Content>
       </PureCell>
-      <SidebarMenu isActive={isActive} handeMenuOpen={handeMenuOpen} />
+      <SidebarMenu
+        isActive={isActive}
+        handeMenuOpen={handeMenuOpen}
+        handeMenuClose={handeMenuClose}
+      />
     </div>
   );
 };

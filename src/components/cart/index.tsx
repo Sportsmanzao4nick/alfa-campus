@@ -8,22 +8,17 @@ import { getTotalQuantity } from "../store/cart/cart-slice";
 import styles from "./index.module.css";
 
 export const Cart = () => {
-  const [isActive, setActive] = useState(false);
-  const [isMenuOpening, setMenuOpening] = useState(false);
-
-  const handeMenuOpen = () => {
-    if (!isMenuOpening) {
-      setMenuOpening(true);
-      setActive((prev) => !prev);
-      setTimeout(() => {
-        setMenuOpening(false);
-      }, 700);
-    }
-  };
-
   const dispatch = useAppDispatch();
   const cartSelect = useAppSelector(cartSelectors.getCart);
   const totalQuantity = useAppSelector(cartSelectors.getTotalQuantity);
+  const [isActive, setActive] = useState(false);
+
+  const handeMenuOpen = () => {
+    setActive(true);
+  };
+  const handeMenuClose = () => {
+    setActive(false);
+  };
 
   useEffect(() => {
     dispatch(getTotalQuantity());
@@ -57,6 +52,7 @@ export const Cart = () => {
       <SidebarShoppingCart
         isActive={isActive}
         handeMenuOpen={handeMenuOpen}
+        handeMenuClose={handeMenuClose}
         cartArr={cartSelect.cart}
       />
     </div>

@@ -27,7 +27,7 @@ export const CellItem = ({ cartArr }: ItemArr) => {
 
   useEffect(() => {
     dispatch(getTotalPrice());
-  }, [cartSelect]);
+  }, [cartSelect, dispatch]);
 
   return (
     <div className={styles.container}>

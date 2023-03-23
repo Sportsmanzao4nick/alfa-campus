@@ -11,9 +11,11 @@ import styles from "./index.module.css";
 export const SidebarMenu = ({
   isActive,
   handeMenuOpen,
+  handeMenuClose,
 }: {
   isActive: boolean;
   handeMenuOpen: () => void;
+  handeMenuClose: () => void;
 }) => {
   return (
     <React.Fragment>
@@ -22,7 +24,7 @@ export const SidebarMenu = ({
         open={isActive}
         placement="right"
         hasCloser={true}
-        onClose={handeMenuOpen}
+        onClose={handeMenuClose}
       >
         <SidePanelResponsive.Header
           className={styles.header}

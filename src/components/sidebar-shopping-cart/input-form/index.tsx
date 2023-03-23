@@ -17,17 +17,32 @@ import {
   useAppSelector,
   productsOperations,
 } from "../../store/cart";
-import {
-  totalWithDelivery,
-  addCustomerInfo,
-} from "../../store/cart/cart-slice";
+import { totalWithDelivery } from "../../store/cart/cart-slice";
 import styles from "./index.module.css";
+import { Product } from "./types";
 
 export const InputForm = () => {
+  const dispatch = useAppDispatch();
+  const productsCart = useAppSelector(cartSelectors.getProducts);
+  const totalPrice = useAppSelector(cartSelectors.getTotalPrice);
+  const deliveryPrice = useAppSelector(cartSelectors.getDeliveryPrice);
+  const totalPriceWithDelivery = useAppSelector(
+    cartSelectors.getTotalPriceWithDelivery
+  );
   const [checked, setChecked] = useState(false);
+  const [deliveryType, setDelivery] = useState("");
+  const [paymentType, setPayment] = useState("");
   const [isVisibleButton, setVisibleButton] = useState(false);
   const onChangeDelivery = (event) => {
     dispatch(totalWithDelivery(Number(event.target.value)));
+    if (Number(event.target.value) === 350) {
+      setDelivery("Доставка по России");
+    }
+    if (Number(event.target.value) === 300) {
+      setDelivery("Курьером по Москве");
+    } else {
+      setDelivery("Самовывоз");
+    }
   };
 
   const handleChangeCheckBox = () => {
@@ -37,59 +52,61 @@ export const InputForm = () => {
   const handleChangeButton = () => {
     setVisibleButton(true);
   };
-  const dispatch = useAppDispatch();
-  const cart = useAppSelector(cartSelectors.getCart);
-  const totalPrice = useAppSelector(cartSelectors.getTotalPrice);
-  const deliveryPrice = useAppSelector(cartSelectors.getDeliveryPrice);
-  const totalPriceWithDelivery = useAppSelector(
-    cartSelectors.getTotalPriceWithDelivery
-  );
+
+  const onChangePayment = (event) => {
+    if (event.target.value === "one") {
+      setPayment("Банковская карта");
+    } else {
+      setPayment("Промокод");
+    }
+  };
+  let productObj: Product = { id: 0, totalCount: 0, totalPrice: 0 };
+  let products: Product[] = [];
+
+  productsCart.forEach((item) => {
+    productObj = {
+      id: item.id,
+      totalPrice: item.price * item.quantity,
+      totalCount: item.quantity,
+      ...(item.choseColor && { color: item.choseColor }),
+      ...(item.choseSize && { model: item.choseSize }),
+      ...(item.choseSticker && { stickerNumber: item.choseSticker }),
+    };
+    products.push(productObj);
+  });
 
   const onSubmit = (values) => {
-    dispatch(
-      addCustomerInfo({
-        fullName,
-        email,
-        phone,
-        address,
-        comments,
-      })
-    );
     const order = {
-      cart: cart,
-      customerInfo: {
-        fullName: fullName,
-        email: email,
-        phone: phone,
-        address: address,
-        comments: comments,
-        checkBox: checkBox,
-      },
+      name,
+      email,
+      phone,
+      address,
+      agreement,
+      deliveryType,
+      paymentType,
+      comments,
+      products,
     };
     dispatch(productsOperations.postOrder(order));
     console.log(order);
   };
 
-  const {
-    values,
-    errors,
-    handleBlur,
-    handleChange,
-    handleSubmit,
-  } = useFormik({
+  const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
-      fullName: "",
+      name: "",
       email: "",
       phone: "",
       address: "",
+      agreement: checked,
+      deliveryType: "",
+      paymentType: "",
       comments: "",
-      checkBox: checked,
     },
     validationSchema: userSchema,
     onSubmit,
   });
-  const { fullName, email, phone, address, comments, checkBox } = values;
-  values.checkBox = checked;
+  const { name, email, phone, address, comments, agreement } = values;
+  values.agreement = checked;
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
@@ -107,12 +124,12 @@ export const InputForm = () => {
           block={true}
           placeholder="Фамилия Имя Отчество"
           size="m"
-          id="fullName"
+          id="name"
           className={styles.input}
-          value={values.fullName}
+          value={values.name}
           onChange={handleChange}
           onBlur={handleBlur}
-          error={errors.fullName}
+          error={errors.name}
         />
       </div>
       <div className={styles.inputItemContainer}>
@@ -245,10 +262,10 @@ export const InputForm = () => {
           block={true}
           size="m"
           label="Согласен с политикой конфиденциальности и обработки персональных данных"
-          id="checkBox"
+          id="agreement"
           onChange={handleChangeCheckBox}
           checked={checked}
-          error={errors.checkBox}
+          error={errors.agreement}
         />
       </div>
       <div className={styles.inputItemContainer}>
@@ -286,7 +303,7 @@ export const InputForm = () => {
         </Typography.TitleResponsive>
       </div>
       <div className={styles.inputItemContainer}>
-        <RadioGroup>
+        <RadioGroup onChange={onChangePayment}>
           <Radio
             label="Банковская карта"
             value="one"

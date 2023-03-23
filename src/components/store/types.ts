@@ -7,16 +7,9 @@ export type productItem = {
   choseSticker: number;
   id: number;
   price: number;
+  totalPrice: number;
   title: string;
   quantity: number;
-};
-
-export type customerItem = {
-  fullName: string;
-  email: string;
-  phone: string;
-  address: string;
-  comments: string;
 };
 
 export interface CartState {
@@ -25,21 +18,22 @@ export interface CartState {
   totalPrice: number;
   deliveryPrice: number;
   totalPriceWithDelivery: number;
-  customerInfo: customerItem[];
   isLoading: boolean;
   hasError: boolean;
 }
 
 export interface SubmitState {
   order: {
-    cart: productItem[];
+    products: productItem[];
     customerInfo: {
-      fullName: string;
-      email: string;
-      phone: string;
-      address: string;
-      comments: string;
-      checkBox: boolean;
+      name: string,
+      email: string,
+      phone: string,
+      address: string,
+      agreement: boolean,
+      deliveryType: string,
+      paymentType: string,
+      comment?: string,
     };
   };
 }

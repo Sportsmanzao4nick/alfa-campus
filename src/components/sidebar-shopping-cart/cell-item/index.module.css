@@ -2,6 +2,12 @@
     padding-bottom: var(--gap-2xl);
 }
 
+.mainContainer {
+    min-width: 130px;
+    box-sizing: border-box;
+    width: 98%;
+}
+
 .titleText {
     line-height: 25px;
     margin: 0;
@@ -13,17 +19,21 @@
 }
 
 .image {
-    max-width: 70px;
+    width: 50px;
     max-height: 70px;
 }
 
 .quantityContainer {
+    width: 23%;
+    min-width: 100px;
     display: flex;
     align-self: center;
     margin-right: var(--gap-s);
 }
 
 .priceContainer {
+    width: 23%;
+    min-width: 100px;
     display: flex;
     align-self: center;
 }
@@ -50,6 +60,17 @@
 }
 
 @media (max-width: 600px) {
+    .image {
+        width: 45px;
+        max-height: 55px;
+
+    }
+
+    .mainContainer {
+        min-width: 105px;
+        width: 100%;
+    }
+
     .titleText {
         line-height: 20px;
     }
@@ -59,10 +80,16 @@
     }
 
     .quantityContainer {
-        margin-right: var(--gap-xs);
+        min-width: 80px;
+        margin-right: var(--gap-2xs);
+    }
+
+    .priceContainer {
+        min-width: 80px;
+        margin-right: var(--gap-2xs);
     }
 
     .iconContainer {
-        margin: 0 var(--gap-xs);
+        margin: 0 var(--gap-2xs);
     }
 }

@@ -23,7 +23,6 @@ const initialState: CartState = {
   totalPrice: 0,
   deliveryPrice: 0,
   totalPriceWithDelivery: 0,
-  customerInfo: [],
   isLoading: false,
   hasError: false,
 };
@@ -104,10 +103,6 @@ const cartSlice = createSlice({
       state.deliveryPrice = action.payload;
       state.totalPriceWithDelivery = state.totalPrice + state.deliveryPrice;
     },
-    addCustomerInfo: (state, action) => {
-      const itemToAdd = action.payload;
-      state.customerInfo.push({ ...itemToAdd });
-    },
   },
   extraReducers: (builder) => {
     builder
@@ -133,7 +128,6 @@ export const {
   getTotalQuantity,
   getTotalPrice,
   totalWithDelivery,
-  addCustomerInfo,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

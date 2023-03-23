@@ -1,7 +1,7 @@
 .circleButtonIcon {
     position: fixed;
     top: 10%;
-    right: 3%;
+    right: 5%;
     animation: zoom-in-out 0.5s forwards;
 }
 

@@ -9,6 +9,7 @@ export const SidebarShoppingCart = ({
   isActive,
   handeMenuOpen,
   cartArr,
+  handeMenuClose,
 }: Product) => {
   return (
     <div>
@@ -18,7 +19,7 @@ export const SidebarShoppingCart = ({
           open={isActive}
           placement="right"
           hasCloser={true}
-          onClose={handeMenuOpen}
+          onClose={handeMenuClose}
         >
           <SidePanelResponsive.Header
             className={styles.header}
