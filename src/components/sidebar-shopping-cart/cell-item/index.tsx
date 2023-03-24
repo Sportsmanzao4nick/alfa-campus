@@ -39,7 +39,7 @@ export const CellItem = ({ cartArr }: ItemArr) => {
             className={styles.cellContainer}
           >
             <PureCell.Graphics>
-              <img src={item.choseImg} className={styles.image} />
+              <img src={item.choseImg} className={styles.image} alt="img" />
             </PureCell.Graphics>
             <PureCell.Content>
               <PureCell.Main>
