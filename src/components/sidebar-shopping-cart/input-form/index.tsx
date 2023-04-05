@@ -19,7 +19,7 @@ import {
 } from "../../store/cart";
 import { totalWithDelivery } from "../../store/cart/cart-slice";
 import styles from "./index.module.css";
-import { Product } from "./types";
+import { Order, Product, ValueDelivery } from "./types";
 
 export const InputForm = () => {
   const dispatch = useAppDispatch();
@@ -33,15 +33,15 @@ export const InputForm = () => {
   const [deliveryType, setDelivery] = useState("");
   const [paymentType, setPayment] = useState("");
   const [isVisibleButton, setVisibleButton] = useState(false);
-  const onChangeDelivery = (event) => {
+  const onChangeDelivery = (event: ValueDelivery) => {
     dispatch(totalWithDelivery(Number(event.target.value)));
     if (Number(event.target.value) === 350) {
-      setDelivery("Доставка по России");
+      setDelivery("Доставка по России — 350₽");
     }
     if (Number(event.target.value) === 300) {
-      setDelivery("Курьером по Москве");
+      setDelivery("Курьером по Москве — 300₽");
     } else {
-      setDelivery("Самовывоз");
+      setDelivery("Самовывоз (пр-т Андропова, 18 корп. 3)");
     }
   };
 
@@ -53,7 +53,7 @@ export const InputForm = () => {
     setVisibleButton(true);
   };
 
-  const onChangePayment = (event) => {
+  const onChangePayment = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (event.target.value === "one") {
       setPayment("Банковская карта");
     } else {
@@ -75,7 +75,7 @@ export const InputForm = () => {
     products.push(productObj);
   });
 
-  const onSubmit = (values) => {
+  const onSubmit = (values: Order) => {
     const order = {
       name,
       email,
@@ -88,7 +88,6 @@ export const InputForm = () => {
       products,
     };
     dispatch(productsOperations.postOrder(order));
-    console.log(order);
   };
 
   const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
@@ -101,6 +100,7 @@ export const InputForm = () => {
       deliveryType: "",
       paymentType: "",
       comments: "",
+      products: [],
     },
     validationSchema: userSchema,
     onSubmit,

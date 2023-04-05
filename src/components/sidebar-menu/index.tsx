@@ -25,6 +25,7 @@ export const SidebarMenu = ({
         placement="right"
         hasCloser={true}
         onClose={handeMenuClose}
+        zIndex={70}
       >
         <SidePanelResponsive.Header
           className={styles.header}

@@ -1,4 +1,5 @@
 import { store } from "./rootReducer";
+import {Product} from "../sidebar-shopping-cart/input-form/types";
 
 export type productItem = {
   choseColor: string;
@@ -23,19 +24,15 @@ export interface CartState {
 }
 
 export interface SubmitState {
-  order: {
-    products: productItem[];
-    customerInfo: {
-      name: string,
-      email: string,
-      phone: string,
-      address: string,
-      agreement: boolean,
-      deliveryType: string,
-      paymentType: string,
-      comment?: string,
-    };
-  };
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  agreement: boolean;
+  deliveryType: string;
+  paymentType: string;
+  comments: string;
+  products: Product[];
 }
 
 export type AppDispatch = typeof store.dispatch;
