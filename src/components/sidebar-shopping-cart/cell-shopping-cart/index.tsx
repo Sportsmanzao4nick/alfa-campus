@@ -4,6 +4,7 @@ import { Props } from "./types";
 import { CellItem } from "../cell-item";
 import { ModalOrder } from "../modal-order";
 import styles from "./index.module.css";
+import {Summary} from "../summary";
 
 export const CellShoppingCart = ({
   cartArr,
@@ -17,7 +18,8 @@ export const CellShoppingCart = ({
 
   return (
     <div className={styles.container}>
-      <CellItem cartArr={cartArr} />
+      <CellItem cartArr={cartArr} isModalActive={isModalActive}/>
+        <Summary/>
       <Button
         size="s"
         className={styles.buttonContinue}

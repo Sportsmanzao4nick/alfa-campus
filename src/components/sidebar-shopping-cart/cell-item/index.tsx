@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { PureCell } from "@alfalab/core-components/pure-cell";
 import { Typography } from "@alfalab/core-components/typography";
 import { Circle } from "@alfalab/core-components/icon-view/circle";
@@ -8,29 +8,18 @@ import { MinusMIcon } from "@alfalab/icons-glyph/MinusMIcon";
 import { SfCrossMIcon } from "@alfalab/icons-glyph/SfCrossMIcon";
 import {
   decrementQuantity,
-  getTotalPrice,
   incrementQuantity,
   removeItem,
 } from "../../store/cart/cart-slice";
-import {
-  cartSelectors,
-  useAppDispatch,
-  useAppSelector,
-} from "../../store/cart";
+import { useAppDispatch } from "../../store/cart";
 import { ItemArr, Product } from "./types";
 import styles from "./index.module.css";
 
-export const CellItem = ({ cartArr }: ItemArr) => {
+export const CellItem = ({ cartArr, isModalActive }: ItemArr) => {
   const dispatch = useAppDispatch();
-  const cartSelect = useAppSelector(cartSelectors.getCart);
-  const totalPrice = useAppSelector(cartSelectors.getTotalPrice);
-
-  useEffect(() => {
-    dispatch(getTotalPrice());
-  }, [cartSelect, dispatch]);
 
   return (
-    <div className={styles.container}>
+    <div className={isModalActive ?  styles.containerFixed : styles.container}>
       {cartArr?.map((item: Product) => {
         return (
           <PureCell
@@ -142,24 +131,6 @@ export const CellItem = ({ cartArr }: ItemArr) => {
           </PureCell>
         );
       })}
-      <div className={styles.sumContainer}>
-        <Typography.TitleResponsive
-          className={styles.titleText}
-          view="xsmall"
-          tag="h3"
-          weight="bold"
-          font="styrene"
-        >
-          Cумма:
-        </Typography.TitleResponsive>
-        <PureCell.Amount
-          className={styles.amountSum}
-          minority={1}
-          weight="bold"
-          value={totalPrice}
-          currency="RUR"
-        />
-      </div>
     </div>
   );
 };

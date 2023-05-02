@@ -17,6 +17,7 @@
 }
 
 .container {
+    overflow: auto;
     padding: var(--gap-4xl) 0;
     max-width: 1200px;
     width: 100%;
@@ -28,7 +29,7 @@
     padding: var(--gap-4xl) var(--gap-m);
     position: relative;
     z-index: 10;
-    width: 50%;
+    width: 49%;
 }
 
 .titleText {
@@ -36,38 +37,61 @@
 }
 
 .productsContainer {
+    padding: var(--gap-4xl) var(--gap-m);
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+}
+
+.fixedContainer {
     position: fixed;
-    max-width: 500px;
-    top: 12vh;
-    right: 20vw;
-    width: 25%;
-    padding: 0 var(--gap-xs);
+}
+
+.cellItemWrapper {
+    overflow-y: auto;
+}
+
+.summaryInfoWrapper {
+    max-width: 760px;
+    width: 100%;
+    padding: var(--gap-s) 0;
 }
 
 @media (max-width: 1024px) {
     .container {
-        display: block;
         max-width: 600px;
+        flex-wrap: wrap-reverse;
+    }
+
+    .fixedContainer {
+        position: static;
+    }
+
+    .cellItemWrapper {
+        overflow-y: visible;
     }
 
     .inputsContainer {
-        padding: var(--gap-s) var(--gap-s);
-        width: 95%;
+        padding: var(--gap-s);
+        width: 90%;
+        margin: 0 auto;
     }
 
     .productsContainer {
-        position: static;
-        width: 95%;
-        padding: var(--gap-xl) var(--gap-s);
+        margin: 0 auto;
+        width: 90%;
+        padding: var(--gap-l) var(--gap-s) var(--gap-s) var(--gap-s);
+    }
+
+    .summaryInfoWrapper {
+        max-width: 600px;
+        padding: 0;
+        width: 95%
     }
 }
 
 @media (max-width: 600px) {
     .container {
         max-width: 500px;
-    }
-
-    .inputsContainer {
-        width: 90%;
     }
 }

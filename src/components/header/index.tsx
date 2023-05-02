@@ -15,15 +15,12 @@ export const Header = () => {
     setActive(false);
   };
 
-  const menuClose = () => {
-    setActive(false);
-  };
   return (
     <div className={styles.container}>
       <div className={styles.logoContainer}>
         <NavLink
           data-testid="main-page-link"
-          onClick={menuClose}
+          onClick={handeMenuClose}
           className={styles.logo}
           to=""
         >

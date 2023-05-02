@@ -1,0 +1,27 @@
+.titleText {
+    line-height: 25px;
+    margin: 0;
+}
+
+.sumContainer {
+    text-align: end;
+}
+
+.amountSum {
+    align-items: end;
+    text-align: end;
+    margin-left: var(--gap-s);
+}
+
+.infoSumOfCart {
+    display: flex;
+}
+
+@media (max-width: 600px) {
+    .titleText {
+        line-height: 20px;
+    }
+    .sumContainer {
+      padding: 0;
+    }
+}

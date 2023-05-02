@@ -11,4 +11,5 @@ export interface Product {
 
 export interface ItemArr {
     cartArr: Product[];
+    isModalActive: boolean;
 }

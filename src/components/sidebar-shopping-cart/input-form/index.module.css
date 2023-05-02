@@ -1,3 +1,19 @@
+.formHidden {
+    display: none;
+}
+.success {
+    padding: 70px 0;
+    text-align: center;
+    background: var(--color-light-graphic-positive);
+    color: #ffffff;
+}
+.fail {
+    padding: 70px 0;
+    text-align: center;
+    background: var(--color-light-text-negative);
+    color: #ffffff;
+}
+
 .titleText {
     line-height: 1.55;
 }
@@ -40,4 +56,12 @@
         display: block;
     }
 }
+
+@media (max-width: 600px) {
+    .inputItemContainer {
+        padding-bottom: var(--gap-s);
+    }
+}
+
+
 
