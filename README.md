@@ -45,4 +45,3 @@
 - Библиотеку для роутинга React Router v6;
 - Библиотеку компонентом [Core Components](https://core-ds.github.io/core-components/master/);
 - Библиотека для работы с формами: Formik и react-hook-form.
-
