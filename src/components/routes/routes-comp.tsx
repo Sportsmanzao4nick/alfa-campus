@@ -13,7 +13,7 @@ import {ProductPage} from "../../pages/product";
 
 const router = createHashRouter(
     createRoutesFromElements(
-        <Route path="" element={<RootLayout/>}>
+        <Route path="/alfa-campus" element={<RootLayout/>}>
             <Route index element={<MainPage/>}/>
             <Route path="own-design" element={<OwnDesign/>}/>
             <Route path="made-in-alfa" element={<MadeInAlfa/>}/>
