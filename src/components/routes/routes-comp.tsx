@@ -1,5 +1,5 @@
 import {
-    createHashRouter,
+    createBrowserRouter,
     Route,
     createRoutesFromElements,
     RouterProvider,
@@ -11,7 +11,7 @@ import {Contacts} from "../../pages/contatcs";
 import {RootLayout} from "./root-layout";
 import {ProductPage} from "../../pages/product";
 
-const router = createHashRouter(
+const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/alfa-campus" element={<RootLayout/>}>
             <Route index element={<MainPage/>}/>
