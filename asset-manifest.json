@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/alfa-campus/static/css/main.91c30323.css",
+    "main.js": "/alfa-campus/static/js/main.a844ef51.js",
+    "static/js/787.80bebaeb.chunk.js": "/alfa-campus/static/js/787.80bebaeb.chunk.js",
+    "static/media/Frame_46.jpeg": "/alfa-campus/static/media/Frame_46.a87b4ffc8d1a066f1a5c.jpeg",
+    "static/media/Frame_45.jpeg": "/alfa-campus/static/media/Frame_45.6935adcea289fc465b15.jpeg",
+    "index.html": "/alfa-campus/index.html",
+    "main.91c30323.css.map": "/alfa-campus/static/css/main.91c30323.css.map",
+    "main.a844ef51.js.map": "/alfa-campus/static/js/main.a844ef51.js.map",
+    "787.80bebaeb.chunk.js.map": "/alfa-campus/static/js/787.80bebaeb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91c30323.css",
+    "static/js/main.a844ef51.js"
+  ]
+}
