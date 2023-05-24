@@ -1,0 +1,41 @@
+.container.container {
+    padding: var(--gap-xs);
+}
+
+.graphics {
+    max-width: 375px;
+    max-height: 375px;
+    align-items: start;
+}
+
+.images {
+    max-width: 375px;
+    max-height: 375px;
+    width: 29vw;
+    height: 29vw;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+@media (max-width: 1024px) {
+    .images {
+        max-width: 295px;
+        max-height: 295px;
+        width: 35vw;
+        height: 35vw;
+    }
+}
+
+@media (max-width: 470px) {
+    .graphics {
+        max-width: 420px;
+        max-height: 420px;
+    }
+
+    .images {
+        max-width: 420px;
+        max-height: 420px;
+        width: 88vw;
+        height: 88vw;
+    }
+}

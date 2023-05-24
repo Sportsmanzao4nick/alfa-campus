@@ -1,0 +1,94 @@
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    height: 90vh;
+}
+
+.headerContainer {
+    padding: var(--gap-2xl) 0;
+    text-align: start;
+}
+
+.header {
+    text-align: start;
+    font-size: 110px;
+    line-height: 110px;
+    letter-spacing: -2.5px;
+    margin: 0 auto;
+}
+
+.textContainer {
+    padding: var(--gap-4xl) 0;
+}
+
+.text {
+    letter-spacing: 0;
+}
+
+.mapsContainer {
+    width: 500px;
+    height: 300px;
+    padding: var(--gap-l) 0;
+}
+
+.maps {
+    max-width: 850px;
+    width: 60vw;
+    height: 35vh;
+}
+
+@media (max-width: 1024px) {
+
+    .container {
+        height: 105vh;
+    }
+
+    .header {
+        font-size: 75px;
+        line-height: 88px;
+    }
+
+    .container {
+        width: 75%;
+        max-width: 910px;
+    }
+
+    .maps {
+        max-width: 850px;
+        width: 74vw;
+        height: 50vh;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .container {
+        height: 115vh;
+    }
+
+    .headerContainer {
+        padding: var(--gap-l) 0;
+        text-align: start;
+    }
+
+    .header {
+        font-size: 42px;
+        line-height: 44px;
+    }
+
+    .container {
+        max-width: 540px;
+        width: 85%;
+    }
+
+    .textContainer {
+        padding: var(--gap-s) 0;
+    }
+
+    .maps {
+        max-width: 540px;
+        width: 85vw;
+        height: 45vh;
+    }
+}

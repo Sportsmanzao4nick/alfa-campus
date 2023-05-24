@@ -1,0 +1,44 @@
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.headerContainer {
+    padding: 30px 0;
+    height: 195px;
+}
+
+.header {
+    line-height: 110px;
+    font-size: 110px;
+    letter-spacing: -2.5px;
+    margin: 0 auto;
+}
+
+.text {
+    letter-spacing: 0;
+}
+
+@media (max-width: 960px) {
+    .header {
+        font-size: 75px;
+        line-height: 88px;
+    }
+
+    .container {
+        width: 75%;
+        max-width: 910px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        font-size: 42px;
+        line-height: 44px;
+    }
+
+    .container {
+        width: 90%;
+    }
+}

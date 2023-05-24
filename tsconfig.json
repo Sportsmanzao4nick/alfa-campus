@@ -1,6 +1,12 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "paths": {
+      "@alfalab/core-components-popover": [
+        "../popover/src"
+      ]
+    },
+    "references": [{ "path": "../popover" }],
     "lib": [
       "dom",
       "dom.iterable",

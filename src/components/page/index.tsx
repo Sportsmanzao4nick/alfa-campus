@@ -1,18 +1,17 @@
-import styles from './index.module.css';
-import {Header} from "../header";
-import {Footer} from "../footer";
 import React from "react";
+import { Header } from "../header";
+import { Footer } from "../footer";
+import { Data } from "./types";
+import { Cart } from "../cart";
+import styles from "./index.module.css";
 
-type Props = {
-    children: React.ReactElement
-}
-
-export const Page = ({ children}: Props) => {
-    return (
-        <div className={styles.page}>
-            <Header/>
-            <div>{children}</div>
-            <Footer/>
-        </div>
-    )
-}
+export const Page = ({ children }: Data) => {
+  return (
+    <div className={styles.page}>
+      <Header />
+      <div>{children}</div>
+      <Cart />
+      <Footer />
+    </div>
+  );
+};

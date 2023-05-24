@@ -1,0 +1,75 @@
+.sideContainer {
+    background-color: #000000;
+}
+
+.header {
+    background-color: #000000;
+}
+
+.content {
+    background-color: #000000;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 10px;
+    left: 560px;
+    color: var(--color-light-bg-primary);
+}
+
+.footer {
+    background-color: #000000;
+}
+
+.text {
+    text-decoration: none;
+    color: var(--color-light-bg-primary);
+}
+
+.contactsIcons {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+.iconContact {
+    display: flex;
+    margin-right: var(--gap-xs);
+}
+
+.linkContact {
+    color: #000000;
+}
+
+
+@media (max-width: 600px) {
+    .sideContainer {
+        position: relative;
+        z-index: 1;
+        background-color: var(--color-light-bg-primary);
+    }
+
+    .header {
+        position: relative;
+        z-index: 1;
+        background-color: var(--color-light-bg-primary);
+    }
+
+    .content {
+        background-color: var(--color-light-bg-primary);
+    }
+
+    .icon {
+        color: #000000;
+    }
+
+    .footer {
+        background-color: var(--color-light-bg-primary);
+    }
+
+    .text {
+        color: #000000;
+    }
+}

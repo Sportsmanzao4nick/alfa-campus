@@ -1,6 +1,3 @@
-@import '@alfalab/core-components/vars/colors-indigo.css';
-@import '@alfalab/core-components/vars/gaps.css';
-
 .container {
     display: flex;
     justify-content: space-between;
@@ -8,27 +5,19 @@
     color: #000000;
 }
 
-.container_active {
-    height: 100%;
-    width: 100%;
-    background-color: #ffffff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
+.backdrop {
+    --backdrop-visible-background: var(--color-dark-bg-opaque);
 }
 
 .logo {
-    color: var(--color-dark-bg-accent, #ef3124);
-    font-weight: 700;
+    color: var(--color-dark-bg-accent);
     text-decoration: none;
     vertical-align: middle;
 }
 
-.burger {
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
+.burger.burger {
+    width: 40px;
+    height: 40px;
 }
 
 .burger:hover {
@@ -36,10 +25,41 @@
 }
 
 .links {
+    width: 150px;
+    display: flex;
     text-decoration: none;
     font-weight: 700;
 }
 
 .menu:hover {
     cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .menu {
+        display: none;
+    }
+
+    .links {
+        width: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 87%;
+    }
+
+    .burger {
+        margin-right: 0;
+    }
+
+    .logo {
+        position: relative;
+        z-index: 90;
+    }
+
+    .links {
+        width: 30px;
+    }
 }

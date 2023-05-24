@@ -1,28 +1,63 @@
-import styles from './index.module.css';
-import {NavLink} from "react-router-dom";
-import React, {useState} from "react";
-import {Sidebar} from "../sidebar";
-import { BurgerMIcon } from '@alfalab/icons-glyph/BurgerMIcon';
+import React, { useState } from "react";
+import { SidebarMenu } from "../sidebar-menu";
+import { NavLink } from "react-router-dom";
+import { BurgerMIcon } from "@alfalab/icons-glyph/BurgerMIcon";
+import { Typography } from "@alfalab/core-components/typography";
+import { PureCell } from "@alfalab/core-components/pure-cell";
+import styles from "./index.module.css";
 
 export const Header = () => {
-    const [isActive, setActive] = useState(false);
-    const sliderState = () => {
-        setActive(!isActive)
-    };
-    return (
-        <div className={styles.container}>
-            <div className={styles.logo__container}>
-                <div onClick={sliderState}
-                     className={isActive ? styles.container_active : styles.container_off}></div>
-                <NavLink className={styles.logo}
-                         to="">A-Store</NavLink>
-            </div>
-            <div onClick={sliderState}
-                 className={styles.links}>
-                <BurgerMIcon className={styles.burger}/>
-                <span className={styles.menu}>меню</span>
-                    <Sidebar isActive={isActive}  sliderState = {sliderState}/>
-            </div>
-        </div>
-    )
-}
+  const [isActive, setActive] = useState(false);
+  const handeMenuOpen = () => {
+    setActive(true);
+  };
+  const handeMenuClose = () => {
+    setActive(false);
+  };
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.logoContainer}>
+        <NavLink
+          data-testid="main-page-link"
+          onClick={handeMenuClose}
+          className={styles.logo}
+          to=""
+        >
+          <Typography.TitleResponsive
+            className={styles.logoPower}
+            tag="div"
+            weight="bold"
+            view="medium"
+            font="styrene"
+          >
+            A-Store
+          </Typography.TitleResponsive>
+        </NavLink>
+      </div>
+      <PureCell onClick={handeMenuOpen} className={styles.links}>
+        <PureCell.Graphics verticalAlign="center">
+          <BurgerMIcon className={styles.burger} />
+        </PureCell.Graphics>
+        <PureCell.Content>
+          <PureCell.Main>
+            <Typography.TitleResponsive
+              className={styles.menu}
+              tag="div"
+              weight="bold"
+              view="medium"
+              font="styrene"
+            >
+              меню
+            </Typography.TitleResponsive>
+          </PureCell.Main>
+        </PureCell.Content>
+      </PureCell>
+      <SidebarMenu
+        isActive={isActive}
+        handeMenuOpen={handeMenuOpen}
+        handeMenuClose={handeMenuClose}
+      />
+    </div>
+  );
+};

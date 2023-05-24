@@ -1,0 +1,67 @@
+.formHidden {
+    display: none;
+}
+.success {
+    padding: 70px 0;
+    text-align: center;
+    background: var(--color-light-graphic-positive);
+    color: #ffffff;
+}
+.fail {
+    padding: 70px 0;
+    text-align: center;
+    background: var(--color-light-text-negative);
+    color: #ffffff;
+}
+
+.titleText {
+    line-height: 1.55;
+}
+
+.inputItemContainer {
+    padding-bottom: var(--gap-l);
+}
+
+.input {
+    margin: var(--gap-2xs) 0;
+    border-radius: 13px;
+}
+
+.buttonCheckPromo {
+    width: 100%;
+    background-color: #000000;
+}
+
+.invisibleButton {
+    display: none;
+}
+
+.buttonContinue {
+    width: 100%;
+    background-color: #000000;
+    margin-top: var(--gap-m);
+}
+
+.sumContainer {
+    width: 100%;
+}
+
+.sumContainerSmallerWidth {
+    display: none;
+}
+
+
+@media (max-width: 1024px) {
+    .sumContainerSmallerWidth {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .inputItemContainer {
+        padding-bottom: var(--gap-s);
+    }
+}
+
+
+

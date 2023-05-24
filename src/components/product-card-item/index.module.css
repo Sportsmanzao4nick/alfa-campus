@@ -1,0 +1,113 @@
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.imagesContainer {
+    padding: 0 var(--gap-s);
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.asideImagesContainer {
+    max-width: 560px;
+    align-self: start;
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mainImage {
+    width: 100%;
+    max-width: 560px;
+    max-height: 742px;
+}
+
+.image {
+    display: flex;
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+    background-size: cover;
+    margin: 4px;
+    margin-left: 0;
+}
+
+.selectImage {
+    outline: 3px solid var(--color-dark-bg-overlay);
+}
+
+.cellContainer {
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--gap-s) var(--gap-3xl);
+    align-self: start;
+    text-align: start;
+}
+
+.mainContainer {
+    align-self: start;
+    text-align: start;
+}
+
+.optionsContainer {
+    width: 40%;
+}
+
+.selectorContainer {
+    padding-top: var(--gap-m);
+}
+
+.selectorText {
+    font-size: 16px;
+}
+
+.amount {
+    padding: var(--gap-l) 0;
+    font-size: 20px;
+}
+
+.button {
+    width: 100%;
+    border-radius: 30px;
+    margin-top: var(--gap-l);
+}
+
+.descriptionText {
+    margin-top: var(--gap-xl);
+    line-height: 1.5;
+    font-size: 16px;
+
+}
+
+@media (max-width: 1024px) {
+    .container {
+        display: block;
+        max-width: 600px;
+    }
+
+    .cellContainer {
+        padding: var(--gap-xl) var(--gap-s);
+    }
+
+    .imagesContainer {
+        padding: 0 var(--gap-xs);
+        width: 95%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 470px) {
+    .imagesContainer {
+        max-width: 450px;
+    }
+
+    .mainImage {
+        max-width: 450px;
+        max-height: 480px;
+    }
+}

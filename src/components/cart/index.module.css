@@ -1,0 +1,44 @@
+.circleButtonIcon {
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    animation: zoom-in-out 0.5s forwards;
+}
+
+@keyframes zoom-in-out {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.5, 1.5, 1.5);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.buttonIcon {
+    cursor: pointer;
+    border-radius: 100%;
+    color: var(--color-light-bg-primary);
+    background-color: var(--color-light-bg-accent);
+    transition: transform 0.2s ease-in-out;
+}
+
+.buttonIcon:hover {
+    transform: scale3d(1.4, 1.4, 1);
+}
+
+@media (max-width: 1024px) {
+    .circleButtonIcon {
+        top: unset;
+        bottom: 10%;
+    }
+}
+
+@media (max-width: 600px) {
+    .circleButtonIcon {
+        top: unset;
+        bottom: 10%;
+    }
+}

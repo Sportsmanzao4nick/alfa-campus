@@ -1,0 +1,8 @@
+.container {
+    padding: var(--gap-xl) 0;
+}
+
+.buttonContinue {
+    width: 100%;
+    background-color: #000000;
+}
