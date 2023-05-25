@@ -67,7 +67,7 @@ export const InputForm = () => {
 const onClickSubmitReset = () => {
   setTimeout(() => {
     window.location.reload();
-    window.location.href = "/";
+    window.location.href = "/alfa-campus";
   }, 5000);
 }
 

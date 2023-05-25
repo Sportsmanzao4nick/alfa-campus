@@ -2,35 +2,35 @@
 	"products": [
 		{
 			"id": 0,
-			"preview": "http://localhost:3000/public/images/15932051.jpeg",
+			"preview": "./made-in-alfa/img/product0/preview.jpeg",
 			"title": "Рюкзак «Для умных и свободных»",
 			"price": 4999,
 			"availability": true
 		},
 		{
 			"id": 1,
-			"preview": "http://localhost:3000/public/images/68519498.jpeg",
+			"preview": "./made-in-alfa/img/product1/preview.jpeg",
 			"title": "Футболка Для умных и свободных",
 			"price": 1999,
 			"availability": true
 		},
 		{
 			"id": 2,
-			"preview": "http://localhost:3000/public/images/77117755.jpeg",
+			"preview": "./made-in-alfa/img/product2/preview.jpeg",
 			"title": "Блокнот Для умных и свободных",
 			"price": 1499,
 			"availability": true
 		},
 		{
 			"id": 3,
-			"preview": "http://localhost:3000/public/images/15932051.jpeg",
+			"preview": "./made-in-alfa/img/product3/preview.jpeg",
 			"title": "Чехол с кардхолдером",
 			"price": 799,
 			"availability": false
 		},
 		{
 			"id": 4,
-			"preview": "http://localhost:3000/public/images/56369345.jpeg",
+			"preview": "./made-in-alfa/img/product4/preview.jpeg",
 			"title": "Экоручка",
 			"price": 99,
 			"availability": true

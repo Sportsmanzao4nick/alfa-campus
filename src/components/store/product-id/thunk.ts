@@ -6,8 +6,9 @@ export const fetchProductById = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://qa-games.ru/astore/product/${id}`
+        `./product${id}.json`
       );
+      console.log(response)
 
       if (response.status !== 200) {
         throw new Error("Error!");
