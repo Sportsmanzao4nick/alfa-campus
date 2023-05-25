@@ -1,0 +1,62 @@
+{
+	"id": 9,
+	"preview": "./img/product9/preview.png",
+	"images": [
+		"./img/product9/images0.png",
+		"./img/product9/images1.png",
+		"./img/product9/images2.png",
+		"./img/product9/images3.png",
+		"./img/product9/images4.png",
+		"./img/product9/images5.png",
+		"./img/product9/images6.png",
+		"./img/product9/images7.png",
+		"./img/product9/images8.png",
+		"./img/product9/images9.png",
+		"./img/product9/images10.png",
+		"./img/product9/images11.png",
+		"./img/product9/images12.png",
+		"./img/product9/images13.png"
+	],
+	"title": "Футболка с FLAT-стикерами",
+	"subtitle": "Все варианты — внутри",
+	"price": 1749,
+	"description": "Выберите стикер, а мы перенесём его на ткань — как на фото. Одежду можно стирать в машинке при 30 °C, вывернув наизнанку. Гладить — с внутренней стороны. Посмотреть и потрогать все стикеры можно в A-Store на Технопарке. А ещё там можно добавить сразу несколько стикеров на одну вещь.",
+	"colors": [
+		"white",
+		"black",
+		"red",
+		"green",
+		"gray"
+	],
+	"sizes": [
+		"XS",
+		"S",
+		"M",
+		"L",
+		"XL",
+		"XXL"
+	],
+	"stickerNumbers": [
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20
+	],
+	"availability": true
+}
