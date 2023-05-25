@@ -1,0 +1,12 @@
+{
+	"id": 2,
+	"preview": "./img/product2/preview.jpeg",
+	"images": [
+		"./img/product2/images0.jpeg",
+		"./img/product2/images1.jpeg"
+	],
+	"title": "Блокнот Для умных и свободных",
+	"description": "Под твёрдой обложкой — 300 белых страниц с градиентом. Должно хватить для небольшого романа или рабочих записей.",
+	"price": 1499,
+	"availability": true
+}

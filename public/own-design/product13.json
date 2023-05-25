@@ -1,0 +1,48 @@
+{
+	"id": 13,
+	"preview": "./img/product13/preview.png",
+	"images": [
+		"./img/product13/images0.png",
+		"./img/product13/images1.png",
+		"./img/product13/images2.png",
+		"./img/product13/images3.png",
+		"./img/product13/images4.png",
+		"./img/product13/images5.png",
+		"./img/product13/images6.png",
+		"./img/product13/images7.png",
+		"./img/product13/images8.png",
+		"./img/product13/images9.png",
+		"./img/product13/images10.png"
+	],
+	"title": "Футболка оверсайз с 3D-стикерами",
+	"subtitle": "Нажмите, чтобы выбрать стикер",
+	"price": 1899,
+	"description": "Выберите стикер, а мы перенесём его на ткань — как на фото. Одежду можно стирать в машинке при 30 °C, вывернув наизнанку. Гладить — с внутренней стороны. Посмотреть и потрогать все стикеры можно в A-Store на Технопарке. А ещё там можно добавить сразу несколько стикеров на одну вещь.",
+	"colors": [
+		"white",
+		"black",
+		"red",
+		"gray"
+	],
+	"sizes": [
+		"S",
+		"M",
+		"L",
+		"XL"
+	],
+	"stickerNumbers": [
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12
+	],
+	"availability": true
+}

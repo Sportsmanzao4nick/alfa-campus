@@ -23,11 +23,11 @@ export const ProductCard = () => {
   useEffect(() => {
     dispatch(productsOperations.fetchProductById(id));
   }, [dispatch, id]);
+  console.log(product)
 
   if (hasError) {
     return <h2>Произошла ошибка, повторите попытку</h2>;
   }
-
   return product ? (
     <Skeleton visible={isLoading} animate={true}>
       <Product product={product} />

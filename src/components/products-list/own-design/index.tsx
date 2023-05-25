@@ -56,7 +56,7 @@ export const ProductsListOwnDesign = () => {
                   <NavLink
                     key={item.id}
                     className={styles.link}
-                    to={`/product/${item.id}`}
+                    to={`${item.id}`}
                   >
                     <Skeleton visible={isLoading} animate={true}>
                       <Cell

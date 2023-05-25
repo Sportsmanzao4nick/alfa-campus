@@ -1,0 +1,14 @@
+{
+	"id": 0,
+	"preview": "./img/product0/preview.jpeg",
+	"images": [
+		"./img/product0/images0.jpeg",
+		"./img/product0/images1.jpeg",
+		"./img/product0/images2.jpeg",
+		"./img/product0/images3.jpeg"
+	],
+	"title": "Рюкзак «Для умных и свободных»",
+	"description": "Поместится и ноутбук, и худи. У рюкзака широкие красные лямки и светоотражающие элементы — вас заметят и днём, и ночью.",
+	"price": 4999,
+	"availability": true
+}
