@@ -2,9 +2,9 @@
 	"id": 1,
 	"preview": "./img/product1/preview.jpeg",
 	"images": [
-		"./img/product1/images0.jpeg",
-		"./img/product1/images1.jpeg",
-		"./img/product1/images2.jpeg"
+		"/made-in-alfa/img/product1/images0.jpeg",
+		"/made-in-alfa/img/product1/images1.jpeg",
+		"/made-in-alfa/img/product1/images2.jpeg"
 	],
 	"title": "Футболка Для умных и свободных",
 	"description": "Мягкая хлопковая футболка для тех, кто любит быть в центре внимания. Состав и способ ухода вынесли на самое видное место.",

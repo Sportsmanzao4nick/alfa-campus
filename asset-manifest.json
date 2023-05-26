@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/alfa-campus/static/css/main.d0b5de68.css",
-    "main.js": "/alfa-campus/static/js/main.69dc3567.js",
+    "main.js": "/alfa-campus/static/js/main.9d86d4fe.js",
     "static/js/787.80bebaeb.chunk.js": "/alfa-campus/static/js/787.80bebaeb.chunk.js",
     "static/media/Frame_46.jpeg": "/alfa-campus/static/media/Frame_46.a87b4ffc8d1a066f1a5c.jpeg",
     "static/media/Frame_45.jpeg": "/alfa-campus/static/media/Frame_45.6935adcea289fc465b15.jpeg",
     "index.html": "/alfa-campus/index.html",
     "main.d0b5de68.css.map": "/alfa-campus/static/css/main.d0b5de68.css.map",
-    "main.69dc3567.js.map": "/alfa-campus/static/js/main.69dc3567.js.map",
+    "main.9d86d4fe.js.map": "/alfa-campus/static/js/main.9d86d4fe.js.map",
     "787.80bebaeb.chunk.js.map": "/alfa-campus/static/js/787.80bebaeb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d0b5de68.css",
-    "static/js/main.69dc3567.js"
+    "static/js/main.9d86d4fe.js"
   ]
 }
