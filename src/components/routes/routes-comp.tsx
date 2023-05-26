@@ -25,6 +25,5 @@ const router = createBrowserRouter(
 );
 
 export const RoutesComp = () => {
-    console.log(router)
     return <RouterProvider router={router}/>;
 };

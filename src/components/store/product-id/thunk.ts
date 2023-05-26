@@ -8,7 +8,6 @@ export const fetchProductById = createAsyncThunk(
       const response = await axios.get(
         `./product${id}.json`
       );
-      console.log(response)
 
       if (response.status !== 200) {
         throw new Error("Error!");
