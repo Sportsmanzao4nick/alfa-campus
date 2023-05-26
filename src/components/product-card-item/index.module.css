@@ -23,8 +23,10 @@
 
 .mainImage {
     width: 100%;
+    height: 75vh;
+    min-height: 620px;
+    max-height: 740px;
     max-width: 560px;
-    max-height: 742px;
 }
 
 .image {

@@ -10,11 +10,9 @@ import styles from "./index.module.css";
 
 export const SidebarMenu = ({
   isActive,
-  handeMenuOpen,
   handeMenuClose,
 }: {
   isActive: boolean;
-  handeMenuOpen: () => void;
   handeMenuClose: () => void;
 }) => {
   return (
@@ -40,7 +38,7 @@ export const SidebarMenu = ({
             font="styrene"
           >
             <NavLink
-              onClick={handeMenuOpen}
+              onClick={handeMenuClose}
               className={styles.text}
               to="made-in-alfa"
             >
@@ -55,7 +53,7 @@ export const SidebarMenu = ({
             font="styrene"
           >
             <NavLink
-              onClick={handeMenuOpen}
+              onClick={handeMenuClose}
               className={styles.text}
               to="own-design"
             >
@@ -70,7 +68,7 @@ export const SidebarMenu = ({
             font="styrene"
           >
             <NavLink
-              onClick={handeMenuOpen}
+              onClick={handeMenuClose}
               className={styles.text}
               to="contacts"
             >
@@ -80,7 +78,7 @@ export const SidebarMenu = ({
         </SidePanelResponsive.Content>
         <SidePanelResponsive.Content className={styles.content}>
           <Typography.Text view="secondary-large" tag="div" weight="medium">
-            <NavLink className={styles.text} to="">
+            <NavLink className={styles.text} to="" onClick={handeMenuClose}>
               Политика конфиденциальности и обработки персональных данных
             </NavLink>
           </Typography.Text>

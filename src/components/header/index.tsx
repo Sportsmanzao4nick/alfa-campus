@@ -55,7 +55,6 @@ export const Header = () => {
       </PureCell>
       <SidebarMenu
         isActive={isActive}
-        handeMenuOpen={handeMenuOpen}
         handeMenuClose={handeMenuClose}
       />
     </div>
