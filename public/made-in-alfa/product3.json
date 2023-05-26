@@ -2,8 +2,8 @@
 	"id": 3,
 	"preview": "./img/product3/preview.jpeg",
 	"images": [
-		"./img/product3/images0.jpeg",
-		"./img/product3/images1.jpeg"
+		"/made-in-alfa/img/product3/images0.jpeg",
+		"/made-in-alfa/img/product3/images1.jpeg"
 	],
 	"title": "Чехол с кардхолдером",
 	"description": "Чтобы карта всегда была под рукой. К чехлу мы сделали яркий стикер — вам решать, клеить его или нет.",

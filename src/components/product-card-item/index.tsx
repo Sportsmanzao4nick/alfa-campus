@@ -75,7 +75,6 @@ export const Product = ({ product }: Products) => {
   const { id, title, price } = product;
 
   const choseImg = product.images?.find((i, idx) => idx === initialSlide);
-
   const dispatchAddToCart = () => {
     dispatch(
       addToCart({
@@ -93,7 +92,7 @@ export const Product = ({ product }: Products) => {
   return (
     <div className={styles.container}>
       <div className={styles.imagesContainer}>
-        <img className={styles.mainImage} src={choseImg} alt="product-image" />
+        <img className={styles.mainImage} src={process.env.PUBLIC_URL + choseImg} alt="product-image" />
         <div className={styles.asideImagesContainer}>
           {product.images?.map((item: string, index) => {
             return (
@@ -106,7 +105,7 @@ export const Product = ({ product }: Products) => {
                   handleOpenGallery(index);
                 }}
                 style={{
-                  backgroundImage: `url(${item})`,
+                  backgroundImage: `url(${process.env.PUBLIC_URL + item})`,
                 }}
               />
             );
