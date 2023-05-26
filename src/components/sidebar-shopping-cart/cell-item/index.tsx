@@ -28,7 +28,7 @@ export const CellItem = ({ cartArr, isModalActive }: ItemArr) => {
             className={styles.cellContainer}
           >
             <PureCell.Graphics>
-              <img src={item.choseImg} className={styles.image} alt="img" />
+              <img src={process.env.PUBLIC_URL + item.choseImg} className={styles.image} alt="img" />
             </PureCell.Graphics>
             <PureCell.Content>
               <PureCell.Main>
